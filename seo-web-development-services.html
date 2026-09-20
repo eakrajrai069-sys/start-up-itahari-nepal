@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>SEO & Web Development in Itahari | Startup Nepal</title>
-  <meta name="description" content="Learn how SEO and web development work together to build a search-ready, user-friendly business website. Startup Nepal focuses on website structure, search intent, technical foundations, content, local relevance, performance, and ongoing growth in Itahari, Sunsari and beyond.">
+  <meta name="description" content="SEO and web development services in Itahari, Sunsari and Nepal. Learn how search-ready business websites use website structure, search intent, technical SEO, content, local relevance, mobile optimization and performance.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#08111f">
   <link rel="canonical" href="https://yourdomain.com/seo-web-development-services.html">
 
   <meta property="og:title" content="SEO & Web Development in Itahari | Startup Nepal">
-  <meta property="og:description" content="A practical guide to building business websites that are useful to visitors, understandable to search engines, and ready for long-term growth.">
+  <meta property="og:description" content="SEO and web development for search-ready, user-friendly business websites in Itahari, Sunsari and Nepal.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yourdomain.com/seo-web-development-services.html">
 
@@ -38,7 +38,9 @@
       "Web Development",
       "Business Websites",
       "Local SEO",
-      "Website Performance"
+      "Website Performance",
+      "Technical SEO",
+      "Search Intent"
     ]
   }
   </script>
@@ -60,8 +62,16 @@
       --max: 1180px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
@@ -86,11 +96,26 @@
       z-index: -1;
     }
 
-    a { color: inherit; text-decoration: none; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    button, input, textarea { font: inherit; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    .container { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
 
     .announcement {
       border-bottom: 1px solid var(--line);
@@ -165,7 +190,10 @@
       text-transform: uppercase;
     }
 
-    .brand-text strong { display: block; font-size: 1rem; }
+    .brand-text strong {
+      display: block;
+      font-size: 1rem;
+    }
 
     .nav-menu {
       display: flex;
@@ -174,7 +202,8 @@
       list-style: none;
     }
 
-    .nav-link, .nav-trigger {
+    .nav-link,
+    .nav-trigger {
       position: relative;
       display: inline-flex;
       align-items: center;
@@ -190,20 +219,25 @@
       cursor: pointer;
     }
 
-    .nav-link:hover, .nav-trigger:hover {
+    .nav-link:hover,
+    .nav-trigger:hover {
       background: rgba(255,255,255,.05);
       color: #fff;
     }
 
     .nav-link.active,
-    .nav-trigger.active { color: var(--accent); }
+    .nav-trigger.active {
+      color: var(--accent);
+    }
 
     .chevron {
       font-size: .72rem;
       transition: transform .22s ease;
     }
 
-    .dropdown { position: relative; }
+    .dropdown {
+      position: relative;
+    }
 
     .dropdown-panel {
       position: absolute;
@@ -233,7 +267,9 @@
     }
 
     .dropdown:hover .chevron,
-    .dropdown.open .chevron { transform: rotate(180deg); }
+    .dropdown.open .chevron {
+      transform: rotate(180deg);
+    }
 
     .dropdown-intro {
       padding: 3px 6px 15px;
@@ -337,7 +373,9 @@
       transition: .2s ease;
     }
 
-    main { min-height: calc(100vh - 120px); }
+    main {
+      min-height: calc(100vh - 120px);
+    }
 
     .hero {
       padding: 92px 0 66px;
@@ -482,7 +520,9 @@
       font-size: .71rem;
     }
 
-    section { padding: 74px 0; }
+    section {
+      padding: 74px 0;
+    }
 
     .section-head {
       max-width: 850px;
@@ -585,8 +625,6 @@
       color: var(--muted);
       font-size: .83rem;
     }
-
-    .article-block p + p { margin-top: 10px; }
 
     .principles {
       display: grid;
@@ -693,7 +731,9 @@
       font-weight: 800;
     }
 
-    summary::-webkit-details-marker { display: none; }
+    summary::-webkit-details-marker {
+      display: none;
+    }
 
     details p {
       padding: 0 18px 18px;
@@ -701,7 +741,120 @@
       font-size: .77rem;
     }
 
-    .cta-section { padding-top: 24px; }
+    /* EAV / SPO */
+
+    .semantic-section {
+      padding: 82px 0;
+    }
+
+    .semantic-wrap {
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      overflow: hidden;
+      background:
+        linear-gradient(155deg, rgba(255,255,255,.045), rgba(255,255,255,.018));
+      box-shadow: var(--shadow);
+    }
+
+    .semantic-content {
+      padding: 34px;
+    }
+
+    .semantic-header {
+      max-width: 900px;
+      margin-bottom: 30px;
+    }
+
+    .semantic-header h2 {
+      margin-top: 9px;
+      font-size: clamp(2rem,4vw,3rem);
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+
+    .semantic-header p {
+      color: var(--muted);
+      margin-top: 14px;
+      font-size: .92rem;
+      line-height: 1.78;
+    }
+
+    .semantic-content h3 {
+      margin-top: 34px;
+      margin-bottom: 14px;
+      font-size: 1.2rem;
+    }
+
+    .semantic-table-wrap {
+      overflow-x: auto;
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: rgba(255,255,255,.018);
+    }
+
+    .semantic-table {
+      width: 100%;
+      min-width: 700px;
+      border-collapse: collapse;
+    }
+
+    .semantic-table th,
+    .semantic-table td {
+      padding: 14px 15px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      font-size: .77rem;
+    }
+
+    .semantic-table th {
+      background: rgba(119,242,192,.055);
+      color: #ecf6ff;
+      font-size: .69rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-weight: 850;
+    }
+
+    .semantic-table td {
+      color: #b8c5d5;
+      line-height: 1.55;
+    }
+
+    .semantic-table td strong {
+      color: #f2f7fb;
+    }
+
+    .semantic-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .semantic-article {
+      margin-top: 11px;
+      color: #b8c5d5;
+      font-size: .95rem;
+      line-height: 1.84;
+    }
+
+    .semantic-article strong {
+      color: #f3f7fb;
+    }
+
+    .semantic-note {
+      margin-top: 20px;
+      padding: 16px 18px;
+      border-left: 3px solid var(--accent);
+      border-radius: 0 14px 14px 0;
+      background: rgba(119,242,192,.045);
+      color: #cdded8;
+      font-size: .81rem;
+      line-height: 1.7;
+    }
+
+    .cta-section {
+      padding-top: 24px;
+    }
 
     .cta {
       position: relative;
@@ -731,7 +884,9 @@
       font-size: .9rem;
     }
 
-    footer { padding: 26px 0 42px; }
+    footer {
+      padding: 26px 0 42px;
+    }
 
     .footer-top {
       padding: 24px 0;
@@ -750,7 +905,9 @@
       font-size: .77rem;
     }
 
-    .footer-links a:hover { color: #fff; }
+    .footer-links a:hover {
+      color: #fff;
+    }
 
     .footer-bottom {
       color: #718095;
@@ -761,7 +918,9 @@
       flex-wrap: wrap;
     }
 
-    .footer-bottom a { color: #cfe5ff; }
+    .footer-bottom a {
+      color: #cfe5ff;
+    }
 
     .reveal {
       opacity: 0;
@@ -775,16 +934,39 @@
     }
 
     @media (max-width: 1040px) {
-      .nav-menu { gap: 0; }
-      .nav-link, .nav-trigger { padding: 10px 10px; font-size: .84rem; }
-      .nav-cta { padding: 10px 12px; }
-      .principles { grid-template-columns: repeat(2,1fr); }
-      .process { grid-template-columns: repeat(2,1fr); }
+
+      .nav-menu {
+        gap: 0;
+      }
+
+      .nav-link,
+      .nav-trigger {
+        padding: 10px 10px;
+        font-size: .84rem;
+      }
+
+      .nav-cta {
+        padding: 10px 12px;
+      }
+
+      .principles {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .process {
+        grid-template-columns: repeat(2,1fr);
+      }
     }
 
     @media (max-width: 900px) {
-      .menu-toggle { display: block; }
-      .navbar { min-height: 72px; }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar {
+        min-height: 72px;
+      }
 
       .nav-menu {
         position: absolute;
@@ -801,9 +983,13 @@
         box-shadow: var(--shadow);
       }
 
-      .nav-menu.open { display: flex; }
+      .nav-menu.open {
+        display: flex;
+      }
 
-      .nav-link, .nav-trigger, .nav-cta {
+      .nav-link,
+      .nav-trigger,
+      .nav-cta {
         width: 100%;
         justify-content: space-between;
         padding: 13px;
@@ -822,50 +1008,121 @@
         pointer-events: auto;
       }
 
-      .dropdown.open .dropdown-panel { display: block; }
-      .dropdown:hover .dropdown-panel { display: none; }
-      .dropdown.open:hover .dropdown-panel { display: block; }
-      .dropdown-grid { grid-template-columns: 1fr; }
+      .dropdown.open .dropdown-panel {
+        display: block;
+      }
+
+      .dropdown:hover .dropdown-panel {
+        display: none;
+      }
+
+      .dropdown.open:hover .dropdown-panel {
+        display: block;
+      }
+
+      .dropdown-grid {
+        grid-template-columns: 1fr;
+      }
 
       .hero-grid,
       .content-grid,
-      .cta { grid-template-columns: 1fr; }
+      .cta {
+        grid-template-columns: 1fr;
+      }
 
-      .cta .btn { justify-self: start; }
+      .cta .btn {
+        justify-self: start;
+      }
+
+      .semantic-content {
+        padding: 25px;
+      }
     }
 
     @media (max-width: 620px) {
-      .container { width: min(calc(100% - 28px),var(--max)); }
-      .announcement-inner { font-size: .72rem; padding: 7px 0; }
-      .brand-text small { font-size: .58rem; }
-      .brand-text strong { font-size: .9rem; }
-      .brand-mark { width: 39px; height: 39px; }
 
-      .hero { padding: 62px 0 48px; }
-      .hero h1 { font-size: clamp(2.45rem,13vw,3.65rem); }
-      .hero-copy { font-size: .93rem; }
+      .container {
+        width: min(calc(100% - 28px),var(--max));
+      }
 
-      section { padding: 60px 0; }
+      .announcement-inner {
+        font-size: .72rem;
+        padding: 7px 0;
+      }
+
+      .brand-text small {
+        font-size: .58rem;
+      }
+
+      .brand-text strong {
+        font-size: .9rem;
+      }
+
+      .brand-mark {
+        width: 39px;
+        height: 39px;
+      }
+
+      .hero {
+        padding: 62px 0 48px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.45rem,13vw,3.65rem);
+      }
+
+      .hero-copy {
+        font-size: .93rem;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      section,
+      .semantic-section {
+        padding: 60px 0;
+      }
 
       .hero-panel,
       .content-card,
       .article-block,
-      .principle { padding: 21px; }
+      .principle {
+        padding: 21px;
+      }
 
       .principles,
-      .process { grid-template-columns: 1fr; }
+      .process {
+        grid-template-columns: 1fr;
+      }
 
-      .cta { padding: 27px; }
+      .cta {
+        padding: 27px;
+      }
 
       .footer-top {
         align-items: flex-start;
         flex-direction: column;
       }
+
+      .semantic-content {
+        padding: 20px;
+      }
+
+      .semantic-article {
+        font-size: .88rem;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *,*::before,*::after {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
@@ -875,6 +1132,7 @@
 </head>
 
 <body>
+
   <div class="announcement">
     <div class="container announcement-inner">
       <span class="status-dot"></span>
@@ -883,572 +1141,2139 @@
   </div>
 
   <header>
+
     <div class="container navbar">
-      <a class="brand" href="index.html" aria-label="Startup Nepal home">
-        <span class="brand-mark">SN</span>
-        <span class="brand-text">
-          <small>Local Search Growth</small>
-          <strong>Startup Nepal</strong>
+
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="Startup Nepal home">
+
+        <span class="brand-mark">
+          SN
         </span>
+
+        <span class="brand-text">
+          <small>
+            Local Search Growth
+          </small>
+
+          <strong>
+            Startup Nepal
+          </strong>
+        </span>
+
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation"
+        aria-expanded="false">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
       </button>
 
       <nav aria-label="Primary navigation">
-        <ul class="nav-menu" id="navMenu">
-          <li><a class="nav-link" href="index.html">Home</a></li>
-          <li><a class="nav-link" href="about.html">About</a></li>
 
-          <li class="dropdown" id="servicesDropdown">
-            <button class="nav-trigger active" type="button" aria-expanded="false">
-              Services <span class="chevron">⌄</span>
+        <ul
+          class="nav-menu"
+          id="navMenu">
+
+          <li>
+            <a
+              class="nav-link"
+              href="index.html">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a
+              class="nav-link"
+              href="about.html">
+              About
+            </a>
+          </li>
+
+          <li
+            class="dropdown"
+            id="servicesDropdown">
+
+            <button
+              class="nav-trigger active"
+              type="button"
+              aria-expanded="false">
+
+              Services
+
+              <span class="chevron">
+                ⌄
+              </span>
+
             </button>
 
-            <div class="dropdown-panel" aria-label="SEO and web development services">
+            <div
+              class="dropdown-panel"
+              aria-label="SEO and web development services">
+
               <div class="dropdown-intro">
-                <div class="eyebrow">Services</div>
-                <h3>SEO & Web Development Services</h3>
+
+                <div class="eyebrow">
+                  Services
+                </div>
+
+                <h3>
+                  SEO & Web Development Services
+                </h3>
+
               </div>
 
               <div class="dropdown-grid">
-                <a class="dropdown-link" href="seo-web-development-services.html">
-                  <span class="service-icon">01</span>
-                  <span><strong>SEO & Web Development Services</strong><span>Search visibility + business website development.</span></span>
+
+                <a
+                  class="dropdown-link"
+                  href="seo-web-development-services.html">
+
+                  <span class="service-icon">
+                    01
+                  </span>
+
+                  <span>
+                    <strong>
+                      SEO & Web Development Services
+                    </strong>
+
+                    <span>
+                      Search visibility + business website development.
+                    </span>
+                  </span>
+
                 </a>
-                <a class="dropdown-link" href="local-seo-service.html">
-                  <span class="service-icon">02</span>
-                  <span><strong>Local SEO Service</strong><span>Improve local search visibility and discovery.</span></span>
+
+                <a
+                  class="dropdown-link"
+                  href="local-seo-service.html">
+
+                  <span class="service-icon">
+                    02
+                  </span>
+
+                  <span>
+                    <strong>
+                      Local SEO Service
+                    </strong>
+
+                    <span>
+                      Improve local search visibility and discovery.
+                    </span>
+                  </span>
+
                 </a>
-                <a class="dropdown-link" href="seo-website-audit.html">
-                  <span class="service-icon">03</span>
-                  <span><strong>SEO Website Audit</strong><span>Find technical, on-page, content, and SEO issues.</span></span>
+
+                <a
+                  class="dropdown-link"
+                  href="seo-website-audit.html">
+
+                  <span class="service-icon">
+                    03
+                  </span>
+
+                  <span>
+                    <strong>
+                      SEO Website Audit
+                    </strong>
+
+                    <span>
+                      Find technical, on-page, content, and SEO issues.
+                    </span>
+                  </span>
+
                 </a>
-                <a class="dropdown-link" href="google-business-profile-optimization.html">
-                  <span class="service-icon">04</span>
-                  <span><strong>Google Business Profile Setup & Optimization</strong><span>Build a stronger local business profile.</span></span>
+
+                <a
+                  class="dropdown-link"
+                  href="google-business-profile-optimization.html">
+
+                  <span class="service-icon">
+                    04
+                  </span>
+
+                  <span>
+                    <strong>
+                      Google Business Profile Setup & Optimization
+                    </strong>
+
+                    <span>
+                      Build a stronger local business profile.
+                    </span>
+                  </span>
+
                 </a>
-                <a class="dropdown-link" href="local-keyword-research.html">
-                  <span class="service-icon">05</span>
-                  <span><strong>Local Keyword Research for Small Businesses</strong><span>Map local search demand to useful pages.</span></span>
+
+                <a
+                  class="dropdown-link"
+                  href="local-keyword-research.html">
+
+                  <span class="service-icon">
+                    05
+                  </span>
+
+                  <span>
+                    <strong>
+                      Local Keyword Research for Small Businesses
+                    </strong>
+
+                    <span>
+                      Map local search demand to useful pages.
+                    </span>
+                  </span>
+
                 </a>
-                <a class="dropdown-link" href="local-seo-landing-pages.html">
-                  <span class="service-icon">06</span>
-                  <span><strong>Local SEO Landing Pages for Service Areas</strong><span>Create location-focused pages with clear intent.</span></span>
+
+                <a
+                  class="dropdown-link"
+                  href="local-seo-landing-pages.html">
+
+                  <span class="service-icon">
+                    06
+                  </span>
+
+                  <span>
+                    <strong>
+                      Local SEO Landing Pages for Service Areas
+                    </strong>
+
+                    <span>
+                      Create location-focused pages with clear intent.
+                    </span>
+                  </span>
+
                 </a>
-                <a class="dropdown-link" href="nap-citation-optimization.html">
-                  <span class="service-icon">07</span>
-                  <span><strong>NAP & Local Citation Optimization</strong><span>Keep business information consistent across listings.</span></span>
+
+                <a
+                  class="dropdown-link"
+                  href="nap-citation-optimization.html">
+
+                  <span class="service-icon">
+                    07
+                  </span>
+
+                  <span>
+                    <strong>
+                      NAP & Local Citation Optimization
+                    </strong>
+
+                    <span>
+                      Keep business information consistent across listings.
+                    </span>
+                  </span>
+
                 </a>
-                <a class="dropdown-link" href="on-page-seo-services.html">
-                  <span class="service-icon">08</span>
-                  <span><strong>On-Page SEO Services for Local Businesses</strong><span>Improve titles, content, internal links, and page structure.</span></span>
+
+                <a
+                  class="dropdown-link"
+                  href="on-page-seo-services.html">
+
+                  <span class="service-icon">
+                    08
+                  </span>
+
+                  <span>
+                    <strong>
+                      On-Page SEO Services for Local Businesses
+                    </strong>
+
+                    <span>
+                      Improve titles, content, internal links, and page structure.
+                    </span>
+                  </span>
+
                 </a>
-                <a class="dropdown-link" href="technical-seo-services.html">
-                  <span class="service-icon">09</span>
-                  <span><strong>Technical SEO Services for Business Websites</strong><span>Address crawlability, indexing, structure, and technical health.</span></span>
+
+                <a
+                  class="dropdown-link"
+                  href="technical-seo-services.html">
+
+                  <span class="service-icon">
+                    09
+                  </span>
+
+                  <span>
+                    <strong>
+                      Technical SEO Services for Business Websites
+                    </strong>
+
+                    <span>
+                      Address crawlability, indexing, structure, and technical health.
+                    </span>
+                  </span>
+
                 </a>
-                <a class="dropdown-link" href="mobile-seo-responsive.html">
-                  <span class="service-icon">10</span>
-                  <span><strong>Mobile SEO & Responsive Website Optimization</strong><span>Make your website easier to use on mobile devices.</span></span>
+
+                <a
+                  class="dropdown-link"
+                  href="mobile-seo-responsive.html">
+
+                  <span class="service-icon">
+                    10
+                  </span>
+
+                  <span>
+                    <strong>
+                      Mobile SEO & Responsive Website Optimization
+                    </strong>
+
+                    <span>
+                      Make your website easier to use on mobile devices.
+                    </span>
+                  </span>
+
                 </a>
-                <a class="dropdown-link" href="website-speed-performance.html">
-                  <span class="service-icon">11</span>
-                  <span><strong>Website Speed & Performance Optimization</strong><span>Improve loading experience and page performance.</span></span>
+
+                <a
+                  class="dropdown-link"
+                  href="website-speed-performance.html">
+
+                  <span class="service-icon">
+                    11
+                  </span>
+
+                  <span>
+                    <strong>
+                      Website Speed & Performance Optimization
+                    </strong>
+
+                    <span>
+                      Improve loading experience and page performance.
+                    </span>
+                  </span>
+
                 </a>
-                <a class="dropdown-link" href="website-maintenance-plans.html">
-                  <span class="service-icon">12</span>
-                  <span><strong>Website Maintenance Plans for Businesses</strong><span>Keep business websites updated, healthy, and secure.</span></span>
+
+                <a
+                  class="dropdown-link"
+                  href="website-maintenance-plans.html">
+
+                  <span class="service-icon">
+                    12
+                  </span>
+
+                  <span>
+                    <strong>
+                      Website Maintenance Plans for Businesses
+                    </strong>
+
+                    <span>
+                      Keep business websites updated, healthy, and secure.
+                    </span>
+                  </span>
+
                 </a>
+
               </div>
+
             </div>
+
           </li>
 
-          <li><a class="nav-link" href="resources.html">Resources</a></li>
-          <li><a class="nav-link" href="pricing.html">Pricing</a></li>
-          <li><a class="nav-link nav-cta" href="contact.html">Contact</a></li>
+          <li>
+            <a
+              class="nav-link"
+              href="resources.html">
+              Resources
+            </a>
+          </li>
+
+          <li>
+            <a
+              class="nav-link"
+              href="pricing.html">
+              Pricing
+            </a>
+          </li>
+
+          <li>
+            <a
+              class="nav-link nav-cta"
+              href="contact.html">
+              Contact
+            </a>
+          </li>
+
         </ul>
+
       </nav>
+
     </div>
+
   </header>
 
+
   <main>
+
+    <!-- HERO -->
+
     <section class="hero">
+
       <div class="container hero-grid">
+
         <div class="reveal">
-          <div class="eyebrow">SEO & Web Development</div>
-          <h1>Build a website that is ready for <span class="gradient">people and search.</span></h1>
+
+          <div class="eyebrow">
+            SEO & Web Development
+          </div>
+
+          <h1>
+            Build a website that is ready for
+            <span class="gradient">
+              people and search.
+            </span>
+          </h1>
+
           <p class="hero-copy">
-            SEO and web development work best when they are considered together. A business website
-            should be easy for customers to use, clear about what the business offers, technically
-            accessible to search engines, and structured so it can grow over time.
+            SEO and web development work best when they are considered together.
+            A business website should be easy for customers to use, clear about
+            what the business offers, technically accessible to search engines,
+            and structured so it can grow over time.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="contact.html">Start a Conversation →</a>
-            <a class="btn btn-secondary" href="#guide">Read the Guide</a>
+
+            <a
+              class="btn btn-primary"
+              href="contact.html">
+              Start a Conversation →
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              href="#guide">
+              Read the Guide
+            </a>
+
           </div>
+
         </div>
 
+
         <div class="hero-panel reveal">
-          <div class="eyebrow">Core Website Foundations</div>
-          <h2 style="margin-top:9px;font-size:1.55rem;line-height:1.12;letter-spacing:-.025em;">
+
+          <div class="eyebrow">
+            Core Website Foundations
+          </div>
+
+          <h2
+            style="margin-top:9px;font-size:1.55rem;line-height:1.12;letter-spacing:-.025em;">
+
             What a search-ready business website should do
+
           </h2>
 
           <div class="panel-list">
-            <div class="panel-item">
-              <div class="panel-no">01</div>
-              <div>
-                <strong>Be understandable</strong>
-                <span>Clear pages, headings, navigation, services, locations, and calls to action.</span>
-              </div>
-            </div>
 
             <div class="panel-item">
-              <div class="panel-no">02</div>
-              <div>
-                <strong>Be discoverable</strong>
-                <span>Strong technical foundations and content that matches relevant search intent.</span>
+
+              <div class="panel-no">
+                01
               </div>
+
+              <div>
+
+                <strong>
+                  Be understandable
+                </strong>
+
+                <span>
+                  Clear pages, headings, navigation, services, locations,
+                  and calls to action.
+                </span>
+
+              </div>
+
             </div>
 
-            <div class="panel-item">
-              <div class="panel-no">03</div>
-              <div>
-                <strong>Be useful</strong>
-                <span>Give visitors the information they need before they decide what to do next.</span>
-              </div>
-            </div>
 
             <div class="panel-item">
-              <div class="panel-no">04</div>
-              <div>
-                <strong>Be ready to grow</strong>
-                <span>Use a structure that supports new pages, content, locations, and improvements.</span>
+
+              <div class="panel-no">
+                02
               </div>
+
+              <div>
+
+                <strong>
+                  Be discoverable
+                </strong>
+
+                <span>
+                  Strong technical foundations and content that matches
+                  relevant search intent.
+                </span>
+
+              </div>
+
             </div>
+
+
+            <div class="panel-item">
+
+              <div class="panel-no">
+                03
+              </div>
+
+              <div>
+
+                <strong>
+                  Be useful
+                </strong>
+
+                <span>
+                  Give visitors the information they need before they
+                  decide what to do next.
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="panel-item">
+
+              <div class="panel-no">
+                04
+              </div>
+
+              <div>
+
+                <strong>
+                  Be ready to grow
+                </strong>
+
+                <span>
+                  Use a structure that supports new pages, content,
+                  locations, and improvements.
+                </span>
+
+              </div>
+
+            </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
+
+    <!-- FOUNDATION -->
+
     <section>
+
       <div class="container">
+
         <div class="section-head reveal">
-          <div class="eyebrow">The Foundation</div>
-          <h2>SEO is not something to bolt onto a finished website.</h2>
+
+          <div class="eyebrow">
+            The Foundation
+          </div>
+
+          <h2>
+            SEO is not something to bolt onto a finished website.
+          </h2>
+
           <p>
-            Search visibility is affected by the way a website is planned, built, written, connected,
-            and maintained. The goal is not to make a website for search engines alone, but to create
-            a website that makes sense to both people and search systems.
+            Search visibility is affected by the way a website is planned,
+            built, written, connected, and maintained. The goal is not to make
+            a website for search engines alone, but to create a website that
+            makes sense to both people and search systems.
           </p>
+
         </div>
+
 
         <div class="content-grid">
-          <article class="content-card reveal">
-            <h3>What good web development contributes</h3>
-            <p>
-              Development creates the technical and structural environment in which the website
-              operates. Important pages should be accessible, responsive, logically organized, and
-              easy to navigate.
-            </p>
-            <ul>
-              <li>Responsive layouts for different screen sizes</li>
-              <li>Logical navigation and page hierarchy</li>
-              <li>Clean, descriptive URLs and internal links</li>
-              <li>Fast and stable page behavior</li>
-              <li>Accessible page content and clear actions</li>
-            </ul>
-          </article>
 
           <article class="content-card reveal">
-            <h3>What good SEO contributes</h3>
+
+            <h3>
+              What good web development contributes
+            </h3>
+
             <p>
-              SEO helps the website communicate its purpose and relevance. It connects the right
-              pages with the searches, questions, and locations that matter to the business.
+              Development creates the technical and structural environment
+              in which the website operates. Important pages should be accessible,
+              responsive, logically organized, and easy to navigate.
             </p>
+
             <ul>
-              <li>Search-intent-focused page planning</li>
-              <li>Useful titles, headings, and content</li>
-              <li>Strong internal linking relationships</li>
-              <li>Technical crawl and indexing foundations</li>
-              <li>Relevant local context where appropriate</li>
+
+              <li>
+                Responsive layouts for different screen sizes
+              </li>
+
+              <li>
+                Logical navigation and page hierarchy
+              </li>
+
+              <li>
+                Clean, descriptive URLs and internal links
+              </li>
+
+              <li>
+                Fast and stable page behavior
+              </li>
+
+              <li>
+                Accessible page content and clear actions
+              </li>
+
             </ul>
+
           </article>
+
+
+          <article class="content-card reveal">
+
+            <h3>
+              What good SEO contributes
+            </h3>
+
+            <p>
+              SEO helps the website communicate its purpose and relevance.
+              It connects the right pages with the searches, questions,
+              and locations that matter to the business.
+            </p>
+
+            <ul>
+
+              <li>
+                Search-intent-focused page planning
+              </li>
+
+              <li>
+                Useful titles, headings, and content
+              </li>
+
+              <li>
+                Strong internal linking relationships
+              </li>
+
+              <li>
+                Technical crawl and indexing foundations
+              </li>
+
+              <li>
+                Relevant local context where appropriate
+              </li>
+
+            </ul>
+
+          </article>
+
         </div>
+
       </div>
+
     </section>
 
-    <section id="guide" class="article-section">
+
+    <!-- CONTINUOUS ARTICLE -->
+
+    <section
+      id="guide"
+      class="article-section">
+
       <div class="container article">
+
         <div class="reveal">
-          <div class="eyebrow">Core Guide</div>
-          <h2>How SEO and web development work together.</h2>
+
+          <div class="eyebrow">
+            Core Guide
+          </div>
+
+          <h2>
+            How SEO and web development work together.
+          </h2>
+
           <p class="article-intro">
-            A website can look excellent and still be difficult to discover. It can also attract
-            search traffic while giving visitors a confusing experience. Combining SEO thinking with
-            web development helps reduce that gap.
+            A website can look excellent and still be difficult to discover.
+            It can also attract search traffic while giving visitors a confusing
+            experience. Combining SEO thinking with web development helps reduce
+            that gap.
           </p>
+
         </div>
+
 
         <div class="article-body">
-          <article class="article-block reveal">
-            <h3>1. Start with the business and the customer</h3>
-            <p>
-              Before designing pages, understand what the business offers, who it serves, which areas
-              it covers, and what visitors need to know. This creates a foundation for deciding what
-              pages are necessary and what each page should help a visitor accomplish.
-            </p>
-          </article>
 
           <article class="article-block reveal">
-            <h3>2. Build a logical website structure</h3>
+
+            <h3>
+              1. Start with the business and the customer
+            </h3>
+
             <p>
-              Important information should not be hidden behind a complicated structure. Core pages
-              should connect naturally through navigation and internal links. A clear hierarchy also
-              helps search engines understand the relationship between sections of a website.
+              Before designing pages, understand what the business offers,
+              who it serves, which areas it covers, and what visitors need
+              to know. This creates a foundation for deciding what pages are
+              necessary and what each page should help a visitor accomplish.
             </p>
+
           </article>
 
-          <article class="article-block reveal">
-            <h3>3. Match pages with search intent</h3>
-            <p>
-              Different searches require different kinds of pages. Someone looking for a business,
-              someone comparing an option, and someone seeking an explanation may need different
-              content. Mapping intent before writing helps prevent pages from becoming vague or
-              overloaded.
-            </p>
-          </article>
 
           <article class="article-block reveal">
-            <h3>4. Make the content useful before making it keyword-focused</h3>
+
+            <h3>
+              2. Build a logical website structure
+            </h3>
+
             <p>
-              Relevant terms matter, but repeating keywords is not the purpose of SEO. Content should
-              explain the subject clearly, answer genuine questions, provide context, and help the
-              visitor decide what to do next. Strong content also creates opportunities for related
+              Important information should not be hidden behind a complicated
+              structure. Core pages should connect naturally through navigation
+              and internal links. A clear hierarchy also helps search engines
+              understand the relationship between sections of a website.
+            </p>
+
+          </article>
+
+
+          <article class="article-block reveal">
+
+            <h3>
+              3. Match pages with search intent
+            </h3>
+
+            <p>
+              Different searches require different kinds of pages. Someone
+              looking for a business, someone comparing an option, and someone
+              seeking an explanation may need different content. Mapping intent
+              before writing helps prevent pages from becoming vague or overloaded.
+            </p>
+
+          </article>
+
+
+          <article class="article-block reveal">
+
+            <h3>
+              4. Make the content useful before making it keyword-focused
+            </h3>
+
+            <p>
+              Relevant terms matter, but repeating keywords is not the purpose
+              of SEO. Content should explain the subject clearly, answer genuine
+              questions, provide context, and help the visitor decide what to
+              do next. Strong content also creates opportunities for related
               pages to support each other through internal links.
             </p>
+
           </article>
 
+
           <article class="article-block reveal">
-            <h3>5. Keep technical foundations healthy</h3>
+
+            <h3>
+              5. Keep technical foundations healthy
+            </h3>
+
             <p>
-              Important technical considerations can include indexability, canonical URLs, XML
-              sitemaps, broken links, redirects, mobile usability, page structure, and performance.
-              Technical work does not replace useful content, but technical problems can interfere
+              Important technical considerations can include indexability,
+              canonical URLs, XML sitemaps, broken links, redirects, mobile
+              usability, page structure, and performance. Technical work does
+              not replace useful content, but technical problems can interfere
               with discovery and user experience.
             </p>
+
           </article>
 
-          <article class="article-block reveal">
-            <h3>6. Design for action, not just appearance</h3>
-            <p>
-              A business website should make its next step obvious. Depending on the business, that
-              could be a phone call, inquiry, booking request, quote request, store visit, or another
-              meaningful action. A good design guides visitors without making the page feel crowded.
-            </p>
-          </article>
 
           <article class="article-block reveal">
-            <h3>7. Treat local relevance carefully</h3>
+
+            <h3>
+              6. Design for action, not just appearance
+            </h3>
+
             <p>
-              Businesses serving a defined geographic area need clear local context. Useful location
-              information, relevant service-area pages, accurate business details, and consistent
-              references can make the website more meaningful to people searching locally.
+              A business website should make its next step obvious. Depending
+              on the business, that could be a phone call, inquiry, booking request,
+              quote request, store visit, or another meaningful action. A good design
+              guides visitors without making the page feel crowded.
             </p>
+
           </article>
 
+
           <article class="article-block reveal">
-            <h3>8. Improve the website over time</h3>
+
+            <h3>
+              7. Treat local relevance carefully
+            </h3>
+
             <p>
-              A website should not be considered finished just because it has launched. Search data,
-              customer questions, new services, changing business priorities, and technical findings
-              can reveal opportunities for new content and improvements.
+              Businesses serving a defined geographic area need clear local context.
+              Useful location information, relevant service-area pages, accurate
+              business details, and consistent references can make the website
+              more meaningful to people searching locally.
             </p>
+
           </article>
+
+
+          <article class="article-block reveal">
+
+            <h3>
+              8. Improve the website over time
+            </h3>
+
+            <p>
+              A website should not be considered finished just because it has
+              launched. Search data, customer questions, new services, changing
+              business priorities, and technical findings can reveal opportunities
+              for new content and improvements.
+            </p>
+
+          </article>
+
         </div>
+
       </div>
+
     </section>
 
+
+    <!-- PRINCIPLES -->
+
     <section>
+
       <div class="container">
+
         <div class="section-head reveal">
-          <div class="eyebrow">Core Principles</div>
-          <h2>Four principles behind a strong search-ready website.</h2>
+
+          <div class="eyebrow">
+            Core Principles
+          </div>
+
+          <h2>
+            Six principles behind a strong search-ready website.
+          </h2>
+
           <p>
-            These principles keep the website focused on useful information, clear structure, and a
-            better experience rather than chasing rankings alone.
+            These principles keep the website focused on useful information,
+            clear structure, and a better experience rather than chasing
+            rankings alone.
           </p>
+
         </div>
+
 
         <div class="principles">
-          <article class="principle reveal">
-            <div class="principle-number">01</div>
-            <h3>Clarity</h3>
-            <p>
-              Visitors should quickly understand what the business does, where it operates, and what
-              they can do next.
-            </p>
-          </article>
 
           <article class="principle reveal">
-            <div class="principle-number">02</div>
-            <h3>Relevance</h3>
+
+            <div class="principle-number">
+              01
+            </div>
+
+            <h3>
+              Clarity
+            </h3>
+
             <p>
-              Pages should be connected to real customer needs, questions, services, and locations.
+              Visitors should quickly understand what the business does,
+              where it operates, and what they can do next.
             </p>
+
           </article>
 
-          <article class="principle reveal">
-            <div class="principle-number">03</div>
-            <h3>Technical Health</h3>
-            <p>
-              The site should provide a dependable foundation for crawling, indexing, mobile use,
-              navigation, and performance.
-            </p>
-          </article>
 
           <article class="principle reveal">
-            <div class="principle-number">04</div>
-            <h3>Continuous Improvement</h3>
+
+            <div class="principle-number">
+              02
+            </div>
+
+            <h3>
+              Relevance
+            </h3>
+
             <p>
-              New information and performance data can guide future page, content, technical, and
-              user-experience improvements.
+              Pages should be connected to real customer needs,
+              questions, services, and locations.
             </p>
+
           </article>
 
-          <article class="principle reveal">
-            <div class="principle-number">05</div>
-            <h3>User First</h3>
-            <p>
-              Search visibility has value when the people who arrive can actually use the website and
-              understand the information.
-            </p>
-          </article>
 
           <article class="principle reveal">
-            <div class="principle-number">06</div>
-            <h3>Scalability</h3>
+
+            <div class="principle-number">
+              03
+            </div>
+
+            <h3>
+              Technical Health
+            </h3>
+
             <p>
-              A sensible structure makes it easier to expand the website with new topics, services,
-              locations, and resources later.
+              The site should provide a dependable foundation for crawling,
+              indexing, mobile use, navigation, and performance.
             </p>
+
           </article>
+
+
+          <article class="principle reveal">
+
+            <div class="principle-number">
+              04
+            </div>
+
+            <h3>
+              Continuous Improvement
+            </h3>
+
+            <p>
+              New information and performance data can guide future page,
+              content, technical, and user-experience improvements.
+            </p>
+
+          </article>
+
+
+          <article class="principle reveal">
+
+            <div class="principle-number">
+              05
+            </div>
+
+            <h3>
+              User First
+            </h3>
+
+            <p>
+              Search visibility has value when the people who arrive can
+              actually use the website and understand the information.
+            </p>
+
+          </article>
+
+
+          <article class="principle reveal">
+
+            <div class="principle-number">
+              06
+            </div>
+
+            <h3>
+              Scalability
+            </h3>
+
+            <p>
+              A sensible structure makes it easier to expand the website
+              with new topics, services, locations, and resources later.
+            </p>
+
+          </article>
+
         </div>
+
 
         <div class="note reveal">
-          A stronger website does not guarantee a particular search ranking. SEO is competitive and
-          depends on many factors outside a website owner's direct control. The practical objective
-          is to build a useful, accessible, technically sound website and keep improving it based on
-          evidence.
+
+          A stronger website does not guarantee a particular search ranking.
+          SEO is competitive and depends on many factors outside a website
+          owner's direct control. The practical objective is to build a useful,
+          accessible, technically sound website and keep improving it based
+          on evidence.
+
         </div>
+
       </div>
+
     </section>
 
+
+    <!-- PROCESS -->
+
     <section>
+
       <div class="container">
+
         <div class="section-head reveal">
-          <div class="eyebrow">A Practical Workflow</div>
-          <h2>From idea to an online presence that can grow.</h2>
+
+          <div class="eyebrow">
+            A Practical Workflow
+          </div>
+
+          <h2>
+            From idea to an online presence that can grow.
+          </h2>
+
           <p>
-            The exact process varies by project, but a clear sequence helps keep design, content,
-            technology, and search strategy aligned.
+            The exact process varies by project, but a clear sequence helps
+            keep design, content, technology, and search strategy aligned.
           </p>
+
         </div>
+
 
         <div class="process">
-          <div class="process-card reveal">
-            <div class="step-no">01</div>
-            <h3>Research</h3>
-            <p>Understand the business, audience, competitors, locations, questions, and priorities.</p>
-          </div>
 
           <div class="process-card reveal">
-            <div class="step-no">02</div>
-            <h3>Plan</h3>
-            <p>Define page structure, navigation, content needs, technical requirements, and goals.</p>
+
+            <div class="step-no">
+              01
+            </div>
+
+            <h3>
+              Research
+            </h3>
+
+            <p>
+              Understand the business, audience, competitors,
+              locations, questions, and priorities.
+            </p>
+
           </div>
 
-          <div class="process-card reveal">
-            <div class="step-no">03</div>
-            <h3>Build</h3>
-            <p>Create responsive pages with clear content structure, useful actions, and solid foundations.</p>
-          </div>
 
           <div class="process-card reveal">
-            <div class="step-no">04</div>
-            <h3>Improve</h3>
-            <p>Monitor the website, review opportunities, fix issues, and expand useful content over time.</p>
+
+            <div class="step-no">
+              02
+            </div>
+
+            <h3>
+              Plan
+            </h3>
+
+            <p>
+              Define page structure, navigation, content needs,
+              technical requirements, and goals.
+            </p>
+
           </div>
+
+
+          <div class="process-card reveal">
+
+            <div class="step-no">
+              03
+            </div>
+
+            <h3>
+              Build
+            </h3>
+
+            <p>
+              Create responsive pages with clear content structure,
+              useful actions, and solid foundations.
+            </p>
+
+          </div>
+
+
+          <div class="process-card reveal">
+
+            <div class="step-no">
+              04
+            </div>
+
+            <h3>
+              Improve
+            </h3>
+
+            <p>
+              Monitor the website, review opportunities, fix issues,
+              and expand useful content over time.
+            </p>
+
+          </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <section>
+
+    <!-- EAV + SPO SECTION -->
+
+    <section class="semantic-section">
+
       <div class="container">
+
+        <div class="semantic-wrap reveal">
+
+          <div class="semantic-content">
+
+            <div class="semantic-header">
+
+              <div class="eyebrow">
+                Semantic SEO Structure
+              </div>
+
+              <h2>
+                SEO & Web Development — Entity, Attribute, Value and Relationships
+              </h2>
+
+              <p>
+                This section organizes the main concepts of the page using
+                EAV and SPO relationships. It connects the central entities
+                involved in SEO and web development so the subject is clear
+                as information rather than as a collection of repeated keywords.
+              </p>
+
+            </div>
+
+
+            <!-- EAV -->
+
+            <h3>
+              EAV — Entity, Attribute and Value
+            </h3>
+
+            <div class="semantic-table-wrap">
+
+              <table class="semantic-table">
+
+                <thead>
+
+                  <tr>
+
+                    <th>
+                      Entity
+                    </th>
+
+                    <th>
+                      Attribute
+                    </th>
+
+                    <th>
+                      Value
+                    </th>
+
+                  </tr>
+
+                </thead>
+
+                <tbody>
+
+                  <tr>
+
+                    <td>
+                      <strong>Startup Nepal</strong>
+                    </td>
+
+                    <td>
+                      Business Type
+                    </td>
+
+                    <td>
+                      SEO and web development service provider
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Startup Nepal</strong>
+                    </td>
+
+                    <td>
+                      Service Area
+                    </td>
+
+                    <td>
+                      Itahari, Sunsari, Koshi Province and Nepal
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>SEO</strong>
+                    </td>
+
+                    <td>
+                      Main Purpose
+                    </td>
+
+                    <td>
+                      Improve search visibility and connect pages with relevant search intent
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Web Development</strong>
+                    </td>
+
+                    <td>
+                      Main Purpose
+                    </td>
+
+                    <td>
+                      Build the technical and structural foundation of a business website
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Business Website</strong>
+                    </td>
+
+                    <td>
+                      Core Attributes
+                    </td>
+
+                    <td>
+                      Structure, navigation, content, URLs, mobile usability,
+                      performance, internal links and conversion paths
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Search Intent</strong>
+                    </td>
+
+                    <td>
+                      Function
+                    </td>
+
+                    <td>
+                      Connect a search query with the type of information or page the user needs
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Technical SEO</strong>
+                    </td>
+
+                    <td>
+                      Components
+                    </td>
+
+                    <td>
+                      Crawlability, indexability, canonicalization,
+                      site structure, mobile usability and performance
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>On-Page SEO</strong>
+                    </td>
+
+                    <td>
+                      Components
+                    </td>
+
+                    <td>
+                      Titles, headings, content, internal links,
+                      metadata and page relevance
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Local SEO</strong>
+                    </td>
+
+                    <td>
+                      Context
+                    </td>
+
+                    <td>
+                      Location-based searches, business information,
+                      local relevance and service areas
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Website Performance</strong>
+                    </td>
+
+                    <td>
+                      Attributes
+                    </td>
+
+                    <td>
+                      Loading behavior, responsiveness and user experience
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Content</strong>
+                    </td>
+
+                    <td>
+                      Purpose
+                    </td>
+
+                    <td>
+                      Explain services, answer questions, establish context,
+                      and satisfy search intent
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Internal Linking</strong>
+                    </td>
+
+                    <td>
+                      Function
+                    </td>
+
+                    <td>
+                      Connect related pages and communicate website relationships
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Mobile Optimization</strong>
+                    </td>
+
+                    <td>
+                      Purpose
+                    </td>
+
+                    <td>
+                      Make the website usable across mobile and smaller screens
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>SEO Website Audit</strong>
+                    </td>
+
+                    <td>
+                      Purpose
+                    </td>
+
+                    <td>
+                      Identify technical, content, structural,
+                      usability and search-related issues
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Business Owner</strong>
+                    </td>
+
+                    <td>
+                      Goal
+                    </td>
+
+                    <td>
+                      Build useful online visibility and support customer discovery
+                    </td>
+
+                  </tr>
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+
+            <!-- SPO -->
+
+            <h3>
+              SPO — Subject, Predicate and Object
+            </h3>
+
+            <div class="semantic-table-wrap">
+
+              <table class="semantic-table">
+
+                <thead>
+
+                  <tr>
+
+                    <th>
+                      Subject
+                    </th>
+
+                    <th>
+                      Predicate
+                    </th>
+
+                    <th>
+                      Object
+                    </th>
+
+                  </tr>
+
+                </thead>
+
+                <tbody>
+
+                  <tr>
+
+                    <td>
+                      <strong>Startup Nepal</strong>
+                    </td>
+
+                    <td>
+                      provides
+                    </td>
+
+                    <td>
+                      SEO and web development services
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Startup Nepal</strong>
+                    </td>
+
+                    <td>
+                      serves
+                    </td>
+
+                    <td>
+                      businesses in Itahari, Sunsari and Nepal
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>SEO</strong>
+                    </td>
+
+                    <td>
+                      improves
+                    </td>
+
+                    <td>
+                      search visibility and page relevance
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Web Development</strong>
+                    </td>
+
+                    <td>
+                      builds
+                    </td>
+
+                    <td>
+                      the website's technical and structural foundation
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Keyword Research</strong>
+                    </td>
+
+                    <td>
+                      identifies
+                    </td>
+
+                    <td>
+                      search terms, topics and search intent
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Search Intent</strong>
+                    </td>
+
+                    <td>
+                      informs
+                    </td>
+
+                    <td>
+                      page purpose and content direction
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Website Structure</strong>
+                    </td>
+
+                    <td>
+                      connects
+                    </td>
+
+                    <td>
+                      pages, navigation and internal links
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Technical SEO</strong>
+                    </td>
+
+                    <td>
+                      addresses
+                    </td>
+
+                    <td>
+                      crawlability, indexing, canonicalization and website structure
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>On-Page SEO</strong>
+                    </td>
+
+                    <td>
+                      improves
+                    </td>
+
+                    <td>
+                      titles, headings, content and internal linking
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Local SEO</strong>
+                    </td>
+
+                    <td>
+                      connects
+                    </td>
+
+                    <td>
+                      businesses with location-based searches
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Business Website</strong>
+                    </td>
+
+                    <td>
+                      communicates
+                    </td>
+
+                    <td>
+                      business services, locations, information and actions
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Content</strong>
+                    </td>
+
+                    <td>
+                      answers
+                    </td>
+
+                    <td>
+                      customer questions and search needs
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Internal Links</strong>
+                    </td>
+
+                    <td>
+                      connect
+                    </td>
+
+                    <td>
+                      related website pages
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Mobile Optimization</strong>
+                    </td>
+
+                    <td>
+                      improves
+                    </td>
+
+                    <td>
+                      website usability across mobile devices
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Website Performance</strong>
+                    </td>
+
+                    <td>
+                      affects
+                    </td>
+
+                    <td>
+                      loading experience and usability
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>SEO Audit</strong>
+                    </td>
+
+                    <td>
+                      identifies
+                    </td>
+
+                    <td>
+                      SEO, technical and structural issues
+                    </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>
+                      <strong>Business Website</strong>
+                    </td>
+
+                    <td>
+                      supports
+                    </td>
+
+                    <td>
+                      customer discovery and online business goals
+                    </td>
+
+                  </tr>
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+
+            <!-- CONTINUOUS ARTICLE -->
+
+            <h3>
+              SEO and Web Development in Itahari — Complete Semantic Article
+            </h3>
+
+            <p class="semantic-article">
+
+              <strong>SEO and web development in Itahari</strong> describe two connected parts of building and improving a business website: <strong>web development</strong> creates the technical and structural foundation, while <strong>SEO</strong> helps the website communicate its subject, services, relevance, and search intent clearly. <strong>Startup Nepal</strong> provides SEO and web development services for businesses in <strong>Itahari, Sunsari, Koshi Province and Nepal</strong>, with the website strategy connecting the business entity, website entity, service entities, location entities, search queries, content, and technical components. A <strong>business website</strong> should clearly explain what the business offers, where it operates, who it serves, and what visitors can do next. Web development contributes to this through page structure, navigation, responsive layouts, URLs, internal linking, performance, forms, and other technical elements, while SEO contributes through <strong>keyword research</strong>, <strong>search intent analysis</strong>, <strong>page mapping</strong>, <strong>on-page optimization</strong>, <strong>technical SEO</strong>, <strong>local SEO</strong>, and useful content. <strong>Search intent</strong> connects a search query with the type of page and information that the searcher expects, so a service page should explain a service, a location page should provide genuine information about a service area, and an informational page should answer a real question instead of duplicating another page with the same intent. <strong>Technical SEO</strong> addresses elements such as crawlability, indexability, canonicalization, website structure, mobile usability, redirects, broken links, and other technical conditions that influence how efficiently a search engine can access and interpret the website. <strong>On-page SEO</strong> works with titles, headings, page content, metadata, internal links, and topical relevance so that each page has a clear purpose. <strong>Local SEO</strong> adds location context for businesses that serve specific geographic markets such as Itahari and Sunsari by connecting services with genuine service areas, business information, local pages, and local search intent. <strong>Website performance</strong> is also an important part of the user experience because visitors need pages that respond and load efficiently enough to use the website comfortably. <strong>Mobile optimization</strong> makes the same business information accessible across smaller screens and mobile devices, which is particularly important because many users discover businesses through mobile search. <strong>Content</strong> should explain the business and answer the questions that matter to customers rather than simply repeating keywords, and <strong>internal links</strong> should connect related pages so visitors can move naturally from one topic or service to another. An <strong>SEO website audit</strong> can examine these relationships and identify technical, structural, content, local, performance, and search-intent issues that require attention. For a business in Itahari, a search-ready website may therefore include a core business page, service pages, location information, contact information, useful resource content, local SEO elements, and technical foundations that support crawling, indexing, navigation, and mobile use. The relationship can be understood simply: <strong>the business provides services, the website communicates those services, SEO connects those pages with relevant searches, and web development provides the structure through which people and search engines access that information</strong>. This approach keeps the website focused on one clear business entity while allowing related services, topics, and locations to be connected through meaningful relationships instead of creating multiple pages that compete for the same central search intent. The practical goal of SEO and web development is therefore to create a website that is useful to customers, understandable to search engines, technically accessible, locally relevant when appropriate, and flexible enough to improve as the business grows.
+
+            </p>
+
+            <div class="semantic-note">
+
+              The EAV and SPO relationships on this page support the same central
+              topic: <strong>SEO & Web Development Services in Itahari</strong>.
+              Related entities such as local SEO, technical SEO, on-page SEO,
+              website performance, mobile optimization, keyword research,
+              search intent, and website structure support that central topic
+              instead of creating separate pages for identical search intent.
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section>
+
+      <div class="container">
+
         <div class="section-head reveal">
-          <div class="eyebrow">Frequently Asked Questions</div>
-          <h2>Questions about SEO and web development.</h2>
+
+          <div class="eyebrow">
+            Frequently Asked Questions
+          </div>
+
+          <h2>
+            Questions about SEO and web development.
+          </h2>
+
         </div>
 
         <div class="faq-wrap">
-          <details class="reveal">
-            <summary>What is the connection between SEO and web development?</summary>
-            <p>
-              Web development creates the website's technical and structural foundation. SEO helps
-              shape how that foundation communicates the site's content and relevance to search
-              engines and visitors.
-            </p>
-          </details>
 
           <details class="reveal">
-            <summary>Should SEO be planned before a website is built?</summary>
+
+            <summary>
+              What is the connection between SEO and web development?
+            </summary>
+
             <p>
-              Planning SEO early can help determine the page structure, navigation, content
-              requirements, URL patterns, internal linking, and technical choices before the site
-              becomes difficult to change.
+              Web development creates the website's technical and structural
+              foundation. SEO helps shape how that foundation communicates
+              the site's content and relevance to search engines and visitors.
             </p>
+
           </details>
 
-          <details class="reveal">
-            <summary>Does a beautiful website automatically rank well?</summary>
-            <p>
-              No. Visual design is only one part of a website. Search visibility also depends on
-              relevance, content, technical accessibility, competition, and other factors.
-            </p>
-          </details>
 
           <details class="reveal">
-            <summary>Is SEO only about keywords?</summary>
+
+            <summary>
+              Should SEO be planned before a website is built?
+            </summary>
+
             <p>
-              No. Keywords can help identify what people search for, but SEO also involves page
-              structure, intent, content quality, internal links, technical foundations, usability,
-              and relevant local context.
+              Planning SEO early can help determine the page structure,
+              navigation, content requirements, URL patterns, internal linking,
+              and technical choices before the site becomes difficult to change.
             </p>
+
           </details>
 
-          <details class="reveal">
-            <summary>Can an existing website be improved for SEO?</summary>
-            <p>
-              Yes. Many existing websites can be audited and improved without rebuilding everything.
-              The right approach depends on the site's current structure, content, technical
-              condition, and business goals.
-            </p>
-          </details>
 
           <details class="reveal">
-            <summary>How long does SEO take to show results?</summary>
+
+            <summary>
+              Does a beautiful website automatically rank well?
+            </summary>
+
             <p>
-              There is no universal timeline. Results can vary based on competition, website
-              condition, search demand, content quality, authority, technical issues, and how much
-              work is implemented.
+              No. Visual design is only one part of a website. Search visibility
+              also depends on relevance, content, technical accessibility,
+              competition, and other factors.
             </p>
+
           </details>
+
+
+          <details class="reveal">
+
+            <summary>
+              Is SEO only about keywords?
+            </summary>
+
+            <p>
+              No. Keywords can help identify what people search for, but SEO
+              also involves page structure, intent, content, internal links,
+              technical foundations, usability, and relevant local context.
+            </p>
+
+          </details>
+
+
+          <details class="reveal">
+
+            <summary>
+              Can an existing website be improved for SEO?
+            </summary>
+
+            <p>
+              Yes. Many existing websites can be audited and improved without
+              rebuilding everything. The right approach depends on the site's
+              current structure, content, technical condition, and business goals.
+            </p>
+
+          </details>
+
+
+          <details class="reveal">
+
+            <summary>
+              How long does SEO take to show results?
+            </summary>
+
+            <p>
+              There is no universal timeline. Results can vary based on competition,
+              website condition, search demand, content quality, authority,
+              technical issues, and how much work is implemented.
+            </p>
+
+          </details>
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- CTA -->
 
     <section class="cta-section">
+
       <div class="container">
+
         <div class="cta reveal">
+
           <div>
-            <div class="eyebrow">Build With Purpose</div>
-            <h2>Your website should be ready for both customers and search.</h2>
+
+            <div class="eyebrow">
+              Build With Purpose
+            </div>
+
+            <h2>
+              Your website should be ready for both customers and search.
+            </h2>
+
             <p>
-              Tell Startup Nepal about your business, current website, target area, and what you want
-              to improve. The next step can then be based on the actual needs of the website.
+              Tell Startup Nepal about your business, current website, target area,
+              and what you want to improve. The next step can then be based on the
+              actual needs of the website.
             </p>
+
           </div>
 
-          <a class="btn btn-primary" href="contact.html">Contact Startup Nepal →</a>
+          <a
+            class="btn btn-primary"
+            href="contact.html">
+            Contact Startup Nepal →
+          </a>
+
         </div>
+
       </div>
+
     </section>
+
   </main>
 
+
+  <!-- FOOTER -->
+
   <footer>
+
     <div class="container">
+
       <div class="footer-top">
-        <a class="brand" href="index.html" aria-label="Startup Nepal home">
-          <span class="brand-mark">SN</span>
-          <span class="brand-text">
-            <small>SEO • Web • Local</small>
-            <strong>Startup Nepal</strong>
+
+        <a
+          class="brand"
+          href="index.html"
+          aria-label="Startup Nepal home">
+
+          <span class="brand-mark">
+            SN
           </span>
+
+          <span class="brand-text">
+
+            <small>
+              SEO • Web • Local
+            </small>
+
+            <strong>
+              Startup Nepal
+            </strong>
+
+          </span>
+
         </a>
 
+
         <div class="footer-links">
-          <a href="about.html">About</a>
-          <a href="seo-web-development-services.html">SEO & Web Development</a>
-          <a href="resources.html">Resources</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="contact.html">Contact</a>
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a href="seo-web-development-services.html">
+            SEO & Web Development
+          </a>
+
+          <a href="resources.html">
+            Resources
+          </a>
+
+          <a href="pricing.html">
+            Pricing
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
         </div>
+
       </div>
+
 
       <div class="footer-bottom">
-        <span>© <span id="year"></span> Startup Nepal. All rights reserved.</span>
-        <span>Email: <a href="mailto:speedxd174@gmail.com">speedxd174@gmail.com</a></span>
-        <span>Serving Itahari, Sunsari and surrounding business areas.</span>
+
+        <span>
+          © <span id="year"></span>
+          Startup Nepal. All rights reserved.
+        </span>
+
+        <span>
+          Email:
+          <a href="mailto:speedxd174@gmail.com">
+            speedxd174@gmail.com
+          </a>
+        </span>
+
+        <span>
+          Serving Itahari, Sunsari and surrounding business areas.
+        </span>
+
       </div>
+
     </div>
+
   </footer>
 
+
   <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-    const servicesDropdown = document.getElementById('servicesDropdown');
-    const servicesTrigger = servicesDropdown.querySelector('.nav-trigger');
 
-    menuToggle.addEventListener('click', () => {
-      const open = navMenu.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
+    const menuToggle =
+      document.getElementById('menuToggle');
 
-    servicesTrigger.addEventListener('click', (event) => {
-      event.stopPropagation();
-      const open = servicesDropdown.classList.toggle('open');
-      servicesTrigger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
+    const navMenu =
+      document.getElementById('navMenu');
 
-    document.addEventListener('click', (event) => {
-      if (!servicesDropdown.contains(event.target)) {
-        servicesDropdown.classList.remove('open');
-        servicesTrigger.setAttribute('aria-expanded', 'false');
+    const servicesDropdown =
+      document.getElementById('servicesDropdown');
+
+    const servicesTrigger =
+      servicesDropdown.querySelector('.nav-trigger');
+
+
+    /* MOBILE MENU */
+
+    menuToggle.addEventListener(
+      'click',
+      () => {
+
+        const open =
+          navMenu.classList.toggle('open');
+
+        menuToggle.setAttribute(
+          'aria-expanded',
+          open ? 'true' : 'false'
+        );
+
       }
+    );
 
-      if (
-        window.innerWidth <= 900 &&
-        !navMenu.contains(event.target) &&
-        !menuToggle.contains(event.target)
-      ) {
-        navMenu.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
+
+    /* SERVICES DROPDOWN */
+
+    servicesTrigger.addEventListener(
+      'click',
+      (event) => {
+
+        event.stopPropagation();
+
+        const open =
+          servicesDropdown.classList.toggle('open');
+
+        servicesTrigger.setAttribute(
+          'aria-expanded',
+          open ? 'true' : 'false'
+        );
+
       }
-    });
+    );
 
-    document.querySelectorAll('.nav-menu a').forEach((link) => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 900) {
+
+    /* OUTSIDE CLICK */
+
+    document.addEventListener(
+      'click',
+      (event) => {
+
+        if (
+          !servicesDropdown.contains(event.target)
+        ) {
+
+          servicesDropdown.classList.remove('open');
+
+          servicesTrigger.setAttribute(
+            'aria-expanded',
+            'false'
+          );
+
+        }
+
+
+        if (
+          window.innerWidth <= 900 &&
+          !navMenu.contains(event.target) &&
+          !menuToggle.contains(event.target)
+        ) {
+
           navMenu.classList.remove('open');
-          menuToggle.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
+          menuToggle.setAttribute(
+            'aria-expanded',
+            'false'
+          );
 
-    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
-    document.getElementById('year').textContent = new Date().getFullYear();
+        }
+
+      }
+    );
+
+
+    /* CLOSE MOBILE MENU AFTER LINK CLICK */
+
+    document
+      .querySelectorAll('.nav-menu a')
+      .forEach((link) => {
+
+        link.addEventListener(
+          'click',
+          () => {
+
+            if (
+              window.innerWidth <= 900
+            ) {
+
+              navMenu.classList.remove('open');
+
+              menuToggle.setAttribute(
+                'aria-expanded',
+                'false'
+              );
+
+            }
+
+          }
+        );
+
+      });
+
+
+    /* REVEAL ANIMATION */
+
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach(
+            (entry) => {
+
+              if (
+                entry.isIntersecting
+              ) {
+
+                entry.target.classList.add(
+                  'visible'
+                );
+
+                observer.unobserve(
+                  entry.target
+                );
+
+              }
+
+            }
+          );
+
+        },
+        {
+          threshold: 0.1
+        }
+      );
+
+
+    document
+      .querySelectorAll('.reveal')
+      .forEach(
+        (element) =>
+          observer.observe(element)
+      );
+
+
+    /* YEAR */
+
+    document.getElementById(
+      'year'
+    ).textContent =
+      new Date().getFullYear();
+
   </script>
+
 </body>
 </html>
