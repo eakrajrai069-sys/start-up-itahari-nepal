@@ -103,6 +103,7 @@
   </script>
 
   <style>
+
     :root{
       --bg:#07101c;
       --panel:rgba(15,28,48,.72);
@@ -846,6 +847,132 @@
       margin-top:6px;
     }
 
+    /* EAV + SPO semantic article styles */
+
+    .semantic-table-wrap{
+      margin-top:18px;
+
+      overflow:auto;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius:18px;
+
+      background:
+        rgba(255,255,255,.025);
+    }
+
+    .semantic-table{
+      width:100%;
+
+      min-width:720px;
+
+      border-collapse:collapse;
+    }
+
+    .semantic-table th,
+    .semantic-table td{
+      padding:14px 15px;
+
+      text-align:left;
+
+      vertical-align:top;
+
+      border-bottom:
+        1px solid
+        var(--line);
+
+      font-size:.77rem;
+    }
+
+    .semantic-table th{
+      color:#edf5fc;
+
+      background:
+        rgba(255,255,255,.04);
+
+      font-size:.7rem;
+
+      text-transform:uppercase;
+
+      letter-spacing:.07em;
+    }
+
+    .semantic-table td{
+      color:var(--muted);
+    }
+
+    .semantic-table tr:last-child td{
+      border-bottom:0;
+    }
+
+    .semantic-table td:first-child{
+      color:#fff;
+
+      font-weight:800;
+
+      width:25%;
+    }
+
+    .spo-grid{
+      display:grid;
+
+      gap:9px;
+
+      margin-top:18px;
+    }
+
+    .spo-item{
+      padding:13px 15px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.05);
+
+      border-radius:14px;
+
+      background:
+        rgba(255,255,255,.022);
+
+      color:var(--muted);
+
+      font-size:.81rem;
+    }
+
+    .spo-item strong{
+      color:#edf5fc;
+    }
+
+    .spo-arrow{
+      color:var(--accent);
+
+      font-weight:900;
+
+      padding:0 5px;
+    }
+
+    .semantic-note{
+      margin-top:18px;
+
+      padding:16px 17px;
+
+      border-left:
+        3px solid
+        var(--accent);
+
+      border-radius:
+        0 14px 14px 0;
+
+      background:
+        rgba(119,242,192,.045);
+
+      color:#dcebe5;
+
+      font-size:.81rem;
+    }
+
     /* Tables */
 
     .table-wrap{
@@ -1384,7 +1511,9 @@
         transition-duration:.01ms !important;
       }
     }
+
   </style>
+
 </head>
 
 <body>
@@ -1880,11 +2009,13 @@
 
 
           <h1>
+
             Local Keyword Research for Small Business
 
             <span class="gradient">
               built around real local searches.
             </span>
+
           </h1>
 
 
@@ -2068,33 +2199,37 @@
           <article class="article-block reveal">
 
             <h3>
-              1. Start with the business and its real offerings
+              1. Start with the business entity
             </h3>
 
             <p>
 
-              Begin by identifying what the small business actually
-              provides. Define the core business, its services,
-              products, locations, audience and important customer
-              needs before collecting search terms.
+              Local keyword research starts with understanding the
+              actual business. The research should identify the
+              business entity, its core services, products, service
+              locations, target customers and the problems those
+              customers want to solve.
 
             </p>
 
+            <div class="semantic-table-wrap">
 
-            <div class="table-wrap" style="margin-top:16px;">
-
-              <table>
+              <table class="semantic-table">
 
                 <thead>
 
                   <tr>
 
                     <th>
-                      Business Element
+                      Entity
                     </th>
 
                     <th>
-                      Example
+                      Attribute
+                    </th>
+
+                    <th>
+                      Example Value
                     </th>
 
                   </tr>
@@ -2104,65 +2239,63 @@
                 <tbody>
 
                   <tr>
-
                     <td>
-                      Business
+                      Small Business
                     </td>
-
                     <td>
-                      Local SEO Agency
+                      Business Type
                     </td>
-
+                    <td>
+                      Local service business
+                    </td>
                   </tr>
 
                   <tr>
-
                     <td>
-                      Service
+                      Small Business
                     </td>
-
+                    <td>
+                      Primary Service
+                    </td>
                     <td>
                       Local SEO
                     </td>
-
                   </tr>
 
                   <tr>
-
                     <td>
-                      Service
+                      Small Business
                     </td>
-
-                    <td>
-                      Google Business Profile Optimization
-                    </td>
-
-                  </tr>
-
-                  <tr>
-
                     <td>
                       Location
                     </td>
-
                     <td>
                       Itahari
                     </td>
-
                   </tr>
 
                   <tr>
-
+                    <td>
+                      Small Business
+                    </td>
                     <td>
                       Market
                     </td>
-
                     <td>
-
-                      Small businesses
-
+                      Local customers
                     </td>
+                  </tr>
 
+                  <tr>
+                    <td>
+                      Small Business
+                    </td>
+                    <td>
+                      Customer Need
+                    </td>
+                    <td>
+                      Find and compare a relevant local service
+                    </td>
                   </tr>
 
                 </tbody>
@@ -2179,37 +2312,36 @@
           <article class="article-block reveal">
 
             <h3>
-              2. Find the different ways customers search
+              2. Find the search terms connected to the business
             </h3>
 
             <p>
 
-              Customers may describe the same service in different
-              ways. Research should capture meaningful variations
-              instead of treating every wording variation as a reason
-              to create another page.
+              Customers can use different words to describe the same
+              service or need. Keyword research identifies those
+              search terms and determines how they relate to the
+              business, service, location and customer task.
 
             </p>
 
+            <div class="semantic-table-wrap">
 
-            <div class="table-wrap" style="margin-top:16px;">
-
-              <table>
+              <table class="semantic-table">
 
                 <thead>
 
                   <tr>
 
                     <th>
-                      Search Type
+                      Search Entity
+                    </th>
+
+                    <th>
+                      Relationship
                     </th>
 
                     <th>
                       Example
-                    </th>
-
-                    <th>
-                      Customer Need
                     </th>
 
                   </tr>
@@ -2219,83 +2351,51 @@
                 <tbody>
 
                   <tr>
-
                     <td>
-                      Service + Location
+                      Customer
                     </td>
-
                     <td>
-                      SEO agency Itahari
+                      searches for
                     </td>
-
                     <td>
-                      Find a local provider
+                      local SEO service
                     </td>
-
                   </tr>
 
                   <tr>
-
                     <td>
-                      Service + City
+                      Customer
                     </td>
-
+                    <td>
+                      adds location
+                    </td>
                     <td>
                       local SEO Itahari
                     </td>
-
-                    <td>
-                      Find a local SEO service
-                    </td>
-
                   </tr>
 
                   <tr>
-
                     <td>
-                      Near Me
+                      Customer
                     </td>
-
                     <td>
-                      SEO agency near me
+                      expresses proximity
                     </td>
-
                     <td>
-                      Find nearby options
+                      local SEO near me
                     </td>
-
                   </tr>
 
                   <tr>
-
                     <td>
-                      Commercial
+                      Customer
                     </td>
-
                     <td>
-                      local SEO services
+                      asks informational question
                     </td>
-
-                    <td>
-                      Evaluate a service
-                    </td>
-
-                  </tr>
-
-                  <tr>
-
-                    <td>
-                      Information
-                    </td>
-
                     <td>
                       what is local SEO
                     </td>
-
-                    <td>
-                      Learn before taking action
-                    </td>
-
                   </tr>
 
                 </tbody>
@@ -2312,21 +2412,21 @@
           <article class="article-block reveal">
 
             <h3>
-              3. Understand search intent before creating a page
+              3. Understand the central search intent
             </h3>
 
             <p>
 
-              Search intent describes the task behind a search.
-              A person looking for a service provider has a different
-              need from someone asking how a service works.
+              Search intent describes what the searcher is trying to
+              accomplish. The same topic can appear in informational,
+              commercial, local-service, comparison or contact-focused
+              searches.
 
             </p>
 
+            <div class="semantic-table-wrap">
 
-            <div class="table-wrap" style="margin-top:16px;">
-
-              <table>
+              <table class="semantic-table">
 
                 <thead>
 
@@ -2337,11 +2437,11 @@
                     </th>
 
                     <th>
-                      Example Query
+                      Search Example
                     </th>
 
                     <th>
-                      Appropriate Page
+                      Main Search Task
                     </th>
 
                   </tr>
@@ -2351,83 +2451,63 @@
                 <tbody>
 
                   <tr>
-
                     <td>
-                      Service
+                      Informational
                     </td>
-
-                    <td>
-                      local SEO service
-                    </td>
-
-                    <td>
-                      Local SEO service page
-                    </td>
-
-                  </tr>
-
-                  <tr>
-
-                    <td>
-                      Local Service
-                    </td>
-
-                    <td>
-                      local SEO service Itahari
-                    </td>
-
-                    <td>
-                      Relevant local service page
-                    </td>
-
-                  </tr>
-
-                  <tr>
-
-                    <td>
-                      Educational
-                    </td>
-
                     <td>
                       what is local keyword research
                     </td>
-
                     <td>
-                      Educational article
+                      Understand the topic
                     </td>
-
                   </tr>
 
                   <tr>
+                    <td>
+                      Commercial
+                    </td>
+                    <td>
+                      local keyword research service
+                    </td>
+                    <td>
+                      Evaluate a service
+                    </td>
+                  </tr>
 
+                  <tr>
+                    <td>
+                      Local Service
+                    </td>
+                    <td>
+                      local keyword research Itahari
+                    </td>
+                    <td>
+                      Find a local provider
+                    </td>
+                  </tr>
+
+                  <tr>
                     <td>
                       Comparison
                     </td>
-
                     <td>
-                      SEO agency pricing
+                      local SEO agency vs freelancer
                     </td>
-
                     <td>
-                      Pricing or comparison content
+                      Compare options
                     </td>
-
                   </tr>
 
                   <tr>
-
                     <td>
                       Contact
                     </td>
-
                     <td>
-                      SEO agency contact
+                      local SEO agency contact
                     </td>
-
                     <td>
-                      Contact page
+                      Contact a provider
                     </td>
-
                   </tr>
 
                 </tbody>
@@ -2449,41 +2529,96 @@
 
             <p>
 
-              Several keywords may describe almost the same search
-              task. Those terms can often be grouped together and
-              covered by one strong page.
+              Different keyword phrases can represent the same search
+              task. When their central intent is substantially the
+              same, they can usually be grouped under one relevant
+              page instead of creating a separate URL for every
+              variation.
 
             </p>
 
+            <div class="spo-grid">
 
-            <div class="note">
+              <div class="spo-item">
 
-              <strong>
-                Example:
-              </strong>
+                <strong>
+                  local keyword research
+                </strong>
 
-              <br><br>
+                <span class="spo-arrow">
+                  →
+                </span>
 
-              "local keyword research"
+                <strong>
+                  same topic
+                </strong>
 
-              <br>
+                <span class="spo-arrow">
+                  →
+                </span>
 
-              "local SEO keyword research"
+                <strong>
+                  local SEO keyword research
+                </strong>
 
-              <br>
+              </div>
 
-              "keyword research for local business"
+              <div class="spo-item">
 
-              <br>
+                <strong>
+                  keyword research for local business
+                </strong>
 
-              "local keyword research services"
+                <span class="spo-arrow">
+                  →
+                </span>
 
-              <br><br>
+                <strong>
+                  same central intent
+                </strong>
 
-              These terms may overlap substantially depending on the
-              actual search results and page purpose. The decision
-              should be based on intent rather than creating one page
-              for every wording variation.
+                <span class="spo-arrow">
+                  →
+                </span>
+
+                <strong>
+                  local keyword research
+                </strong>
+
+              </div>
+
+              <div class="spo-item">
+
+                <strong>
+                  local keyword research service
+                </strong>
+
+                <span class="spo-arrow">
+                  →
+                </span>
+
+                <strong>
+                  commercial relationship
+                </strong>
+
+                <span class="spo-arrow">
+                  →
+                </span>
+
+                <strong>
+                  service page
+                </strong>
+
+              </div>
+
+            </div>
+
+            <div class="semantic-note">
+
+              The objective is not to force all related keywords onto
+              one page. The objective is to determine which keywords
+              represent the same search task and which represent a
+              genuinely different need.
 
             </div>
 
@@ -2495,32 +2630,32 @@
           <article class="article-block reveal">
 
             <h3>
-              5. Add the location only when it represents the search
+              5. Connect locations to real business coverage
             </h3>
 
             <p>
 
-              Local searches can contain city, district, neighborhood
-              or "near me" language. Research should identify which
-              locations are genuinely relevant to the business.
+              Location is an important attribute in local keyword
+              research. A city, neighbourhood, district or proximity
+              term can change the context of a search. The location
+              should represent a genuine area served by the business.
 
             </p>
 
+            <div class="semantic-table-wrap">
 
-            <div class="table-wrap" style="margin-top:16px;">
-
-              <table>
+              <table class="semantic-table">
 
                 <thead>
 
                   <tr>
 
                     <th>
-                      Core Service
+                      Service
                     </th>
 
                     <th>
-                      Location
+                      Location Attribute
                     </th>
 
                     <th>
@@ -2534,51 +2669,39 @@
                 <tbody>
 
                   <tr>
-
                     <td>
                       Local SEO
                     </td>
-
                     <td>
                       Itahari
                     </td>
-
                     <td>
                       local SEO Itahari
                     </td>
-
                   </tr>
 
                   <tr>
-
                     <td>
                       SEO Agency
                     </td>
-
                     <td>
                       Itahari
                     </td>
-
                     <td>
                       SEO agency Itahari
                     </td>
-
                   </tr>
 
                   <tr>
-
                     <td>
                       Local SEO
                     </td>
-
                     <td>
                       Sunsari
                     </td>
-
                     <td>
                       local SEO Sunsari
                     </td>
-
                   </tr>
 
                 </tbody>
@@ -2587,12 +2710,12 @@
 
             </div>
 
-
             <p>
 
-              Do not create location pages merely by changing the
-              city name. A location page should have a genuine reason
-              to exist and useful information for that location.
+              Location terms should not automatically create separate
+              pages. A location page needs a genuine business purpose
+              and useful information for people looking for the
+              service in that area.
 
             </p>
 
@@ -2604,268 +2727,21 @@
           <article class="article-block reveal">
 
             <h3>
-              6. Connect each search with a page purpose
+              6. Identify keyword attributes
             </h3>
 
             <p>
 
-              Once the keywords are grouped, map each distinct search
-              task to the page that should satisfy it.
+              Search queries often become more specific because the
+              user adds an attribute. Common attributes include
+              location, price, service type, audience, urgency,
+              business type and proximity.
 
             </p>
 
+            <div class="semantic-table-wrap">
 
-            <div class="table-wrap" style="margin-top:16px;">
-
-              <table>
-
-                <thead>
-
-                  <tr>
-
-                    <th>
-                      Search Topic
-                    </th>
-
-                    <th>
-                      Primary Page
-                    </th>
-
-                    <th>
-                      Supporting Content
-                    </th>
-
-                  </tr>
-
-                </thead>
-
-                <tbody>
-
-                  <tr>
-
-                    <td>
-                      Local SEO service
-                    </td>
-
-                    <td>
-                      local-seo-service.html
-                    </td>
-
-                    <td>
-                      Local SEO guides
-                    </td>
-
-                  </tr>
-
-                  <tr>
-
-                    <td>
-                      Google Business Profile optimization
-                    </td>
-
-                    <td>
-                      google-business-profile-optimization.html
-                    </td>
-
-                    <td>
-                      Google Business Profile guides
-                    </td>
-
-                  </tr>
-
-                  <tr>
-
-                    <td>
-                      Local keyword research
-                    </td>
-
-                    <td>
-                      local-keyword-research.html
-                    </td>
-
-                    <td>
-                      Keyword research articles
-                    </td>
-
-                  </tr>
-
-                  <tr>
-
-                    <td>
-                      SEO website audit
-                    </td>
-
-                    <td>
-                      seo-website-audit.html
-                    </td>
-
-                    <td>
-                      Technical SEO guides
-                    </td>
-
-                  </tr>
-
-                </tbody>
-
-              </table>
-
-            </div>
-
-          </article>
-
-
-          <!-- 7 -->
-
-          <article class="article-block reveal">
-
-            <h3>
-              7. Build the keyword map around real business relationships
-            </h3>
-
-            <p>
-
-              A keyword strategy becomes clearer when the relationships
-              between the business, services, locations and pages are
-              explicit.
-
-            </p>
-
-
-            <div class="table-wrap" style="margin-top:16px;">
-
-              <table>
-
-                <thead>
-
-                  <tr>
-
-                    <th>
-                      Main Subject
-                    </th>
-
-                    <th>
-                      Relationship
-                    </th>
-
-                    <th>
-                      Connected Topic
-                    </th>
-
-                  </tr>
-
-                </thead>
-
-                <tbody>
-
-                  <tr>
-
-                    <td>
-                      Startup Nepal
-                    </td>
-
-                    <td>
-                      provides
-                    </td>
-
-                    <td>
-                      Local SEO Service
-                    </td>
-
-                  </tr>
-
-                  <tr>
-
-                    <td>
-                      Startup Nepal
-                    </td>
-
-                    <td>
-                      provides
-                    </td>
-
-                    <td>
-                      Local Keyword Research
-                    </td>
-
-                  </tr>
-
-                  <tr>
-
-                    <td>
-                      Local Keyword Research
-                    </td>
-
-                    <td>
-                      supports
-                    </td>
-
-                    <td>
-                      Local SEO Strategy
-                    </td>
-
-                  </tr>
-
-                  <tr>
-
-                    <td>
-                      Local SEO Strategy
-                    </td>
-
-                    <td>
-                      targets
-                    </td>
-
-                    <td>
-                      Relevant Local Searches
-                    </td>
-
-                  </tr>
-
-                  <tr>
-
-                    <td>
-                      Keyword Research
-                    </td>
-
-                    <td>
-                      informs
-                    </td>
-
-                    <td>
-                      Website Page Mapping
-                    </td>
-
-                  </tr>
-
-                </tbody>
-
-              </table>
-
-            </div>
-
-          </article>
-
-
-          <!-- 8 -->
-
-          <article class="article-block reveal">
-
-            <h3>
-              8. Include attributes that change the search
-            </h3>
-
-            <p>
-
-              Search terms often become more specific because people
-              add an attribute such as price, service type, location,
-              urgency, audience or business type.
-
-            </p>
-
-
-            <div class="table-wrap" style="margin-top:16px;">
-
-              <table>
+              <table class="semantic-table">
 
                 <thead>
 
@@ -2890,83 +2766,277 @@
                 <tbody>
 
                   <tr>
-
                     <td>
                       SEO Service
                     </td>
-
                     <td>
                       Location
                     </td>
-
                     <td>
                       SEO service Itahari
                     </td>
-
                   </tr>
 
                   <tr>
-
                     <td>
                       SEO Service
                     </td>
-
                     <td>
                       Business Type
                     </td>
-
                     <td>
                       SEO for small business
                     </td>
-
                   </tr>
 
                   <tr>
-
                     <td>
                       Local SEO
                     </td>
-
                     <td>
                       Price
                     </td>
-
                     <td>
                       local SEO pricing
                     </td>
-
                   </tr>
 
                   <tr>
-
                     <td>
                       Local SEO
                     </td>
-
                     <td>
                       Proximity
                     </td>
-
                     <td>
                       local SEO near me
                     </td>
-
                   </tr>
 
                   <tr>
-
                     <td>
                       Keyword Research
                     </td>
-
                     <td>
                       Audience
                     </td>
-
                     <td>
                       keyword research for small business
                     </td>
+                  </tr>
 
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </article>
+
+
+          <!-- 7 -->
+
+          <article class="article-block reveal">
+
+            <h3>
+              7. Map keywords to the right page
+            </h3>
+
+            <p>
+
+              Keyword research becomes useful when search terms are
+              connected to page purposes. The primary keyword or topic
+              should describe the main purpose of the page, while
+              closely related terms can be covered naturally within
+              that page.
+
+            </p>
+
+            <div class="semantic-table-wrap">
+
+              <table class="semantic-table">
+
+                <thead>
+
+                  <tr>
+
+                    <th>
+                      Search Topic
+                    </th>
+
+                    <th>
+                      Page Purpose
+                    </th>
+
+                    <th>
+                      Suggested URL
+                    </th>
+
+                  </tr>
+
+                </thead>
+
+                <tbody>
+
+                  <tr>
+                    <td>
+                      Local Keyword Research
+                    </td>
+                    <td>
+                      Explain and provide the service
+                    </td>
+                    <td>
+                      local-keyword-research.html
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      Local SEO Service
+                    </td>
+                    <td>
+                      Explain local SEO service
+                    </td>
+                    <td>
+                      local-seo-service.html
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      Google Business Profile Optimization
+                    </td>
+                    <td>
+                      Explain Google Business Profile service
+                    </td>
+                    <td>
+                      google-business-profile-optimization.html
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      SEO Website Audit
+                    </td>
+                    <td>
+                      Explain audit service
+                    </td>
+                    <td>
+                      seo-website-audit.html
+                    </td>
+                  </tr>
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </article>
+
+
+          <!-- 8 -->
+
+          <article class="article-block reveal">
+
+            <h3>
+              8. Connect keyword research with website structure
+            </h3>
+
+            <p>
+
+              A good keyword map should explain how the important
+              topics fit into the website. Core business services
+              usually need dedicated service pages, while supporting
+              questions can be handled by informational resources
+              when those questions have a distinct purpose.
+
+            </p>
+
+            <div class="semantic-table-wrap">
+
+              <table class="semantic-table">
+
+                <thead>
+
+                  <tr>
+
+                    <th>
+                      Page Type
+                    </th>
+
+                    <th>
+                      Main Entity
+                    </th>
+
+                    <th>
+                      Search Purpose
+                    </th>
+
+                  </tr>
+
+                </thead>
+
+                <tbody>
+
+                  <tr>
+                    <td>
+                      Homepage
+                    </td>
+                    <td>
+                      Business
+                    </td>
+                    <td>
+                      Understand the company and major services
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      Service Page
+                    </td>
+                    <td>
+                      Specific Service
+                    </td>
+                    <td>
+                      Evaluate the service
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      Location Page
+                    </td>
+                    <td>
+                      Service + Location
+                    </td>
+                    <td>
+                      Understand service availability in an area
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      Resource Article
+                    </td>
+                    <td>
+                      Search Question
+                    </td>
+                    <td>
+                      Learn or solve a specific problem
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      Contact Page
+                    </td>
+                    <td>
+                      Business
+                    </td>
+                    <td>
+                      Start a conversation
+                    </td>
                   </tr>
 
                 </tbody>
@@ -2983,40 +3053,35 @@
           <article class="article-block reveal">
 
             <h3>
-              9. Separate core business keywords from supporting topics
+              9. Use EAV to understand the keyword context
             </h3>
 
             <p>
 
-              A small business website usually has a few important
-              commercial topics and many supporting informational
-              topics.
-
-              The commercial pages should remain focused on the
-              business offerings, while articles can answer supporting
-              questions without competing with those pages.
+              EAV means Entity, Attribute and Value. In local keyword
+              research, this structure helps organize the facts that
+              make a search more specific.
 
             </p>
 
+            <div class="semantic-table-wrap">
 
-            <div class="table-wrap" style="margin-top:16px;">
-
-              <table>
+              <table class="semantic-table">
 
                 <thead>
 
                   <tr>
 
                     <th>
-                      Page Type
+                      Entity
                     </th>
 
                     <th>
-                      Example Topic
+                      Attribute
                     </th>
 
                     <th>
-                      Purpose
+                      Value
                     </th>
 
                   </tr>
@@ -3026,67 +3091,305 @@
                 <tbody>
 
                   <tr>
-
                     <td>
-                      Core Service Page
+                      Local SEO
                     </td>
+                    <td>
+                      Location
+                    </td>
+                    <td>
+                      Itahari
+                    </td>
+                  </tr>
 
+                  <tr>
+                    <td>
+                      SEO Service
+                    </td>
+                    <td>
+                      Audience
+                    </td>
+                    <td>
+                      Small Business
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      Keyword Research
+                    </td>
+                    <td>
+                      Type
+                    </td>
+                    <td>
+                      Local
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      SEO Service
+                    </td>
+                    <td>
+                      Pricing
+                    </td>
+                    <td>
+                      Service Cost
+                    </td>
+                  </tr>
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+            <p>
+
+              EAV helps explain why two searches can be related while
+              still having different attributes. The same core entity
+              can appear with different locations, audiences, prices
+              or service characteristics.
+
+            </p>
+
+          </article>
+
+
+          <!-- 10 -->
+
+          <article class="article-block reveal">
+
+            <h3>
+              10. Use SPO to understand relationships
+            </h3>
+
+            <p>
+
+              SPO means Subject, Predicate and Object. It helps
+              describe relationships between entities and actions.
+              This is useful when turning keyword research into a
+              website information structure.
+
+            </p>
+
+            <div class="spo-grid">
+
+              <div class="spo-item">
+
+                <strong>
+                  Startup Nepal
+                </strong>
+
+                <span class="spo-arrow">
+                  →
+                </span>
+
+                <strong>
+                  provides
+                </strong>
+
+                <span class="spo-arrow">
+                  →
+                </span>
+
+                <strong>
+                  Local Keyword Research
+                </strong>
+
+              </div>
+
+              <div class="spo-item">
+
+                <strong>
+                  Local Keyword Research
+                </strong>
+
+                <span class="spo-arrow">
+                  →
+                </span>
+
+                <strong>
+                  identifies
+                </strong>
+
+                <span class="spo-arrow">
+                  →
+                </span>
+
+                <strong>
+                  Local Search Terms
+                </strong>
+
+              </div>
+
+              <div class="spo-item">
+
+                <strong>
+                  Keyword Research
+                </strong>
+
+                <span class="spo-arrow">
+                  →
+                </span>
+
+                <strong>
+                  analyzes
+                </strong>
+
+                <span class="spo-arrow">
+                  →
+                </span>
+
+                <strong>
+                  Search Intent
+                </strong>
+
+              </div>
+
+              <div class="spo-item">
+
+                <strong>
+                  Search Intent
+                </strong>
+
+                <span class="spo-arrow">
+                  →
+                </span>
+
+                <strong>
+                  informs
+                </strong>
+
+                <span class="spo-arrow">
+                  →
+                </span>
+
+                <strong>
+                  Page Mapping
+                </strong>
+
+              </div>
+
+              <div class="spo-item">
+
+                <strong>
+                  Page Mapping
+                </strong>
+
+                <span class="spo-arrow">
+                  →
+                </span>
+
+                <strong>
+                  assigns
+                </strong>
+
+                <span class="spo-arrow">
+                  →
+                </span>
+
+                <strong>
+                  Search Topics to URLs
+                </strong>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- 11 -->
+
+          <article class="article-block reveal">
+
+            <h3>
+              11. Separate core topics from supporting topics
+            </h3>
+
+            <p>
+
+              The main service of a business and the informational
+              questions surrounding that service do not always need
+              to target the same page. A clear website separates the
+              commercial destination from supporting educational
+              content when their search intent is different.
+
+            </p>
+
+            <div class="semantic-table-wrap">
+
+              <table class="semantic-table">
+
+                <thead>
+
+                  <tr>
+
+                    <th>
+                      Topic Type
+                    </th>
+
+                    <th>
+                      Example
+                    </th>
+
+                    <th>
+                      Page Role
+                    </th>
+
+                  </tr>
+
+                </thead>
+
+                <tbody>
+
+                  <tr>
+                    <td>
+                      Core Service
+                    </td>
                     <td>
                       Local SEO Service
                     </td>
-
                     <td>
-                      Explain and sell the service
+                      Commercial service page
                     </td>
-
                   </tr>
 
                   <tr>
-
                     <td>
-                      Service Page
+                      Supporting Topic
                     </td>
-
-                    <td>
-                      Google Business Profile Optimization
-                    </td>
-
-                    <td>
-                      Explain a specific service
-                    </td>
-
-                  </tr>
-
-                  <tr>
-
-                    <td>
-                      Supporting Article
-                    </td>
-
                     <td>
                       How does local SEO work?
                     </td>
-
                     <td>
-                      Answer an educational question
+                      Informational article
                     </td>
-
                   </tr>
 
                   <tr>
-
                     <td>
-                      Supporting Article
+                      Supporting Topic
                     </td>
-
                     <td>
-                      How to choose local keywords
+                      How to find local keywords
                     </td>
-
                     <td>
-                      Teach the research process
+                      Educational article
                     </td>
+                  </tr>
 
+                  <tr>
+                    <td>
+                      Commercial Topic
+                    </td>
+                    <td>
+                      Local SEO Pricing
+                    </td>
+                    <td>
+                      Pricing or commercial page
+                    </td>
                   </tr>
 
                 </tbody>
@@ -3098,38 +3401,161 @@
           </article>
 
 
-          <!-- 10 -->
+          <!-- 12 -->
 
           <article class="article-block reveal">
 
             <h3>
-              10. Avoid making a page for every keyword variation
+              12. Avoid keyword cannibalization during page mapping
             </h3>
 
             <p>
 
-              A common mistake in local keyword research is turning
-              every keyword into its own URL.
-
-              When several terms have the same subject, purpose and
-              search intent, they can often be covered by one stronger
-              page.
+              Creating several pages for very similar keywords can
+              make the website unnecessarily repetitive. Before
+              creating a new URL, compare the subject, search intent,
+              service, location and customer task with the pages that
+              already exist.
 
             </p>
 
             <div class="note">
 
               <strong>
-                Better approach:
+                Practical rule:
               </strong>
 
               <br><br>
 
-              One primary page can target a meaningful group of related
-              searches while naturally covering their variations.
+              If two keyword groups ask the search engine to provide
+              essentially the same page experience, consider covering
+              them together. Create a separate page when there is a
+              meaningful difference in topic, intent, service, product,
+              audience or location.
 
-              Create another page when the customer task, service,
-              product or location is genuinely different.
+            </div>
+
+          </article>
+
+
+          <!-- 13 -->
+
+          <article class="article-block reveal">
+
+            <h3>
+              13. The final output should be a keyword map, not only a keyword list
+            </h3>
+
+            <p>
+
+              A completed local keyword research project should show
+              more than search phrases. It should explain the topic,
+              central intent, related terms, relevant attributes,
+              page purpose and URL relationship.
+
+            </p>
+
+            <div class="semantic-table-wrap">
+
+              <table class="semantic-table">
+
+                <thead>
+
+                  <tr>
+
+                    <th>
+                      Keyword Research Element
+                    </th>
+
+                    <th>
+                      Purpose
+                    </th>
+
+                    <th>
+                      Example
+                    </th>
+
+                  </tr>
+
+                </thead>
+
+                <tbody>
+
+                  <tr>
+                    <td>
+                      Seed Topic
+                    </td>
+                    <td>
+                      Starting entity
+                    </td>
+                    <td>
+                      Local Keyword Research
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      Primary Keyword
+                    </td>
+                    <td>
+                      Main page topic
+                    </td>
+                    <td>
+                      Local Keyword Research for Small Business
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      Related Terms
+                    </td>
+                    <td>
+                      Closely connected searches
+                    </td>
+                    <td>
+                      local SEO keyword research
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      Search Intent
+                    </td>
+                    <td>
+                      Searcher's task
+                    </td>
+                    <td>
+                      Learn or request keyword research
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      Attributes
+                    </td>
+                    <td>
+                      Search specificity
+                    </td>
+                    <td>
+                      small business, Itahari, local
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      Page Mapping
+                    </td>
+                    <td>
+                      Assign keyword group to page
+                    </td>
+                    <td>
+                      local-keyword-research.html
+                    </td>
+                  </tr>
+
+                </tbody>
+
+              </table>
 
             </div>
 
