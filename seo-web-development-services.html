@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en-NP">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SEO & Web Development in Itahari | Startup Nepal</title>
+  <meta name="description" content="Learn how SEO and web development work together to build a search-ready, user-friendly business website. Startup Nepal focuses on website structure, search intent, technical foundations, content, local relevance, performance, and ongoing growth in Itahari, Sunsari and beyond.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#08111f">
+  <link rel="canonical" href="https://yourdomain.com/seo-web-development-services.html">
+
+  <meta property="og:title" content="SEO & Web Development in Itahari | Startup Nepal">
+  <meta property="og:description" content="A practical guide to building business websites that are useful to visitors, understandable to search engines, and ready for long-term growth.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/seo-web-development-services.html">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"SEO & Web Development in Itahari",
+    "description":"How SEO and web development work together to create search-ready, user-friendly business websites.",
+    "author":{
+      "@type":"Organization",
+      "name":"Startup Nepal"
+    },
+    "publisher":{
+      "@type":"Organization",
+      "name":"Startup Nepal"
+    },
+    "mainEntityOfPage":{
+      "@type":"WebPage",
+      "@id":"https://yourdomain.com/seo-web-development-services.html"
+    },
+    "about":[
+      "SEO",
+      "Web Development",
+      "Business Websites",
+      "Local SEO",
+      "Website Performance"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #07101c;
+      --bg-soft: #0b1727;
+      --panel: rgba(15, 28, 48, 0.72);
+      --panel-solid: #0e1b2e;
+      --text: #f6f8fc;
+      --muted: #9ba9bc;
+      --line: rgba(255,255,255,.09);
+      --accent: #77f2c0;
+      --accent-2: #66a6ff;
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --shadow: 0 24px 70px rgba(0,0,0,.35);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 10% 8%, rgba(102,166,255,.13), transparent 32%),
+        radial-gradient(circle at 88% 12%, rgba(119,242,192,.09), transparent 28%),
+        linear-gradient(180deg, #06101c 0%, #081421 44%, #07101c 100%);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: linear-gradient(to bottom, black, transparent 70%);
+      z-index: -1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button, input, textarea { font: inherit; }
+
+    .container { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+
+    .announcement {
+      border-bottom: 1px solid var(--line);
+      background: rgba(4,10,18,.6);
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+    .announcement-inner {
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-align: center;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 14px rgba(119,242,192,.8);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--line);
+      background: rgba(7,16,28,.74);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .navbar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg,rgba(119,242,192,.98),rgba(102,166,255,.98));
+      color: #08111f;
+      box-shadow: 0 10px 28px rgba(102,166,255,.2);
+      font-size: 1.06rem;
+      font-weight: 900;
+    }
+
+    .brand-text small {
+      display: block;
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 650;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .brand-text strong { display: block; font-size: 1rem; }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      list-style: none;
+    }
+
+    .nav-link, .nav-trigger {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 11px 14px;
+      border-radius: 12px;
+      color: #d9e1ec;
+      font-size: .92rem;
+      font-weight: 650;
+      transition: .2s ease;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .nav-link:hover, .nav-trigger:hover {
+      background: rgba(255,255,255,.05);
+      color: #fff;
+    }
+
+    .nav-link.active,
+    .nav-trigger.active { color: var(--accent); }
+
+    .chevron {
+      font-size: .72rem;
+      transition: transform .22s ease;
+    }
+
+    .dropdown { position: relative; }
+
+    .dropdown-panel {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%) translateY(-7px);
+      width: min(750px, calc(100vw - 28px));
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: rgba(9,19,33,.96);
+      backdrop-filter: blur(20px);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: .2s ease;
+    }
+
+    .dropdown:hover .dropdown-panel,
+    .dropdown:focus-within .dropdown-panel,
+    .dropdown.open .dropdown-panel {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown:hover .chevron,
+    .dropdown.open .chevron { transform: rotate(180deg); }
+
+    .dropdown-intro {
+      padding: 3px 6px 15px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 12px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .68rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .dropdown-intro h3 {
+      margin-top: 5px;
+      font-size: 1.05rem;
+    }
+
+    .dropdown-grid {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 7px;
+    }
+
+    .dropdown-link {
+      padding: 11px 12px;
+      border-radius: 13px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #dfe7f2;
+      transition: .2s ease;
+    }
+
+    .dropdown-link:hover {
+      background: rgba(119,242,192,.07);
+      color: #fff;
+    }
+
+    .service-icon {
+      width: 29px;
+      height: 29px;
+      flex: 0 0 29px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.055);
+      color: var(--accent);
+      font-size: .77rem;
+      font-weight: 800;
+      border: 1px solid rgba(255,255,255,.06);
+    }
+
+    .dropdown-link strong {
+      display: block;
+      font-size: .85rem;
+      line-height: 1.35;
+    }
+
+    .dropdown-link span {
+      display: block;
+      color: var(--muted);
+      font-size: .73rem;
+      margin-top: 2px;
+      line-height: 1.4;
+    }
+
+    .nav-cta {
+      padding: 11px 15px;
+      border-radius: 12px;
+      background: linear-gradient(135deg,var(--accent),#9ef8d4);
+      color: #07101c;
+      font-weight: 800;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(119,242,192,.16);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.035);
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 19px;
+      height: 2px;
+      background: #fff;
+      margin: 4px auto;
+      border-radius: 999px;
+      transition: .2s ease;
+    }
+
+    main { min-height: calc(100vh - 120px); }
+
+    .hero {
+      padding: 92px 0 66px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.06fr .94fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin-top: 18px;
+      font-size: clamp(2.75rem, 6vw, 5rem);
+      line-height: 1.02;
+      letter-spacing: -.055em;
+      max-width: 790px;
+    }
+
+    .gradient {
+      background: linear-gradient(100deg,#fff 8%,#9edcff 47%,#8df7ce 88%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      margin-top: 21px;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: .9rem;
+      border: 1px solid var(--line);
+      transition: .2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg,var(--accent),#9af7d4);
+      color: #08111f;
+      border-color: transparent;
+      box-shadow: 0 18px 38px rgba(119,242,192,.11);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 42px rgba(119,242,192,.17);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.03);
+      color: #eef4fb;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,.06);
+      transform: translateY(-1px);
+    }
+
+    .hero-panel {
+      position: relative;
+      overflow: hidden;
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at 75% 15%, rgba(102,166,255,.12), transparent 34%),
+        linear-gradient(155deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      right: -90px;
+      bottom: -90px;
+      border-radius: 50%;
+      background: rgba(119,242,192,.08);
+      filter: blur(8px);
+    }
+
+    .panel-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 19px;
+    }
+
+    .panel-item {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      padding: 12px;
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 14px;
+      background: rgba(255,255,255,.022);
+    }
+
+    .panel-no {
+      width: 28px;
+      height: 28px;
+      flex: 0 0 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: rgba(119,242,192,.08);
+      border: 1px solid rgba(119,242,192,.1);
+      color: var(--accent);
+      font-size: .67rem;
+      font-weight: 900;
+    }
+
+    .panel-item strong {
+      display: block;
+      font-size: .8rem;
+    }
+
+    .panel-item span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: .71rem;
+    }
+
+    section { padding: 74px 0; }
+
+    .section-head {
+      max-width: 850px;
+      margin-bottom: 31px;
+    }
+
+    .section-head h2 {
+      margin-top: 9px;
+      font-size: clamp(2rem,4vw,3rem);
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin-top: 13px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .content-card {
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 21px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .content-card h3 {
+      font-size: 1.08rem;
+      letter-spacing: -.015em;
+    }
+
+    .content-card p {
+      color: var(--muted);
+      margin-top: 8px;
+      font-size: .82rem;
+    }
+
+    .content-card ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .content-card li {
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+      color: #dfe7f2;
+      font-size: .75rem;
+    }
+
+    .content-card li::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .article-section {
+      padding-top: 30px;
+    }
+
+    .article {
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .article-intro {
+      max-width: 850px;
+      color: var(--muted);
+      margin-top: 13px;
+      font-size: .93rem;
+    }
+
+    .article-body {
+      display: grid;
+      gap: 17px;
+      margin-top: 25px;
+    }
+
+    .article-block {
+      padding: 24px;
+      border-left: 2px solid rgba(119,242,192,.35);
+      border-radius: 0 17px 17px 0;
+      background: rgba(255,255,255,.022);
+    }
+
+    .article-block h3 {
+      font-size: 1.1rem;
+      margin-bottom: 7px;
+    }
+
+    .article-block p {
+      color: var(--muted);
+      font-size: .83rem;
+    }
+
+    .article-block p + p { margin-top: 10px; }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 13px;
+    }
+
+    .principle {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .principle-number {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: rgba(102,166,255,.1);
+      border: 1px solid rgba(102,166,255,.14);
+      color: #b6d3ff;
+      font-size: .7rem;
+      font-weight: 900;
+    }
+
+    .principle h3 {
+      margin-top: 13px;
+      font-size: .98rem;
+    }
+
+    .principle p {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: .74rem;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 11px;
+    }
+
+    .process-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 19px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .step-no {
+      width: 31px;
+      height: 31px;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      background: rgba(102,166,255,.1);
+      border: 1px solid rgba(102,166,255,.15);
+      color: #b6d3ff;
+      font-size: .7rem;
+      font-weight: 900;
+    }
+
+    .process-card h3 {
+      margin-top: 13px;
+      font-size: .92rem;
+    }
+
+    .process-card p {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .72rem;
+    }
+
+    .note {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border: 1px solid rgba(119,242,192,.12);
+      border-radius: 16px;
+      background: rgba(119,242,192,.035);
+      color: #cde8dd;
+      font-size: .76rem;
+    }
+
+    .faq-wrap {
+      display: grid;
+      gap: 10px;
+      max-width: 920px;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,.025);
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 17px 18px;
+      font-size: .84rem;
+      font-weight: 800;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    details p {
+      padding: 0 18px 18px;
+      color: var(--muted);
+      font-size: .77rem;
+    }
+
+    .cta-section { padding-top: 24px; }
+
+    .cta {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 28px;
+      padding: 38px;
+      border: 1px solid rgba(119,242,192,.14);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 80% 30%,rgba(119,242,192,.10),transparent 35%),
+        linear-gradient(135deg,rgba(25,47,64,.9),rgba(10,24,36,.88));
+    }
+
+    .cta h2 {
+      font-size: clamp(1.75rem,4vw,2.8rem);
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+
+    .cta p {
+      color: var(--muted);
+      margin-top: 10px;
+      max-width: 650px;
+      font-size: .9rem;
+    }
+
+    footer { padding: 26px 0 42px; }
+
+    .footer-top {
+      padding: 24px 0;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      color: var(--muted);
+      font-size: .77rem;
+    }
+
+    .footer-links a:hover { color: #fff; }
+
+    .footer-bottom {
+      color: #718095;
+      font-size: .72rem;
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom a { color: #cfe5ff; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 1040px) {
+      .nav-menu { gap: 0; }
+      .nav-link, .nav-trigger { padding: 10px 10px; font-size: .84rem; }
+      .nav-cta { padding: 10px 12px; }
+      .principles { grid-template-columns: repeat(2,1fr); }
+      .process { grid-template-columns: repeat(2,1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .menu-toggle { display: block; }
+      .navbar { min-height: 72px; }
+
+      .nav-menu {
+        position: absolute;
+        top: 72px;
+        left: 20px;
+        right: 20px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(8,18,31,.98);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-menu.open { display: flex; }
+
+      .nav-link, .nav-trigger, .nav-cta {
+        width: 100%;
+        justify-content: space-between;
+        padding: 13px;
+      }
+
+      .dropdown-panel {
+        position: static;
+        transform: none !important;
+        width: 100%;
+        margin-top: 5px;
+        box-shadow: none;
+        border-radius: 15px;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .dropdown.open .dropdown-panel { display: block; }
+      .dropdown:hover .dropdown-panel { display: none; }
+      .dropdown.open:hover .dropdown-panel { display: block; }
+      .dropdown-grid { grid-template-columns: 1fr; }
+
+      .hero-grid,
+      .content-grid,
+      .cta { grid-template-columns: 1fr; }
+
+      .cta .btn { justify-self: start; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(calc(100% - 28px),var(--max)); }
+      .announcement-inner { font-size: .72rem; padding: 7px 0; }
+      .brand-text small { font-size: .58rem; }
+      .brand-text strong { font-size: .9rem; }
+      .brand-mark { width: 39px; height: 39px; }
+
+      .hero { padding: 62px 0 48px; }
+      .hero h1 { font-size: clamp(2.45rem,13vw,3.65rem); }
+      .hero-copy { font-size: .93rem; }
+
+      section { padding: 60px 0; }
+
+      .hero-panel,
+      .content-card,
+      .article-block,
+      .principle { padding: 21px; }
+
+      .principles,
+      .process { grid-template-columns: 1fr; }
+
+      .cta { padding: 27px; }
+
+      .footer-top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *,*::before,*::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="announcement">
+    <div class="container announcement-inner">
+      <span class="status-dot"></span>
+      <span>SEO & web development for businesses in Itahari and surrounding areas</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="index.html" aria-label="Startup Nepal home">
+        <span class="brand-mark">SN</span>
+        <span class="brand-text">
+          <small>Local Search Growth</small>
+          <strong>Startup Nepal</strong>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav aria-label="Primary navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="about.html">About</a></li>
+
+          <li class="dropdown" id="servicesDropdown">
+            <button class="nav-trigger active" type="button" aria-expanded="false">
+              Services <span class="chevron">⌄</span>
+            </button>
+
+            <div class="dropdown-panel" aria-label="SEO and web development services">
+              <div class="dropdown-intro">
+                <div class="eyebrow">Services</div>
+                <h3>SEO & Web Development Services</h3>
+              </div>
+
+              <div class="dropdown-grid">
+                <a class="dropdown-link" href="seo-web-development-services.html">
+                  <span class="service-icon">01</span>
+                  <span><strong>SEO & Web Development Services</strong><span>Search visibility + business website development.</span></span>
+                </a>
+                <a class="dropdown-link" href="local-seo-service.html">
+                  <span class="service-icon">02</span>
+                  <span><strong>Local SEO Service</strong><span>Improve local search visibility and discovery.</span></span>
+                </a>
+                <a class="dropdown-link" href="seo-website-audit.html">
+                  <span class="service-icon">03</span>
+                  <span><strong>SEO Website Audit</strong><span>Find technical, on-page, content, and SEO issues.</span></span>
+                </a>
+                <a class="dropdown-link" href="google-business-profile-optimization.html">
+                  <span class="service-icon">04</span>
+                  <span><strong>Google Business Profile Setup & Optimization</strong><span>Build a stronger local business profile.</span></span>
+                </a>
+                <a class="dropdown-link" href="local-keyword-research.html">
+                  <span class="service-icon">05</span>
+                  <span><strong>Local Keyword Research for Small Businesses</strong><span>Map local search demand to useful pages.</span></span>
+                </a>
+                <a class="dropdown-link" href="local-seo-landing-pages.html">
+                  <span class="service-icon">06</span>
+                  <span><strong>Local SEO Landing Pages for Service Areas</strong><span>Create location-focused pages with clear intent.</span></span>
+                </a>
+                <a class="dropdown-link" href="nap-citation-optimization.html">
+                  <span class="service-icon">07</span>
+                  <span><strong>NAP & Local Citation Optimization</strong><span>Keep business information consistent across listings.</span></span>
+                </a>
+                <a class="dropdown-link" href="on-page-seo-services.html">
+                  <span class="service-icon">08</span>
+                  <span><strong>On-Page SEO Services for Local Businesses</strong><span>Improve titles, content, internal links, and page structure.</span></span>
+                </a>
+                <a class="dropdown-link" href="technical-seo-services.html">
+                  <span class="service-icon">09</span>
+                  <span><strong>Technical SEO Services for Business Websites</strong><span>Address crawlability, indexing, structure, and technical health.</span></span>
+                </a>
+                <a class="dropdown-link" href="mobile-seo-responsive.html">
+                  <span class="service-icon">10</span>
+                  <span><strong>Mobile SEO & Responsive Website Optimization</strong><span>Make your website easier to use on mobile devices.</span></span>
+                </a>
+                <a class="dropdown-link" href="website-speed-performance.html">
+                  <span class="service-icon">11</span>
+                  <span><strong>Website Speed & Performance Optimization</strong><span>Improve loading experience and page performance.</span></span>
+                </a>
+                <a class="dropdown-link" href="website-maintenance-plans.html">
+                  <span class="service-icon">12</span>
+                  <span><strong>Website Maintenance Plans for Businesses</strong><span>Keep business websites updated, healthy, and secure.</span></span>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <li><a class="nav-link" href="resources.html">Resources</a></li>
+          <li><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li><a class="nav-link nav-cta" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">SEO & Web Development</div>
+          <h1>Build a website that is ready for <span class="gradient">people and search.</span></h1>
+          <p class="hero-copy">
+            SEO and web development work best when they are considered together. A business website
+            should be easy for customers to use, clear about what the business offers, technically
+            accessible to search engines, and structured so it can grow over time.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="contact.html">Start a Conversation →</a>
+            <a class="btn btn-secondary" href="#guide">Read the Guide</a>
+          </div>
+        </div>
+
+        <div class="hero-panel reveal">
+          <div class="eyebrow">Core Website Foundations</div>
+          <h2 style="margin-top:9px;font-size:1.55rem;line-height:1.12;letter-spacing:-.025em;">
+            What a search-ready business website should do
+          </h2>
+
+          <div class="panel-list">
+            <div class="panel-item">
+              <div class="panel-no">01</div>
+              <div>
+                <strong>Be understandable</strong>
+                <span>Clear pages, headings, navigation, services, locations, and calls to action.</span>
+              </div>
+            </div>
+
+            <div class="panel-item">
+              <div class="panel-no">02</div>
+              <div>
+                <strong>Be discoverable</strong>
+                <span>Strong technical foundations and content that matches relevant search intent.</span>
+              </div>
+            </div>
+
+            <div class="panel-item">
+              <div class="panel-no">03</div>
+              <div>
+                <strong>Be useful</strong>
+                <span>Give visitors the information they need before they decide what to do next.</span>
+              </div>
+            </div>
+
+            <div class="panel-item">
+              <div class="panel-no">04</div>
+              <div>
+                <strong>Be ready to grow</strong>
+                <span>Use a structure that supports new pages, content, locations, and improvements.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">The Foundation</div>
+          <h2>SEO is not something to bolt onto a finished website.</h2>
+          <p>
+            Search visibility is affected by the way a website is planned, built, written, connected,
+            and maintained. The goal is not to make a website for search engines alone, but to create
+            a website that makes sense to both people and search systems.
+          </p>
+        </div>
+
+        <div class="content-grid">
+          <article class="content-card reveal">
+            <h3>What good web development contributes</h3>
+            <p>
+              Development creates the technical and structural environment in which the website
+              operates. Important pages should be accessible, responsive, logically organized, and
+              easy to navigate.
+            </p>
+            <ul>
+              <li>Responsive layouts for different screen sizes</li>
+              <li>Logical navigation and page hierarchy</li>
+              <li>Clean, descriptive URLs and internal links</li>
+              <li>Fast and stable page behavior</li>
+              <li>Accessible page content and clear actions</li>
+            </ul>
+          </article>
+
+          <article class="content-card reveal">
+            <h3>What good SEO contributes</h3>
+            <p>
+              SEO helps the website communicate its purpose and relevance. It connects the right
+              pages with the searches, questions, and locations that matter to the business.
+            </p>
+            <ul>
+              <li>Search-intent-focused page planning</li>
+              <li>Useful titles, headings, and content</li>
+              <li>Strong internal linking relationships</li>
+              <li>Technical crawl and indexing foundations</li>
+              <li>Relevant local context where appropriate</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="guide" class="article-section">
+      <div class="container article">
+        <div class="reveal">
+          <div class="eyebrow">Core Guide</div>
+          <h2>How SEO and web development work together.</h2>
+          <p class="article-intro">
+            A website can look excellent and still be difficult to discover. It can also attract
+            search traffic while giving visitors a confusing experience. Combining SEO thinking with
+            web development helps reduce that gap.
+          </p>
+        </div>
+
+        <div class="article-body">
+          <article class="article-block reveal">
+            <h3>1. Start with the business and the customer</h3>
+            <p>
+              Before designing pages, understand what the business offers, who it serves, which areas
+              it covers, and what visitors need to know. This creates a foundation for deciding what
+              pages are necessary and what each page should help a visitor accomplish.
+            </p>
+          </article>
+
+          <article class="article-block reveal">
+            <h3>2. Build a logical website structure</h3>
+            <p>
+              Important information should not be hidden behind a complicated structure. Core pages
+              should connect naturally through navigation and internal links. A clear hierarchy also
+              helps search engines understand the relationship between sections of a website.
+            </p>
+          </article>
+
+          <article class="article-block reveal">
+            <h3>3. Match pages with search intent</h3>
+            <p>
+              Different searches require different kinds of pages. Someone looking for a business,
+              someone comparing an option, and someone seeking an explanation may need different
+              content. Mapping intent before writing helps prevent pages from becoming vague or
+              overloaded.
+            </p>
+          </article>
+
+          <article class="article-block reveal">
+            <h3>4. Make the content useful before making it keyword-focused</h3>
+            <p>
+              Relevant terms matter, but repeating keywords is not the purpose of SEO. Content should
+              explain the subject clearly, answer genuine questions, provide context, and help the
+              visitor decide what to do next. Strong content also creates opportunities for related
+              pages to support each other through internal links.
+            </p>
+          </article>
+
+          <article class="article-block reveal">
+            <h3>5. Keep technical foundations healthy</h3>
+            <p>
+              Important technical considerations can include indexability, canonical URLs, XML
+              sitemaps, broken links, redirects, mobile usability, page structure, and performance.
+              Technical work does not replace useful content, but technical problems can interfere
+              with discovery and user experience.
+            </p>
+          </article>
+
+          <article class="article-block reveal">
+            <h3>6. Design for action, not just appearance</h3>
+            <p>
+              A business website should make its next step obvious. Depending on the business, that
+              could be a phone call, inquiry, booking request, quote request, store visit, or another
+              meaningful action. A good design guides visitors without making the page feel crowded.
+            </p>
+          </article>
+
+          <article class="article-block reveal">
+            <h3>7. Treat local relevance carefully</h3>
+            <p>
+              Businesses serving a defined geographic area need clear local context. Useful location
+              information, relevant service-area pages, accurate business details, and consistent
+              references can make the website more meaningful to people searching locally.
+            </p>
+          </article>
+
+          <article class="article-block reveal">
+            <h3>8. Improve the website over time</h3>
+            <p>
+              A website should not be considered finished just because it has launched. Search data,
+              customer questions, new services, changing business priorities, and technical findings
+              can reveal opportunities for new content and improvements.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Core Principles</div>
+          <h2>Four principles behind a strong search-ready website.</h2>
+          <p>
+            These principles keep the website focused on useful information, clear structure, and a
+            better experience rather than chasing rankings alone.
+          </p>
+        </div>
+
+        <div class="principles">
+          <article class="principle reveal">
+            <div class="principle-number">01</div>
+            <h3>Clarity</h3>
+            <p>
+              Visitors should quickly understand what the business does, where it operates, and what
+              they can do next.
+            </p>
+          </article>
+
+          <article class="principle reveal">
+            <div class="principle-number">02</div>
+            <h3>Relevance</h3>
+            <p>
+              Pages should be connected to real customer needs, questions, services, and locations.
+            </p>
+          </article>
+
+          <article class="principle reveal">
+            <div class="principle-number">03</div>
+            <h3>Technical Health</h3>
+            <p>
+              The site should provide a dependable foundation for crawling, indexing, mobile use,
+              navigation, and performance.
+            </p>
+          </article>
+
+          <article class="principle reveal">
+            <div class="principle-number">04</div>
+            <h3>Continuous Improvement</h3>
+            <p>
+              New information and performance data can guide future page, content, technical, and
+              user-experience improvements.
+            </p>
+          </article>
+
+          <article class="principle reveal">
+            <div class="principle-number">05</div>
+            <h3>User First</h3>
+            <p>
+              Search visibility has value when the people who arrive can actually use the website and
+              understand the information.
+            </p>
+          </article>
+
+          <article class="principle reveal">
+            <div class="principle-number">06</div>
+            <h3>Scalability</h3>
+            <p>
+              A sensible structure makes it easier to expand the website with new topics, services,
+              locations, and resources later.
+            </p>
+          </article>
+        </div>
+
+        <div class="note reveal">
+          A stronger website does not guarantee a particular search ranking. SEO is competitive and
+          depends on many factors outside a website owner's direct control. The practical objective
+          is to build a useful, accessible, technically sound website and keep improving it based on
+          evidence.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">A Practical Workflow</div>
+          <h2>From idea to an online presence that can grow.</h2>
+          <p>
+            The exact process varies by project, but a clear sequence helps keep design, content,
+            technology, and search strategy aligned.
+          </p>
+        </div>
+
+        <div class="process">
+          <div class="process-card reveal">
+            <div class="step-no">01</div>
+            <h3>Research</h3>
+            <p>Understand the business, audience, competitors, locations, questions, and priorities.</p>
+          </div>
+
+          <div class="process-card reveal">
+            <div class="step-no">02</div>
+            <h3>Plan</h3>
+            <p>Define page structure, navigation, content needs, technical requirements, and goals.</p>
+          </div>
+
+          <div class="process-card reveal">
+            <div class="step-no">03</div>
+            <h3>Build</h3>
+            <p>Create responsive pages with clear content structure, useful actions, and solid foundations.</p>
+          </div>
+
+          <div class="process-card reveal">
+            <div class="step-no">04</div>
+            <h3>Improve</h3>
+            <p>Monitor the website, review opportunities, fix issues, and expand useful content over time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Frequently Asked Questions</div>
+          <h2>Questions about SEO and web development.</h2>
+        </div>
+
+        <div class="faq-wrap">
+          <details class="reveal">
+            <summary>What is the connection between SEO and web development?</summary>
+            <p>
+              Web development creates the website's technical and structural foundation. SEO helps
+              shape how that foundation communicates the site's content and relevance to search
+              engines and visitors.
+            </p>
+          </details>
+
+          <details class="reveal">
+            <summary>Should SEO be planned before a website is built?</summary>
+            <p>
+              Planning SEO early can help determine the page structure, navigation, content
+              requirements, URL patterns, internal linking, and technical choices before the site
+              becomes difficult to change.
+            </p>
+          </details>
+
+          <details class="reveal">
+            <summary>Does a beautiful website automatically rank well?</summary>
+            <p>
+              No. Visual design is only one part of a website. Search visibility also depends on
+              relevance, content, technical accessibility, competition, and other factors.
+            </p>
+          </details>
+
+          <details class="reveal">
+            <summary>Is SEO only about keywords?</summary>
+            <p>
+              No. Keywords can help identify what people search for, but SEO also involves page
+              structure, intent, content quality, internal links, technical foundations, usability,
+              and relevant local context.
+            </p>
+          </details>
+
+          <details class="reveal">
+            <summary>Can an existing website be improved for SEO?</summary>
+            <p>
+              Yes. Many existing websites can be audited and improved without rebuilding everything.
+              The right approach depends on the site's current structure, content, technical
+              condition, and business goals.
+            </p>
+          </details>
+
+          <details class="reveal">
+            <summary>How long does SEO take to show results?</summary>
+            <p>
+              There is no universal timeline. Results can vary based on competition, website
+              condition, search demand, content quality, authority, technical issues, and how much
+              work is implemented.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta reveal">
+          <div>
+            <div class="eyebrow">Build With Purpose</div>
+            <h2>Your website should be ready for both customers and search.</h2>
+            <p>
+              Tell Startup Nepal about your business, current website, target area, and what you want
+              to improve. The next step can then be based on the actual needs of the website.
+            </p>
+          </div>
+
+          <a class="btn btn-primary" href="contact.html">Contact Startup Nepal →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <a class="brand" href="index.html" aria-label="Startup Nepal home">
+          <span class="brand-mark">SN</span>
+          <span class="brand-text">
+            <small>SEO • Web • Local</small>
+            <strong>Startup Nepal</strong>
+          </span>
+        </a>
+
+        <div class="footer-links">
+          <a href="about.html">About</a>
+          <a href="seo-web-development-services.html">SEO & Web Development</a>
+          <a href="resources.html">Resources</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Startup Nepal. All rights reserved.</span>
+        <span>Email: <a href="mailto:speedxd174@gmail.com">speedxd174@gmail.com</a></span>
+        <span>Serving Itahari, Sunsari and surrounding business areas.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const servicesDropdown = document.getElementById('servicesDropdown');
+    const servicesTrigger = servicesDropdown.querySelector('.nav-trigger');
+
+    menuToggle.addEventListener('click', () => {
+      const open = navMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    servicesTrigger.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const open = servicesDropdown.classList.toggle('open');
+      servicesTrigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!servicesDropdown.contains(event.target)) {
+        servicesDropdown.classList.remove('open');
+        servicesTrigger.setAttribute('aria-expanded', 'false');
+      }
+
+      if (
+        window.innerWidth <= 900 &&
+        !navMenu.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 900) {
+          navMenu.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
