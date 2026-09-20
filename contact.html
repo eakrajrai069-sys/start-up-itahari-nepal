@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-NP">
 <head>
@@ -36,6 +37,7 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+
     body {
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
@@ -46,133 +48,611 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
+
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       pointer-events: none;
-      background-image: linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+      background-image:
+        linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
       background-size: 40px 40px;
       mask-image: linear-gradient(to bottom, black, transparent 70%);
       z-index: -1;
     }
+
     a { color: inherit; text-decoration: none; }
     button, a { -webkit-tap-highlight-color: transparent; }
     button, input, textarea { font: inherit; }
 
-    .container { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
 
-    .announcement { border-bottom: 1px solid var(--line); background: rgba(4,10,18,.6); color: var(--muted); font-size: .84rem; }
-    .announcement-inner { min-height: 38px; display:flex; align-items:center; justify-content:center; gap:8px; text-align:center; }
-    .status-dot { width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 14px rgba(119,242,192,.8); }
+    .announcement {
+      border-bottom: 1px solid var(--line);
+      background: rgba(4,10,18,.6);
+      color: var(--muted);
+      font-size: .84rem;
+    }
 
-    header { position:sticky; top:0; z-index:1000; border-bottom:1px solid var(--line); background:rgba(7,16,28,.74); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); }
-    .navbar { min-height:78px; display:flex; align-items:center; justify-content:space-between; gap:22px; }
-    .brand { display:inline-flex; align-items:center; gap:12px; font-weight:800; letter-spacing:-.02em; white-space:nowrap; }
-    .brand-mark { width:42px; height:42px; border-radius:13px; display:grid; place-items:center; background:linear-gradient(135deg,rgba(119,242,192,.98),rgba(102,166,255,.98)); color:#08111f; box-shadow:0 10px 28px rgba(102,166,255,.2); font-size:1.06rem; font-weight:900; }
-    .brand-text small { display:block; color:var(--muted); font-size:.68rem; font-weight:650; letter-spacing:.08em; text-transform:uppercase; }
-    .brand-text strong { display:block; font-size:1rem; }
-    .nav-menu { display:flex; align-items:center; gap:5px; list-style:none; }
-    .nav-link, .nav-trigger { position:relative; display:inline-flex; align-items:center; gap:7px; padding:11px 14px; border-radius:12px; color:#d9e1ec; font-size:.92rem; font-weight:650; transition:.2s ease; background:transparent; border:0; cursor:pointer; }
-    .nav-link:hover, .nav-trigger:hover { background:rgba(255,255,255,.05); color:#fff; }
+    .announcement-inner {
+      min-height: 38px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      text-align:center;
+    }
+
+    .status-dot {
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 14px rgba(119,242,192,.8);
+    }
+
+    header {
+      position:sticky;
+      top:0;
+      z-index:1000;
+      border-bottom:1px solid var(--line);
+      background:rgba(7,16,28,.74);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+
+    .navbar {
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:22px;
+    }
+
+    .brand {
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      letter-spacing:-.02em;
+      white-space:nowrap;
+    }
+
+    .brand-mark {
+      width:42px;
+      height:42px;
+      border-radius:13px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,rgba(119,242,192,.98),rgba(102,166,255,.98));
+      color:#08111f;
+      box-shadow:0 10px 28px rgba(102,166,255,.2);
+      font-size:1.06rem;
+      font-weight:900;
+    }
+
+    .brand-text small {
+      display:block;
+      color:var(--muted);
+      font-size:.68rem;
+      font-weight:650;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .brand-text strong {
+      display:block;
+      font-size:1rem;
+    }
+
+    .nav-menu {
+      display:flex;
+      align-items:center;
+      gap:5px;
+      list-style:none;
+    }
+
+    .nav-link,
+    .nav-trigger {
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      padding:11px 14px;
+      border-radius:12px;
+      color:#d9e1ec;
+      font-size:.92rem;
+      font-weight:650;
+      transition:.2s ease;
+      background:transparent;
+      border:0;
+      cursor:pointer;
+    }
+
+    .nav-link:hover,
+    .nav-trigger:hover {
+      background:rgba(255,255,255,.05);
+      color:#fff;
+    }
+
     .nav-link.active { color:var(--accent); }
-    .chevron { font-size:.72rem; transition:transform .22s ease; }
+
+    .chevron {
+      font-size:.72rem;
+      transition:transform .22s ease;
+    }
+
     .dropdown { position:relative; }
-    .dropdown-panel { position:absolute; top:calc(100% + 12px); left:50%; transform:translateX(-50%) translateY(-7px); width:min(750px,calc(100vw - 28px)); padding:18px; border:1px solid var(--line); background:rgba(9,19,33,.96); backdrop-filter:blur(20px); border-radius:22px; box-shadow:var(--shadow); opacity:0; visibility:hidden; pointer-events:none; transition:.2s ease; }
-    .dropdown:hover .dropdown-panel, .dropdown:focus-within .dropdown-panel, .dropdown.open .dropdown-panel { opacity:1; visibility:visible; pointer-events:auto; transform:translateX(-50%) translateY(0); }
-    .dropdown:hover .chevron, .dropdown.open .chevron { transform:rotate(180deg); }
-    .dropdown-intro { padding:3px 6px 15px; border-bottom:1px solid var(--line); margin-bottom:12px; }
-    .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:.68rem; font-weight:800; color:var(--accent); }
-    .dropdown-intro h3 { margin-top:5px; font-size:1.05rem; }
-    .dropdown-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px; }
-    .dropdown-link { padding:11px 12px; border-radius:13px; display:flex; align-items:flex-start; gap:10px; color:#dfe7f2; transition:.2s ease; }
-    .dropdown-link:hover { background:rgba(119,242,192,.07); color:#fff; }
-    .service-icon { width:29px; height:29px; flex:0 0 29px; border-radius:9px; display:grid; place-items:center; background:rgba(255,255,255,.055); color:var(--accent); font-size:.77rem; font-weight:800; border:1px solid rgba(255,255,255,.06); }
-    .dropdown-link strong { display:block; font-size:.85rem; line-height:1.35; }
-    .dropdown-link span { display:block; color:var(--muted); font-size:.73rem; margin-top:2px; line-height:1.4; }
-    .nav-cta { padding:11px 15px; border-radius:12px; background:linear-gradient(135deg,var(--accent),#9ef8d4); color:#07101c; font-weight:800; }
-    .nav-cta:hover { transform:translateY(-1px); box-shadow:0 10px 24px rgba(119,242,192,.16); }
-    .menu-toggle { display:none; width:45px; height:45px; border-radius:12px; border:1px solid var(--line); background:rgba(255,255,255,.035); color:#fff; cursor:pointer; }
-    .menu-toggle span { display:block; width:19px; height:2px; background:#fff; margin:4px auto; border-radius:999px; transition:.2s ease; }
 
-    main { min-height:calc(100vh - 120px); }
-    .contact-hero { padding:90px 0 58px; }
-    .hero-grid { display:grid; grid-template-columns:1fr .92fr; gap:60px; align-items:center; }
-    .contact-hero h1 { margin-top:18px; font-size:clamp(2.8rem,6vw,5rem); line-height:1.02; letter-spacing:-.055em; max-width:760px; }
-    .gradient { background:linear-gradient(100deg,#fff 8%,#9edcff 47%,#8df7ce 88%); -webkit-background-clip:text; background-clip:text; color:transparent; }
-    .contact-hero > .container > .hero-grid p { margin-top:21px; max-width:670px; color:var(--muted); font-size:1.02rem; }
-    .hero-points { display:grid; gap:11px; margin-top:26px; max-width:620px; }
-    .hero-point { display:flex; gap:11px; align-items:flex-start; padding:13px 14px; border:1px solid rgba(255,255,255,.05); border-radius:15px; background:rgba(255,255,255,.022); }
-    .check { width:27px; height:27px; flex:0 0 27px; display:grid; place-items:center; border-radius:9px; background:rgba(119,242,192,.08); color:var(--accent); font-size:.72rem; font-weight:900; }
-    .hero-point strong { display:block; font-size:.83rem; }
-    .hero-point span { display:block; color:var(--muted); font-size:.71rem; margin-top:2px; }
+    .dropdown-panel {
+      position:absolute;
+      top:calc(100% + 12px);
+      left:50%;
+      transform:translateX(-50%) translateY(-7px);
+      width:min(750px,calc(100vw - 28px));
+      padding:18px;
+      border:1px solid var(--line);
+      background:rgba(9,19,33,.96);
+      backdrop-filter:blur(20px);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      opacity:0;
+      visibility:hidden;
+      pointer-events:none;
+      transition:.2s ease;
+    }
 
-    .contact-card { padding:28px; border:1px solid var(--line); border-radius:26px; background:linear-gradient(155deg,rgba(255,255,255,.055),rgba(255,255,255,.018)); box-shadow:var(--shadow); }
-    .contact-card h2 { font-size:1.55rem; letter-spacing:-.025em; }
-    .contact-card > p { color:var(--muted); margin-top:7px; font-size:.82rem; }
-    .field-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:21px; }
-    .field { display:grid; gap:7px; }
-    .field.full { grid-column:1/-1; }
-    label { color:#dce5ef; font-size:.74rem; font-weight:700; }
-    input, textarea { width:100%; border:1px solid var(--line); background:rgba(255,255,255,.035); color:#fff; border-radius:13px; outline:none; transition:.2s ease; }
-    input { min-height:47px; padding:0 13px; }
-    textarea { min-height:132px; padding:12px 13px; resize:vertical; }
-    input::placeholder, textarea::placeholder { color:#718095; }
-    input:focus, textarea:focus { border-color:rgba(119,242,192,.4); box-shadow:0 0 0 3px rgba(119,242,192,.07); }
-    .form-actions { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:14px; }
-    .btn { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:48px; padding:0 18px; border-radius:14px; font-weight:800; font-size:.9rem; border:1px solid var(--line); transition:.2s ease; cursor:pointer; }
-    .btn-primary { background:linear-gradient(135deg,var(--accent),#9af7d4); color:#08111f; border-color:transparent; box-shadow:0 18px 38px rgba(119,242,192,.11); }
-    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 22px 42px rgba(119,242,192,.17); }
-    .btn-secondary { background:rgba(255,255,255,.03); color:#eef4fb; }
-    .btn-secondary:hover { background:rgba(255,255,255,.06); transform:translateY(-1px); }
-    .form-note { margin-top:10px; color:#718095; font-size:.66rem; line-height:1.5; }
-    .form-status { margin-top:12px; min-height:18px; color:#9ba9bc; font-size:.72rem; line-height:1.5; }
-    .form-status.success { color:#77f2c0; }
-    .form-status.error { color:#ff9f9f; }
+    .dropdown:hover .dropdown-panel,
+    .dropdown:focus-within .dropdown-panel,
+    .dropdown.open .dropdown-panel {
+      opacity:1;
+      visibility:visible;
+      pointer-events:auto;
+      transform:translateX(-50%) translateY(0);
+    }
 
-    section { padding:74px 0; }
-    .section-head { max-width:760px; margin-bottom:32px; }
-    .section-head h2 { margin-top:9px; font-size:clamp(2rem,4vw,3rem); line-height:1.08; letter-spacing:-.035em; }
-    .section-head p { color:var(--muted); margin-top:13px; }
-    .contact-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
-    .info-card { padding:23px; border:1px solid var(--line); border-radius:20px; background:rgba(255,255,255,.025); }
-    .info-icon { width:35px; height:35px; display:grid; place-items:center; border-radius:11px; background:rgba(119,242,192,.08); border:1px solid rgba(119,242,192,.12); color:var(--accent); font-weight:900; font-size:.78rem; }
-    .info-card h3 { margin-top:13px; font-size:1rem; }
-    .info-card p { color:var(--muted); margin-top:6px; font-size:.77rem; }
-    .info-card a { display:inline-block; margin-top:12px; color:#ddfff2; font-size:.8rem; font-weight:800; word-break:break-word; }
+    .dropdown:hover .chevron,
+    .dropdown.open .chevron {
+      transform:rotate(180deg);
+    }
 
-    /* Added only for the semantic article */
+    .dropdown-intro {
+      padding:3px 6px 15px;
+      border-bottom:1px solid var(--line);
+      margin-bottom:12px;
+    }
+
+    .eyebrow {
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:.68rem;
+      font-weight:800;
+      color:var(--accent);
+    }
+
+    .dropdown-intro h3 {
+      margin-top:5px;
+      font-size:1.05rem;
+    }
+
+    .dropdown-grid {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:7px;
+    }
+
+    .dropdown-link {
+      padding:11px 12px;
+      border-radius:13px;
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      color:#dfe7f2;
+      transition:.2s ease;
+    }
+
+    .dropdown-link:hover {
+      background:rgba(119,242,192,.07);
+      color:#fff;
+    }
+
+    .service-icon {
+      width:29px;
+      height:29px;
+      flex:0 0 29px;
+      border-radius:9px;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.055);
+      color:var(--accent);
+      font-size:.77rem;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .dropdown-link strong {
+      display:block;
+      font-size:.85rem;
+      line-height:1.35;
+    }
+
+    .dropdown-link span {
+      display:block;
+      color:var(--muted);
+      font-size:.73rem;
+      margin-top:2px;
+      line-height:1.4;
+    }
+
+    .nav-cta {
+      padding:11px 15px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),#9ef8d4);
+      color:#07101c;
+      font-weight:800;
+    }
+
+    .nav-cta:hover {
+      transform:translateY(-1px);
+      box-shadow:0 10px 24px rgba(119,242,192,.16);
+    }
+
+    .menu-toggle {
+      display:none;
+      width:45px;
+      height:45px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.035);
+      color:#fff;
+      cursor:pointer;
+    }
+
+    .menu-toggle span {
+      display:block;
+      width:19px;
+      height:2px;
+      background:#fff;
+      margin:4px auto;
+      border-radius:999px;
+      transition:.2s ease;
+    }
+
+    main {
+      min-height:calc(100vh - 120px);
+    }
+
+    .contact-hero {
+      padding:90px 0 58px;
+    }
+
+    .hero-grid {
+      display:grid;
+      grid-template-columns:1fr .92fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .contact-hero h1 {
+      margin-top:18px;
+      font-size:clamp(2.8rem,6vw,5rem);
+      line-height:1.02;
+      letter-spacing:-.055em;
+      max-width:760px;
+    }
+
+    .gradient {
+      background:linear-gradient(100deg,#fff 8%,#9edcff 47%,#8df7ce 88%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .contact-hero > .container > .hero-grid p {
+      margin-top:21px;
+      max-width:670px;
+      color:var(--muted);
+      font-size:1.02rem;
+    }
+
+    .hero-points {
+      display:grid;
+      gap:11px;
+      margin-top:26px;
+      max-width:620px;
+    }
+
+    .hero-point {
+      display:flex;
+      gap:11px;
+      align-items:flex-start;
+      padding:13px 14px;
+      border:1px solid rgba(255,255,255,.05);
+      border-radius:15px;
+      background:rgba(255,255,255,.022);
+    }
+
+    .check {
+      width:27px;
+      height:27px;
+      flex:0 0 27px;
+      display:grid;
+      place-items:center;
+      border-radius:9px;
+      background:rgba(119,242,192,.08);
+      color:var(--accent);
+      font-size:.72rem;
+      font-weight:900;
+    }
+
+    .hero-point strong {
+      display:block;
+      font-size:.83rem;
+    }
+
+    .hero-point span {
+      display:block;
+      color:var(--muted);
+      font-size:.71rem;
+      margin-top:2px;
+    }
+
+    .contact-card {
+      padding:28px;
+      border:1px solid var(--line);
+      border-radius:26px;
+      background:linear-gradient(155deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+      box-shadow:var(--shadow);
+    }
+
+    .contact-card h2 {
+      font-size:1.55rem;
+      letter-spacing:-.025em;
+    }
+
+    .contact-card > p {
+      color:var(--muted);
+      margin-top:7px;
+      font-size:.82rem;
+    }
+
+    .field-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:21px;
+    }
+
+    .field {
+      display:grid;
+      gap:7px;
+    }
+
+    .field.full {
+      grid-column:1/-1;
+    }
+
+    label {
+      color:#dce5ef;
+      font-size:.74rem;
+      font-weight:700;
+    }
+
+    input,
+    textarea {
+      width:100%;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.035);
+      color:#fff;
+      border-radius:13px;
+      outline:none;
+      transition:.2s ease;
+    }
+
+    input {
+      min-height:47px;
+      padding:0 13px;
+    }
+
+    textarea {
+      min-height:132px;
+      padding:12px 13px;
+      resize:vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color:#718095;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color:rgba(119,242,192,.4);
+      box-shadow:0 0 0 3px rgba(119,242,192,.07);
+    }
+
+    .form-actions {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:14px;
+      font-weight:800;
+      font-size:.9rem;
+      border:1px solid var(--line);
+      transition:.2s ease;
+      cursor:pointer;
+    }
+
+    .btn-primary {
+      background:linear-gradient(135deg,var(--accent),#9af7d4);
+      color:#08111f;
+      border-color:transparent;
+      box-shadow:0 18px 38px rgba(119,242,192,.11);
+    }
+
+    .btn-primary:hover {
+      transform:translateY(-2px);
+      box-shadow:0 22px 42px rgba(119,242,192,.17);
+    }
+
+    .btn-secondary {
+      background:rgba(255,255,255,.03);
+      color:#eef4fb;
+    }
+
+    .btn-secondary:hover {
+      background:rgba(255,255,255,.06);
+      transform:translateY(-1px);
+    }
+
+    .btn:disabled {
+      opacity:.65;
+      cursor:not-allowed;
+      transform:none;
+    }
+
+    .form-note {
+      margin-top:10px;
+      color:#718095;
+      font-size:.66rem;
+      line-height:1.5;
+    }
+
+    .form-status {
+      margin-top:12px;
+      min-height:18px;
+      color:#9ba9bc;
+      font-size:.72rem;
+      line-height:1.5;
+    }
+
+    .form-status.success {
+      color:#77f2c0;
+    }
+
+    .form-status.error {
+      color:#ff9f9f;
+    }
+
+    section {
+      padding:74px 0;
+    }
+
+    .section-head {
+      max-width:760px;
+      margin-bottom:32px;
+    }
+
+    .section-head h2 {
+      margin-top:9px;
+      font-size:clamp(2rem,4vw,3rem);
+      line-height:1.08;
+      letter-spacing:-.035em;
+    }
+
+    .section-head p {
+      color:var(--muted);
+      margin-top:13px;
+    }
+
+    .contact-grid {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .info-card {
+      padding:23px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:rgba(255,255,255,.025);
+    }
+
+    .info-icon {
+      width:35px;
+      height:35px;
+      display:grid;
+      place-items:center;
+      border-radius:11px;
+      background:rgba(119,242,192,.08);
+      border:1px solid rgba(119,242,192,.12);
+      color:var(--accent);
+      font-weight:900;
+      font-size:.78rem;
+    }
+
+    .info-card h3 {
+      margin-top:13px;
+      font-size:1rem;
+    }
+
+    .info-card p {
+      color:var(--muted);
+      margin-top:6px;
+      font-size:.77rem;
+    }
+
+    .info-card a {
+      display:inline-block;
+      margin-top:12px;
+      color:#ddfff2;
+      font-size:.8rem;
+      font-weight:800;
+      word-break:break-word;
+    }
+
     .article-card {
       padding:30px;
       border:1px solid var(--line);
       border-radius:24px;
       background:rgba(255,255,255,.025);
     }
+
     .article-card h3 {
       font-size:1.18rem;
       margin-bottom:9px;
       letter-spacing:-.02em;
     }
+
     .article-card p {
       color:var(--muted);
       font-size:.86rem;
       line-height:1.8;
       margin-top:12px;
     }
+
     .article-block + .article-block {
       margin-top:28px;
     }
+
     .eav-table-wrap {
       margin-top:18px;
       overflow-x:auto;
       border:1px solid var(--line);
       border-radius:16px;
     }
+
     .eav-table {
       width:100%;
       min-width:680px;
       border-collapse:collapse;
     }
+
     .eav-table th,
     .eav-table td {
       padding:14px 15px;
@@ -181,6 +661,7 @@
       border-bottom:1px solid var(--line);
       font-size:.76rem;
     }
+
     .eav-table th {
       color:#eaf2fb;
       background:rgba(255,255,255,.035);
@@ -188,22 +669,27 @@
       text-transform:uppercase;
       letter-spacing:.06em;
     }
+
     .eav-table td {
       color:var(--muted);
     }
+
     .eav-table tr:last-child td {
       border-bottom:0;
     }
+
     .eav-table td:first-child {
       color:#fff;
       font-weight:750;
       width:24%;
     }
+
     .article-list {
       display:grid;
       gap:9px;
       margin-top:16px;
     }
+
     .article-list-item {
       padding:13px 14px;
       border:1px solid rgba(255,255,255,.05);
@@ -212,56 +698,335 @@
       color:var(--muted);
       font-size:.8rem;
     }
+
     .article-list-item strong {
       color:#edf5fd;
     }
 
-    .next-grid { display:grid; grid-template-columns:.95fr 1.05fr; gap:18px; }
-    .process-card, .service-card { padding:26px; border:1px solid var(--line); border-radius:22px; background:rgba(255,255,255,.025); }
-    .process-list { display:grid; gap:10px; margin-top:18px; }
-    .process-step { display:flex; gap:12px; align-items:flex-start; padding:13px; border-radius:15px; border:1px solid rgba(255,255,255,.05); background:rgba(255,255,255,.022); }
-    .step-no { width:29px; height:29px; flex:0 0 29px; display:grid; place-items:center; border-radius:9px; background:rgba(102,166,255,.1); border:1px solid rgba(102,166,255,.15); color:#b6d3ff; font-size:.7rem; font-weight:900; }
-    .process-step strong { display:block; font-size:.82rem; }
-    .process-step span { display:block; color:var(--muted); font-size:.72rem; margin-top:2px; }
-    .service-card h3 { font-size:1.18rem; }
-    .service-card p { margin-top:8px; color:var(--muted); font-size:.82rem; }
-    .service-list { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:17px; }
-    .service-pill { padding:10px 11px; border:1px solid var(--line); border-radius:12px; color:#dfe7f2; background:rgba(255,255,255,.025); font-size:.72rem; }
-
-    .cta-section { padding-top:24px; }
-    .cta { position:relative; overflow:hidden; display:grid; grid-template-columns:1fr auto; align-items:center; gap:28px; padding:38px; border:1px solid rgba(119,242,192,.14); border-radius:28px; background:radial-gradient(circle at 80% 30%,rgba(119,242,192,.10),transparent 35%),linear-gradient(135deg,rgba(25,47,64,.9),rgba(10,24,36,.88)); }
-    .cta h2 { font-size:clamp(1.75rem,4vw,2.8rem); line-height:1.08; letter-spacing:-.035em; }
-    .cta p { color:var(--muted); margin-top:10px; max-width:650px; font-size:.9rem; }
-
-    footer { padding:26px 0 42px; }
-    .footer-top { padding:24px 0; border-top:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; gap:18px; }
-    .footer-links { display:flex; flex-wrap:wrap; gap:14px; color:var(--muted); font-size:.77rem; }
-    .footer-links a:hover { color:#fff; }
-    .footer-bottom { color:#718095; font-size:.72rem; display:flex; gap:10px; justify-content:space-between; flex-wrap:wrap; }
-    .footer-bottom a { color:#cfe5ff; }
-
-    .reveal { opacity:0; transform:translateY(18px); transition:opacity .65s ease, transform .65s ease; }
-    .reveal.visible { opacity:1; transform:none; }
-
-    @media (max-width:1040px){
-      .nav-menu{gap:0}.nav-link,.nav-trigger{padding:10px 10px;font-size:.84rem}.nav-cta{padding:10px 12px}
+    .next-grid {
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:18px;
     }
-    @media (max-width:900px){
-      .menu-toggle{display:block}.navbar{min-height:72px}
-      .nav-menu{position:absolute;top:72px;left:20px;right:20px;display:none;flex-direction:column;align-items:stretch;padding:12px;border:1px solid var(--line);border-radius:18px;background:rgba(8,18,31,.98);box-shadow:var(--shadow)}
-      .nav-menu.open{display:flex}.nav-link,.nav-trigger,.nav-cta{width:100%;justify-content:space-between;padding:13px}
-      .dropdown-panel{position:static;transform:none !important;width:100%;margin-top:5px;box-shadow:none;border-radius:15px;display:none;opacity:1;visibility:visible;pointer-events:auto}
-      .dropdown.open .dropdown-panel{display:block}.dropdown:hover .dropdown-panel{display:none}.dropdown.open:hover .dropdown-panel{display:block}.dropdown-grid{grid-template-columns:1fr}
-      .hero-grid,.next-grid,.cta{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr 1fr}.cta .btn{justify-self:start}
+
+    .process-card,
+    .service-card {
+      padding:26px;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:rgba(255,255,255,.025);
     }
-    @media (max-width:620px){
-      .container{width:min(calc(100% - 28px),var(--max))}.announcement-inner{font-size:.72rem;padding:7px 0}.brand-text small{font-size:.58rem}.brand-text strong{font-size:.9rem}.brand-mark{width:39px;height:39px}
-      .contact-hero{padding:62px 0 48px}.contact-hero h1{font-size:clamp(2.45rem,13vw,3.65rem)}.contact-hero > .container > .hero-grid p{font-size:.93rem}
-      .contact-card{padding:22px}.field-grid,.contact-grid,.service-list{grid-template-columns:1fr}.field.full{grid-column:auto}
-      .article-card{padding:22px}
-      section{padding:60px 0}.cta{padding:27px}.footer-top{align-items:flex-start;flex-direction:column}
+
+    .process-list {
+      display:grid;
+      gap:10px;
+      margin-top:18px;
     }
-    @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important} }
+
+    .process-step {
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding:13px;
+      border-radius:15px;
+      border:1px solid rgba(255,255,255,.05);
+      background:rgba(255,255,255,.022);
+    }
+
+    .step-no {
+      width:29px;
+      height:29px;
+      flex:0 0 29px;
+      display:grid;
+      place-items:center;
+      border-radius:9px;
+      background:rgba(102,166,255,.1);
+      border:1px solid rgba(102,166,255,.15);
+      color:#b6d3ff;
+      font-size:.7rem;
+      font-weight:900;
+    }
+
+    .process-step strong {
+      display:block;
+      font-size:.82rem;
+    }
+
+    .process-step span {
+      display:block;
+      color:var(--muted);
+      font-size:.72rem;
+      margin-top:2px;
+    }
+
+    .service-card h3 {
+      font-size:1.18rem;
+    }
+
+    .service-card p {
+      margin-top:8px;
+      color:var(--muted);
+      font-size:.82rem;
+    }
+
+    .service-list {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+      margin-top:17px;
+    }
+
+    .service-pill {
+      padding:10px 11px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      color:#dfe7f2;
+      background:rgba(255,255,255,.025);
+      font-size:.72rem;
+    }
+
+    .cta-section {
+      padding-top:24px;
+    }
+
+    .cta {
+      position:relative;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:28px;
+      padding:38px;
+      border:1px solid rgba(119,242,192,.14);
+      border-radius:28px;
+      background:
+        radial-gradient(circle at 80% 30%,rgba(119,242,192,.10),transparent 35%),
+        linear-gradient(135deg,rgba(25,47,64,.9),rgba(10,24,36,.88));
+    }
+
+    .cta h2 {
+      font-size:clamp(1.75rem,4vw,2.8rem);
+      line-height:1.08;
+      letter-spacing:-.035em;
+    }
+
+    .cta p {
+      color:var(--muted);
+      margin-top:10px;
+      max-width:650px;
+      font-size:.9rem;
+    }
+
+    footer {
+      padding:26px 0 42px;
+    }
+
+    .footer-top {
+      padding:24px 0;
+      border-top:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .footer-links {
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      color:var(--muted);
+      font-size:.77rem;
+    }
+
+    .footer-links a:hover {
+      color:#fff;
+    }
+
+    .footer-bottom {
+      color:#718095;
+      font-size:.72rem;
+      display:flex;
+      gap:10px;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+
+    .footer-bottom a {
+      color:#cfe5ff;
+    }
+
+    .reveal {
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible {
+      opacity:1;
+      transform:none;
+    }
+
+    @media (max-width:1040px) {
+      .nav-menu { gap:0; }
+      .nav-link,
+      .nav-trigger {
+        padding:10px 10px;
+        font-size:.84rem;
+      }
+      .nav-cta { padding:10px 12px; }
+    }
+
+    @media (max-width:900px) {
+      .menu-toggle { display:block; }
+      .navbar { min-height:72px; }
+
+      .nav-menu {
+        position:absolute;
+        top:72px;
+        left:20px;
+        right:20px;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        padding:12px;
+        border:1px solid var(--line);
+        border-radius:18px;
+        background:rgba(8,18,31,.98);
+        box-shadow:var(--shadow);
+      }
+
+      .nav-menu.open { display:flex; }
+
+      .nav-link,
+      .nav-trigger,
+      .nav-cta {
+        width:100%;
+        justify-content:space-between;
+        padding:13px;
+      }
+
+      .dropdown-panel {
+        position:static;
+        transform:none !important;
+        width:100%;
+        margin-top:5px;
+        box-shadow:none;
+        border-radius:15px;
+        display:none;
+        opacity:1;
+        visibility:visible;
+        pointer-events:auto;
+      }
+
+      .dropdown.open .dropdown-panel {
+        display:block;
+      }
+
+      .dropdown:hover .dropdown-panel {
+        display:none;
+      }
+
+      .dropdown.open:hover .dropdown-panel {
+        display:block;
+      }
+
+      .dropdown-grid {
+        grid-template-columns:1fr;
+      }
+
+      .hero-grid,
+      .next-grid,
+      .cta {
+        grid-template-columns:1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns:1fr 1fr;
+      }
+
+      .cta .btn {
+        justify-self:start;
+      }
+    }
+
+    @media (max-width:620px) {
+      .container {
+        width:min(calc(100% - 28px),var(--max));
+      }
+
+      .announcement-inner {
+        font-size:.72rem;
+        padding:7px 0;
+      }
+
+      .brand-text small {
+        font-size:.58rem;
+      }
+
+      .brand-text strong {
+        font-size:.9rem;
+      }
+
+      .brand-mark {
+        width:39px;
+        height:39px;
+      }
+
+      .contact-hero {
+        padding:62px 0 48px;
+      }
+
+      .contact-hero h1 {
+        font-size:clamp(2.45rem,13vw,3.65rem);
+      }
+
+      .contact-hero > .container > .hero-grid p {
+        font-size:.93rem;
+      }
+
+      .contact-card {
+        padding:22px;
+      }
+
+      .field-grid,
+      .contact-grid,
+      .service-list {
+        grid-template-columns:1fr;
+      }
+
+      .field.full {
+        grid-column:auto;
+      }
+
+      .article-card {
+        padding:22px;
+      }
+
+      section {
+        padding:60px 0;
+      }
+
+      .cta {
+        padding:27px;
+      }
+
+      .footer-top {
+        align-items:flex-start;
+        flex-direction:column;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+      }
+    }
   </style>
 
   <script type="application/ld+json">
@@ -277,7 +1042,9 @@
   }
   </script>
 </head>
+
 <body>
+
   <div class="announcement">
     <div class="container announcement-inner">
       <span class="status-dot"></span>
@@ -287,133 +1054,434 @@
 
   <header>
     <div class="container navbar">
+
       <a class="brand" href="index.html" aria-label="Startup Nepal home">
         <span class="brand-mark">SN</span>
-        <span class="brand-text"><small>Local Search Growth</small><strong>Startup Nepal</strong></span>
+        <span class="brand-text">
+          <small>Local Search Growth</small>
+          <strong>Startup Nepal</strong>
+        </span>
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation"
+        aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
 
       <nav aria-label="Primary navigation">
         <ul class="nav-menu" id="navMenu">
-          <li><a class="nav-link" href="index.html">Home</a></li>
-          <li><a class="nav-link" href="about.html">About</a></li>
+
+          <li>
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <li>
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+
           <li class="dropdown" id="servicesDropdown">
-            <button class="nav-trigger" type="button" aria-expanded="false">Services <span class="chevron">⌄</span></button>
-            <div class="dropdown-panel" aria-label="SEO and web development services">
-              <div class="dropdown-intro"><div class="eyebrow">Services</div><h3>SEO & Web Development Services</h3></div>
+
+            <button
+              class="nav-trigger"
+              type="button"
+              aria-expanded="false">
+              Services
+              <span class="chevron">⌄</span>
+            </button>
+
+            <div
+              class="dropdown-panel"
+              aria-label="SEO and web development services">
+
+              <div class="dropdown-intro">
+                <div class="eyebrow">Services</div>
+                <h3>SEO & Web Development Services</h3>
+              </div>
+
               <div class="dropdown-grid">
-                <a class="dropdown-link" href="seo-web-development-services.html"><span class="service-icon">01</span><span><strong>SEO & Web Development Services</strong><span>Search visibility + business website development.</span></span></a>
-                <a class="dropdown-link" href="local-seo-service.html"><span class="service-icon">02</span><span><strong>Local SEO Service</strong><span>Improve local search visibility and discovery.</span></span></a>
-                <a class="dropdown-link" href="seo-website-audit.html"><span class="service-icon">03</span><span><strong>SEO Website Audit</strong><span>Find technical, on-page, content, and SEO issues.</span></span></a>
-                <a class="dropdown-link" href="google-business-profile-optimization.html"><span class="service-icon">04</span><span><strong>Google Business Profile Setup & Optimization</strong><span>Build a stronger local business profile.</span></span></a>
-                <a class="dropdown-link" href="local-keyword-research.html"><span class="service-icon">05</span><span><strong>Local Keyword Research for Small Businesses</strong><span>Map local search demand to useful pages.</span></span></a>
-                <a class="dropdown-link" href="local-seo-landing-pages.html"><span class="service-icon">06</span><span><strong>Local SEO Landing Pages for Service Areas</strong><span>Create location-focused pages with clear intent.</span></span></a>
-                <a class="dropdown-link" href="nap-citation-optimization.html"><span class="service-icon">07</span><span><strong>NAP & Local Citation Optimization</strong><span>Keep business information consistent across listings.</span></span></a>
-                <a class="dropdown-link" href="on-page-seo-services.html"><span class="service-icon">08</span><span><strong>On-Page SEO Services for Local Businesses</strong><span>Improve titles, content, internal links, and page structure.</span></span></a>
-                <a class="dropdown-link" href="technical-seo-services.html"><span class="service-icon">09</span><span><strong>Technical SEO Services for Business Websites</strong><span>Address crawlability, indexing, structure, and technical health.</span></span></a>
-                <a class="dropdown-link" href="mobile-seo-responsive.html"><span class="service-icon">10</span><span><strong>Mobile SEO & Responsive Website Optimization</strong><span>Make your website easier to use on mobile devices.</span></span></a>
-                <a class="dropdown-link" href="website-speed-performance.html"><span class="service-icon">11</span><span><strong>Website Speed & Performance Optimization</strong><span>Improve loading experience and page performance.</span></span></a>
-                <a class="dropdown-link" href="website-maintenance-plans.html"><span class="service-icon">12</span><span><strong>Website Maintenance Plans for Businesses</strong><span>Keep business websites updated, healthy, and secure.</span></span></a>
+
+                <a class="dropdown-link" href="seo-web-development-services.html">
+                  <span class="service-icon">01</span>
+                  <span>
+                    <strong>SEO & Web Development Services</strong>
+                    <span>Search visibility + business website development.</span>
+                  </span>
+                </a>
+
+                <a class="dropdown-link" href="local-seo-service.html">
+                  <span class="service-icon">02</span>
+                  <span>
+                    <strong>Local SEO Service</strong>
+                    <span>Improve local search visibility and discovery.</span>
+                  </span>
+                </a>
+
+                <a class="dropdown-link" href="seo-website-audit.html">
+                  <span class="service-icon">03</span>
+                  <span>
+                    <strong>SEO Website Audit</strong>
+                    <span>Find technical, on-page, content, and SEO issues.</span>
+                  </span>
+                </a>
+
+                <a class="dropdown-link" href="google-business-profile-optimization.html">
+                  <span class="service-icon">04</span>
+                  <span>
+                    <strong>Google Business Profile Setup & Optimization</strong>
+                    <span>Build a stronger local business profile.</span>
+                  </span>
+                </a>
+
+                <a class="dropdown-link" href="local-keyword-research.html">
+                  <span class="service-icon">05</span>
+                  <span>
+                    <strong>Local Keyword Research for Small Businesses</strong>
+                    <span>Map local search demand to useful pages.</span>
+                  </span>
+                </a>
+
+                <a class="dropdown-link" href="local-seo-landing-pages.html">
+                  <span class="service-icon">06</span>
+                  <span>
+                    <strong>Local SEO Landing Pages for Service Areas</strong>
+                    <span>Create location-focused pages with clear intent.</span>
+                  </span>
+                </a>
+
+                <a class="dropdown-link" href="nap-citation-optimization.html">
+                  <span class="service-icon">07</span>
+                  <span>
+                    <strong>NAP & Local Citation Optimization</strong>
+                    <span>Keep business information consistent across listings.</span>
+                  </span>
+                </a>
+
+                <a class="dropdown-link" href="on-page-seo-services.html">
+                  <span class="service-icon">08</span>
+                  <span>
+                    <strong>On-Page SEO Services for Local Businesses</strong>
+                    <span>Improve titles, content, internal links, and page structure.</span>
+                  </span>
+                </a>
+
+                <a class="dropdown-link" href="technical-seo-services.html">
+                  <span class="service-icon">09</span>
+                  <span>
+                    <strong>Technical SEO Services for Business Websites</strong>
+                    <span>Address crawlability, indexing, structure, and technical health.</span>
+                  </span>
+                </a>
+
+                <a class="dropdown-link" href="mobile-seo-responsive.html">
+                  <span class="service-icon">10</span>
+                  <span>
+                    <strong>Mobile SEO & Responsive Website Optimization</strong>
+                    <span>Make your website easier to use on mobile devices.</span>
+                  </span>
+                </a>
+
+                <a class="dropdown-link" href="website-speed-performance.html">
+                  <span class="service-icon">11</span>
+                  <span>
+                    <strong>Website Speed & Performance Optimization</strong>
+                    <span>Improve loading experience and page performance.</span>
+                  </span>
+                </a>
+
+                <a class="dropdown-link" href="website-maintenance-plans.html">
+                  <span class="service-icon">12</span>
+                  <span>
+                    <strong>Website Maintenance Plans for Businesses</strong>
+                    <span>Keep business websites updated, healthy, and secure.</span>
+                  </span>
+                </a>
+
               </div>
             </div>
           </li>
-          <li><a class="nav-link" href="resources.html">Resources</a></li>
-          <li><a class="nav-link" href="pricing.html">Pricing</a></li>
-          <li><a class="nav-link nav-cta active" href="contact.html">Contact</a></li>
+
+          <li>
+            <a class="nav-link" href="resources.html">Resources</a>
+          </li>
+
+          <li>
+            <a class="nav-link" href="pricing.html">Pricing</a>
+          </li>
+
+          <li>
+            <a class="nav-link nav-cta active" href="contact.html">Contact</a>
+          </li>
+
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
+
     <section class="contact-hero">
       <div class="container hero-grid">
+
         <div class="reveal">
+
           <div class="eyebrow">Contact Startup Nepal</div>
-          <h1>Let’s talk about your <span class="gradient">business growth.</span></h1>
-          <p>Have a website that is not getting enough visibility, need a new business website, or want to improve local search presence? Send the details and start the conversation with Startup Nepal.</p>
+
+          <h1>
+            Let’s talk about your
+            <span class="gradient">business growth.</span>
+          </h1>
+
+          <p>
+            Have a website that is not getting enough visibility, need a new business website,
+            or want to improve local search presence? Send the details and start the conversation
+            with Startup Nepal.
+          </p>
 
           <div class="hero-points">
-            <div class="hero-point"><div class="check">01</div><div><strong>SEO & Local SEO</strong><span>Search visibility, local discovery, keyword strategy, and on-page improvements.</span></div></div>
-            <div class="hero-point"><div class="check">02</div><div><strong>Web Development</strong><span>Responsive business websites designed around clear services and customer actions.</span></div></div>
-            <div class="hero-point"><div class="check">03</div><div><strong>Website & SEO Audits</strong><span>Identify technical, content, structure, and search visibility opportunities.</span></div></div>
+
+            <div class="hero-point">
+              <div class="check">01</div>
+              <div>
+                <strong>SEO & Local SEO</strong>
+                <span>
+                  Search visibility, local discovery, keyword strategy, and on-page improvements.
+                </span>
+              </div>
+            </div>
+
+            <div class="hero-point">
+              <div class="check">02</div>
+              <div>
+                <strong>Web Development</strong>
+                <span>
+                  Responsive business websites designed around clear services and customer actions.
+                </span>
+              </div>
+            </div>
+
+            <div class="hero-point">
+              <div class="check">03</div>
+              <div>
+                <strong>Website & SEO Audits</strong>
+                <span>
+                  Identify technical, content, structure, and search visibility opportunities.
+                </span>
+              </div>
+            </div>
+
           </div>
+
         </div>
 
         <div class="contact-card reveal">
+
           <div class="eyebrow">Send an inquiry</div>
+
           <h2>Tell me what you need.</h2>
-          <p>Send your project details directly to Startup Nepal. Your inquiry will be saved securely for follow-up.</p>
-          <form id="contactForm">
-            <div class="field-grid">
-              <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" placeholder="Your name" required></div>
-              <div class="field"><label for="business">Business</label><input id="business" name="business" type="text" placeholder="Business name"></div>
-              <div class="field"><label for="email">Your email</label><input id="email" name="email" type="email" placeholder="you@example.com" required></div>
-              <div class="field"><label for="service">Service</label><input id="service" name="service" type="text" placeholder="SEO, website, local SEO..."></div>
-              <div class="field full"><label for="message">What do you need help with?</label><textarea id="message" name="message" placeholder="Tell me about your website, business, goals, or the problem you want to solve." required></textarea></div>
-            </div>
-            <div class="form-actions">
-              <button class="btn btn-primary" type="submit">Send Inquiry →</button>
-              <a class="btn btn-secondary" href="mailto:speedxd174@gmail.com">Open Gmail →</a>
-            </div>
-            <div class="form-note">Email: speedxd174@gmail.com</div>
-            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
-          </form>
-        </div>
-      </div>
-    </section>
 
-    <section>
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="eyebrow">Contact Details</div>
-          <h2>Choose the easiest way to reach Startup Nepal.</h2>
-          <p>For project discussions, SEO questions, website work, or pricing inquiries, email is the direct contact channel.</p>
-        </div>
-        <div class="contact-grid">
-          <div class="info-card reveal"><div class="info-icon">@</div><h3>Email</h3><p>Send project details, questions, or your website URL by email.</p><a href="mailto:speedxd174@gmail.com">speedxd174@gmail.com</a></div>
-          <div class="info-card reveal"><div class="info-icon">⌖</div><h3>Service Area</h3><p>Startup Nepal focuses on businesses in Itahari, Sunsari, Koshi Province, and broader projects.</p><a href="#contactForm">Start a project</a></div>
-          <div class="info-card reveal"><div class="info-icon">→</div><h3>What to Include</h3><p>Business name, website, service needed, target location, and the main problem you want solved.</p><a href="#contactForm">Send details</a></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Added semantic article using EAV + SPO structure -->
-    <section>
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="eyebrow">About Contacting Startup Nepal</div>
-          <h2>Contact an SEO Agency in Itahari for SEO, Local SEO & Web Development</h2>
           <p>
-            Startup Nepal helps businesses discuss SEO, local SEO, website development, website audits,
-            Google Business Profile optimization, and other search visibility needs through one direct contact channel.
+            Send your project details directly to Startup Nepal.
+            Your inquiry will be saved securely for follow-up.
           </p>
+
+          <form id="contactForm">
+
+            <div class="field-grid">
+
+              <div class="field">
+                <label for="name">Your name</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  required>
+              </div>
+
+              <div class="field">
+                <label for="business">Business</label>
+                <input
+                  id="business"
+                  name="business"
+                  type="text"
+                  placeholder="Business name">
+              </div>
+
+              <div class="field">
+                <label for="email">Your email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  required>
+              </div>
+
+              <div class="field">
+                <label for="service">Service</label>
+                <input
+                  id="service"
+                  name="service"
+                  type="text"
+                  placeholder="SEO, website, local SEO...">
+              </div>
+
+              <div class="field full">
+                <label for="message">What do you need help with?</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell me about your website, business, goals, or the problem you want to solve."
+                  required></textarea>
+              </div>
+
+            </div>
+
+            <div class="form-actions">
+
+              <button
+                class="btn btn-primary"
+                type="submit">
+                Send Inquiry →
+              </button>
+
+              <a
+                class="btn btn-secondary"
+                href="mailto:speedxd174@gmail.com">
+                Open Gmail →
+              </a>
+
+            </div>
+
+            <div class="form-note">
+              Email: speedxd174@gmail.com
+            </div>
+
+            <div
+              class="form-status"
+              id="formStatus"
+              role="status"
+              aria-live="polite"></div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div class="eyebrow">Contact Details</div>
+
+          <h2>
+            Choose the easiest way to reach Startup Nepal.
+          </h2>
+
+          <p>
+            For project discussions, SEO questions, website work,
+            or pricing inquiries, email is the direct contact channel.
+          </p>
+
+        </div>
+
+        <div class="contact-grid">
+
+          <div class="info-card reveal">
+            <div class="info-icon">@</div>
+            <h3>Email</h3>
+            <p>
+              Send project details, questions, or your website URL by email.
+            </p>
+            <a href="mailto:speedxd174@gmail.com">
+              speedxd174@gmail.com
+            </a>
+          </div>
+
+          <div class="info-card reveal">
+            <div class="info-icon">⌖</div>
+            <h3>Service Area</h3>
+            <p>
+              Startup Nepal focuses on businesses in Itahari, Sunsari,
+              Koshi Province, and broader projects.
+            </p>
+            <a href="#contactForm">Start a project</a>
+          </div>
+
+          <div class="info-card reveal">
+            <div class="info-icon">→</div>
+            <h3>What to Include</h3>
+            <p>
+              Business name, website, service needed, target location,
+              and the main problem you want solved.
+            </p>
+            <a href="#contactForm">Send details</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-head reveal">
+
+          <div class="eyebrow">About Contacting Startup Nepal</div>
+
+          <h2>
+            Contact an SEO Agency in Itahari for SEO, Local SEO & Web Development
+          </h2>
+
+          <p>
+            Startup Nepal helps businesses discuss SEO, local SEO, website development,
+            website audits, Google Business Profile optimization, and other search
+            visibility needs through one direct contact channel.
+          </p>
+
         </div>
 
         <article class="article-card reveal">
+
           <div class="article-block">
+
             <h3>What is Startup Nepal?</h3>
+
             <p>
-              Startup Nepal is an SEO and web development service for businesses that need help with search visibility,
-              local search presence, business websites, and website optimization. Businesses in Itahari, Sunsari,
-              Koshi Province, and surrounding areas can use the contact page to explain their website, service,
-              target location, and business goals.
+              Startup Nepal is an SEO and web development service for businesses that need
+              help with search visibility, local search presence, business websites,
+              and website optimization. Businesses in Itahari, Sunsari, Koshi Province,
+              and surrounding areas can use the contact page to explain their website,
+              service, target location, and business goals.
             </p>
+
             <p>
-              Startup Nepal provides SEO services for businesses. Startup Nepal provides local SEO services for
-              businesses that want to improve their local search presence. Startup Nepal develops responsive
-              business websites for businesses that need a stronger online presence. Startup Nepal performs
-              SEO website audits to identify technical, content, structure, and optimization opportunities.
+              Startup Nepal provides SEO services for businesses. Startup Nepal provides
+              local SEO services for businesses that want to improve their local search
+              presence. Startup Nepal develops responsive business websites for businesses
+              that need a stronger online presence. Startup Nepal performs SEO website
+              audits to identify technical, content, structure, and optimization opportunities.
             </p>
+
           </div>
 
           <div class="article-block">
+
             <h3>Key business information</h3>
+
             <div class="eav-table-wrap">
+
               <table class="eav-table">
+
                 <thead>
                   <tr>
                     <th>Entity</th>
@@ -421,136 +1489,240 @@
                     <th>Value</th>
                   </tr>
                 </thead>
+
                 <tbody>
+
                   <tr>
                     <td>Startup Nepal</td>
                     <td>Business type</td>
                     <td>SEO and web development service</td>
                   </tr>
+
                   <tr>
                     <td>Startup Nepal</td>
                     <td>Primary service area</td>
                     <td>Itahari, Sunsari, Koshi Province, Nepal</td>
                   </tr>
+
                   <tr>
                     <td>Startup Nepal</td>
                     <td>SEO services</td>
-                    <td>SEO, Local SEO, SEO Website Audit, On-Page SEO, Technical SEO</td>
+                    <td>
+                      SEO, Local SEO, SEO Website Audit, On-Page SEO, Technical SEO
+                    </td>
                   </tr>
+
                   <tr>
                     <td>Startup Nepal</td>
                     <td>Local search services</td>
-                    <td>Google Business Profile optimization, local keyword research, local SEO landing pages, NAP and citation optimization</td>
+                    <td>
+                      Google Business Profile optimization, local keyword research,
+                      local SEO landing pages, NAP and citation optimization
+                    </td>
                   </tr>
+
                   <tr>
                     <td>Startup Nepal</td>
                     <td>Web services</td>
-                    <td>Business website development, responsive optimization, website speed and performance, website maintenance</td>
+                    <td>
+                      Business website development, responsive optimization,
+                      website speed and performance, website maintenance
+                    </td>
                   </tr>
+
                   <tr>
                     <td>Startup Nepal</td>
                     <td>Contact method</td>
                     <td>speedxd174@gmail.com</td>
                   </tr>
+
                 </tbody>
+
               </table>
+
             </div>
+
           </div>
 
           <div class="article-block">
+
             <h3>What can a business contact Startup Nepal about?</h3>
+
             <p>
-              A business can contact Startup Nepal when it needs help with a website, search visibility,
-              local search, or a specific SEO problem. The contact request can include the business name,
-              website URL, target location, service needed, and the main issue that needs attention.
+              A business can contact Startup Nepal when it needs help with a website,
+              search visibility, local search, or a specific SEO problem. The contact
+              request can include the business name, website URL, target location,
+              service needed, and the main issue that needs attention.
             </p>
 
             <div class="article-list">
+
               <div class="article-list-item">
-                <strong>SEO:</strong> A business can request help with keyword strategy, on-page SEO,
+                <strong>SEO:</strong>
+                A business can request help with keyword strategy, on-page SEO,
                 technical SEO, content structure, and search visibility.
               </div>
+
               <div class="article-list-item">
-                <strong>Local SEO:</strong> A local business can request help with local search visibility,
-                Google Business Profile optimization, local keywords, citations, and service-area pages.
+                <strong>Local SEO:</strong>
+                A local business can request help with local search visibility,
+                Google Business Profile optimization, local keywords, citations,
+                and service-area pages.
               </div>
+
               <div class="article-list-item">
-                <strong>Website development:</strong> A business can request a responsive website that clearly
-                presents its services, locations, contact information, and customer actions.
+                <strong>Website development:</strong>
+                A business can request a responsive website that clearly presents
+                its services, locations, contact information, and customer actions.
               </div>
+
               <div class="article-list-item">
-                <strong>SEO website audit:</strong> A business can request an audit when it wants to identify
-                technical, content, page structure, indexing, or optimization issues.
+                <strong>SEO website audit:</strong>
+                A business can request an audit when it wants to identify technical,
+                content, page structure, indexing, or optimization issues.
               </div>
+
             </div>
+
           </div>
 
           <div class="article-block">
+
             <h3>How the services connect</h3>
+
             <p>
-              SEO improves a business website's ability to communicate its topic, services, and relevance.
-              Local SEO connects a business with searches that have a geographic focus. A business website
-              gives users a place to understand the service, evaluate the business, and take action.
-              Google Business Profile optimization supports the local business presence that users may see
-              in local search results.
+              SEO improves a business website's ability to communicate its topic,
+              services, and relevance. Local SEO connects a business with searches
+              that have a geographic focus. A business website gives users a place
+              to understand the service, evaluate the business, and take action.
+              Google Business Profile optimization supports the local business presence
+              that users may see in local search results.
             </p>
+
             <p>
-              These services can work together. A business website can target its core service. Local SEO can
-              connect that service with a location such as Itahari or Sunsari. On-page SEO can organize the
-              information on the page. Technical SEO can address crawlability, indexing, and technical structure.
-              The contact page then gives potential clients a direct way to ask about the required service.
+              These services can work together. A business website can target its core service.
+              Local SEO can connect that service with a location such as Itahari or Sunsari.
+              On-page SEO can organize the information on the page. Technical SEO can address
+              crawlability, indexing, and technical structure. The contact page then gives
+              potential clients a direct way to ask about the required service.
             </p>
+
           </div>
 
           <div class="article-block">
+
             <h3>What information should you send?</h3>
+
             <p>
-              A useful inquiry gives Startup Nepal enough context to understand the business and the problem.
-              You can include your business name, website URL, main service, target location, current SEO problem,
-              desired service, and any specific goal you are working toward.
+              A useful inquiry gives Startup Nepal enough context to understand the business
+              and the problem. You can include your business name, website URL, main service,
+              target location, current SEO problem, desired service, and any specific goal
+              you are working toward.
             </p>
+
             <p>
-              For example, a local business can explain which service it wants to promote, which location it serves,
-              whether it already has a website, and whether it has a Google Business Profile. Clear information makes
-              the initial discussion more useful and helps identify the appropriate SEO, local SEO, website, or audit
-              service.
+              For example, a local business can explain which service it wants to promote,
+              which location it serves, whether it already has a website, and whether it has
+              a Google Business Profile. Clear information makes the initial discussion more
+              useful and helps identify the appropriate SEO, local SEO, website, or audit service.
             </p>
+
           </div>
 
           <div class="article-block">
+
             <h3>Contact Startup Nepal</h3>
+
             <p>
               Businesses can contact Startup Nepal by email at
-              <a href="mailto:speedxd174@gmail.com" style="color:#ddfff2;font-weight:800;">
+              <a
+                href="mailto:speedxd174@gmail.com"
+                style="color:#ddfff2;font-weight:800;">
                 speedxd174@gmail.com
               </a>.
-              The contact form can be used to send the business name, email address, requested service,
-              and project details. Startup Nepal can then review the inquiry and discuss the relevant
+              The contact form can be used to send the business name,
+              email address, requested service, and project details.
+              Startup Nepal can then review the inquiry and discuss the relevant
               SEO, local SEO, website development, or optimization scope.
             </p>
+
           </div>
+
         </article>
+
       </div>
     </section>
 
     <section>
+
       <div class="container next-grid">
+
         <div class="process-card reveal">
+
           <div class="eyebrow">What Happens Next</div>
-          <h2 style="margin-top:9px;font-size:clamp(1.8rem,3.5vw,2.5rem);line-height:1.1;letter-spacing:-.03em;">A simple process from first message to project.</h2>
+
+          <h2 style="margin-top:9px;font-size:clamp(1.8rem,3.5vw,2.5rem);line-height:1.1;letter-spacing:-.03em;">
+            A simple process from first message to project.
+          </h2>
+
           <div class="process-list">
-            <div class="process-step"><div class="step-no">01</div><div><strong>Share the details</strong><span>Tell me about your business, website, goals, and the service you need.</span></div></div>
-            <div class="process-step"><div class="step-no">02</div><div><strong>Review the opportunity</strong><span>We can identify the key website, SEO, local search, or growth priorities.</span></div></div>
-            <div class="process-step"><div class="step-no">03</div><div><strong>Discuss the scope</strong><span>Clarify the work, deliverables, timeline, and the appropriate pricing plan.</span></div></div>
-            <div class="process-step"><div class="step-no">04</div><div><strong>Start the work</strong><span>Move into the agreed SEO, website, or optimization project.</span></div></div>
+
+            <div class="process-step">
+              <div class="step-no">01</div>
+              <div>
+                <strong>Share the details</strong>
+                <span>
+                  Tell me about your business, website, goals, and the service you need.
+                </span>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-no">02</div>
+              <div>
+                <strong>Review the opportunity</strong>
+                <span>
+                  We can identify the key website, SEO, local search, or growth priorities.
+                </span>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-no">03</div>
+              <div>
+                <strong>Discuss the scope</strong>
+                <span>
+                  Clarify the work, deliverables, timeline, and the appropriate pricing plan.
+                </span>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="step-no">04</div>
+              <div>
+                <strong>Start the work</strong>
+                <span>
+                  Move into the agreed SEO, website, or optimization project.
+                </span>
+              </div>
+            </div>
+
           </div>
+
         </div>
 
         <div class="service-card reveal">
+
           <div class="eyebrow">Common Requests</div>
+
           <h3>What can you contact us about?</h3>
-          <p>These are some of the services Startup Nepal is set up to discuss with businesses.</p>
+
+          <p>
+            These are some of the services Startup Nepal is set up to discuss with businesses.
+          </p>
+
           <div class="service-list">
+
             <div class="service-pill">Local SEO</div>
             <div class="service-pill">SEO Audit</div>
             <div class="service-pill">Keyword Research</div>
@@ -561,173 +1733,447 @@
             <div class="service-pill">Website Performance</div>
             <div class="service-pill">SEO Landing Pages</div>
             <div class="service-pill">Website Maintenance</div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
     <section class="cta-section">
+
       <div class="container">
+
         <div class="cta reveal">
+
           <div>
+
             <div class="eyebrow">Email Startup Nepal</div>
+
             <h2>Have a project in mind?</h2>
-            <p>Send your business details and I’ll have the information needed to understand what you are looking to improve.</p>
+
+            <p>
+              Send your business details and I’ll have the information needed
+              to understand what you are looking to improve.
+            </p>
+
           </div>
-          <a class="btn btn-primary" href="mailto:speedxd174@gmail.com?subject=Project%20Inquiry%20-%20Startup%20Nepal">Email Eakraj →</a>
+
+          <a
+            class="btn btn-primary"
+            href="mailto:speedxd174@gmail.com?subject=Project%20Inquiry%20-%20Startup%20Nepal">
+            Email Eakraj →
+          </a>
+
         </div>
+
       </div>
+
     </section>
+
   </main>
 
   <footer>
+
     <div class="container">
+
       <div class="footer-top">
-        <a class="brand" href="index.html"><span class="brand-mark">SN</span><span class="brand-text"><small>SEO • Web • Local</small><strong>Startup Nepal</strong></span></a>
+
+        <a class="brand" href="index.html">
+          <span class="brand-mark">SN</span>
+          <span class="brand-text">
+            <small>SEO • Web • Local</small>
+            <strong>Startup Nepal</strong>
+          </span>
+        </a>
+
         <div class="footer-links">
-          <a href="about.html">About</a><a href="services.html">Services</a><a href="resources.html">Resources</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="resources.html">Resources</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="contact.html">Contact</a>
         </div>
+
       </div>
+
       <div class="footer-bottom">
-        <span>© <span id="year"></span> Startup Nepal. All rights reserved.</span>
-        <span>Email: <a href="mailto:speedxd174@gmail.com">speedxd174@gmail.com</a></span>
-        <span>Serving Itahari, Sunsari and surrounding business areas.</span>
+
+        <span>
+          © <span id="year"></span> Startup Nepal. All rights reserved.
+        </span>
+
+        <span>
+          Email:
+          <a href="mailto:speedxd174@gmail.com">
+            speedxd174@gmail.com
+          </a>
+        </span>
+
+        <span>
+          Serving Itahari, Sunsari and surrounding business areas.
+        </span>
+
       </div>
+
     </div>
+
   </footer>
 
   <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-    const servicesDropdown = document.getElementById('servicesDropdown');
-    const servicesTrigger = servicesDropdown.querySelector('.nav-trigger');
+
+    /* =========================================
+       NAVIGATION
+    ========================================= */
+
+    const menuToggle =
+      document.getElementById('menuToggle');
+
+    const navMenu =
+      document.getElementById('navMenu');
+
+    const servicesDropdown =
+      document.getElementById('servicesDropdown');
+
+    const servicesTrigger =
+      servicesDropdown.querySelector('.nav-trigger');
+
 
     menuToggle.addEventListener('click', () => {
-      const open = navMenu.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
 
-    servicesTrigger.addEventListener('click', (event) => {
-      event.stopPropagation();
-      const open = servicesDropdown.classList.toggle('open');
-      servicesTrigger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
+      const open =
+        navMenu.classList.toggle('open');
 
-    document.addEventListener('click', (event) => {
-      if (!servicesDropdown.contains(event.target)) {
-        servicesDropdown.classList.remove('open');
-        servicesTrigger.setAttribute('aria-expanded', 'false');
-      }
-      if (window.innerWidth <= 900 && !navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
-        navMenu.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    document.querySelectorAll('.nav-menu a').forEach((link) => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 900) {
-          navMenu.classList.remove('open');
-          menuToggle.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
-
-    /*
-      SUPABASE SETUP
-      1) Create a Supabase project.
-      2) Replace the two placeholders below with your Project URL and Publishable Key.
-      3) Run the SQL shown in the HTML comment below in Supabase SQL Editor.
-
-      Never put a Supabase secret/service_role key in this file.
-    */
-    const SUPABASE_URL = 'https://YOUR-PROJECT-REF.supabase.co';
-    const SUPABASE_PUBLISHABLE_KEY = 'YOUR_SUPABASE_PUBLISHABLE_KEY';
-    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
-
-    const contactForm = document.getElementById('contactForm');
-    const formStatus = document.getElementById('formStatus');
-    const submitButton = contactForm.querySelector('button[type="submit"]');
-
-    contactForm.addEventListener('submit', async (event) => {
-      event.preventDefault();
-
-      const name = document.getElementById('name').value.trim();
-      const business = document.getElementById('business').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const service = document.getElementById('service').value.trim();
-      const message = document.getElementById('message').value.trim();
-
-      if (!name || !email || !message) {
-        formStatus.className = 'form-status error';
-        formStatus.textContent = 'Please complete your name, email, and message.';
-        return;
-      }
-
-      submitButton.disabled = true;
-      submitButton.textContent = 'Sending...';
-      formStatus.className = 'form-status';
-      formStatus.textContent = 'Saving your inquiry...';
-
-      const { error } = await supabaseClient
-        .from('contact_submissions')
-        .insert([{
-          name,
-          business: business || null,
-          email,
-          service: service || null,
-          message
-        }]);
-
-      if (error) {
-        console.error('Supabase submission error:', error);
-        formStatus.className = 'form-status error';
-        formStatus.textContent = 'Something went wrong. Please email speedxd174@gmail.com directly.';
-        submitButton.disabled = false;
-        submitButton.textContent = 'Send Inquiry →';
-        return;
-      }
-
-      formStatus.className = 'form-status success';
-      formStatus.textContent = 'Inquiry sent successfully. Thank you — I will review your message.';
-      contactForm.reset();
-      submitButton.disabled = false;
-      submitButton.textContent = 'Send Inquiry →';
-    });
-
-    /*
-      RUN THIS ONCE IN SUPABASE SQL EDITOR:
-
-      create table public.contact_submissions (
-        id bigint generated by default as identity primary key,
-        name text not null,
-        business text,
-        email text not null,
-        service text,
-        message text not null,
-        created_at timestamptz not null default now()
+      menuToggle.setAttribute(
+        'aria-expanded',
+        open ? 'true' : 'false'
       );
 
-      alter table public.contact_submissions enable row level security;
+    });
 
-      create policy "Allow public contact submissions"
-      on public.contact_submissions
-      for insert
-      to anon
-      with check (true);
+
+    servicesTrigger.addEventListener('click', (event) => {
+
+      event.stopPropagation();
+
+      const open =
+        servicesDropdown.classList.toggle('open');
+
+      servicesTrigger.setAttribute(
+        'aria-expanded',
+        open ? 'true' : 'false'
+      );
+
+    });
+
+
+    document.addEventListener('click', (event) => {
+
+      if (!servicesDropdown.contains(event.target)) {
+
+        servicesDropdown.classList.remove('open');
+
+        servicesTrigger.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+
+      }
+
+      if (
+        window.innerWidth <= 900 &&
+        !navMenu.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
+
+        navMenu.classList.remove('open');
+
+        menuToggle.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+
+      }
+
+    });
+
+
+    document.querySelectorAll('.nav-menu a')
+      .forEach((link) => {
+
+        link.addEventListener('click', () => {
+
+          if (window.innerWidth <= 900) {
+
+            navMenu.classList.remove('open');
+
+            menuToggle.setAttribute(
+              'aria-expanded',
+              'false'
+            );
+
+          }
+
+        });
+
+      });
+
+
+    /* =========================================
+       SUPABASE CONNECTION
+    ========================================= */
+
+    const SUPABASE_URL =
+      'https://hqrcdmskxjmjoyzskzgl.supabase.co';
+
+    const SUPABASE_PUBLISHABLE_KEY =
+      'sb_publishable__lREZrUZw1qbBWT5ERR81g_wazT0DgU';
+
+
+    const supabaseClient =
+      supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+      );
+
+
+    /* =========================================
+       CONTACT FORM
+    ========================================= */
+
+    const contactForm =
+      document.getElementById('contactForm');
+
+    const formStatus =
+      document.getElementById('formStatus');
+
+    const submitButton =
+      contactForm.querySelector(
+        'button[type="submit"]'
+      );
+
+
+    contactForm.addEventListener(
+      'submit',
+      async (event) => {
+
+        event.preventDefault();
+
+
+        const name =
+          document.getElementById('name')
+            .value
+            .trim();
+
+        const business =
+          document.getElementById('business')
+            .value
+            .trim();
+
+        const email =
+          document.getElementById('email')
+            .value
+            .trim();
+
+        const service =
+          document.getElementById('service')
+            .value
+            .trim();
+
+        const message =
+          document.getElementById('message')
+            .value
+            .trim();
+
+
+        if (!name || !email || !message) {
+
+          formStatus.className =
+            'form-status error';
+
+          formStatus.textContent =
+            'Please complete your name, email, and message.';
+
+          return;
+
+        }
+
+
+        submitButton.disabled = true;
+
+        submitButton.textContent =
+          'Sending...';
+
+        formStatus.className =
+          'form-status';
+
+        formStatus.textContent =
+          'Saving your inquiry...';
+
+
+        try {
+
+          const { error } =
+            await supabaseClient
+              .from('contact_submissions')
+              .insert([{
+
+                name,
+
+                business:
+                  business || null,
+
+                email,
+
+                service:
+                  service || null,
+
+                message
+
+              }]);
+
+
+          if (error) {
+
+            console.error(
+              'Supabase submission error:',
+              error
+            );
+
+            formStatus.className =
+              'form-status error';
+
+            formStatus.textContent =
+              'Something went wrong. Please email speedxd174@gmail.com directly.';
+
+            submitButton.disabled = false;
+
+            submitButton.textContent =
+              'Send Inquiry →';
+
+            return;
+
+          }
+
+
+          formStatus.className =
+            'form-status success';
+
+          formStatus.textContent =
+            'Inquiry sent successfully. Thank you — I will review your message.';
+
+          contactForm.reset();
+
+          submitButton.disabled = false;
+
+          submitButton.textContent =
+            'Send Inquiry →';
+
+
+        } catch (error) {
+
+          console.error(
+            'Unexpected submission error:',
+            error
+          );
+
+          formStatus.className =
+            'form-status error';
+
+          formStatus.textContent =
+            'Something went wrong. Please email speedxd174@gmail.com directly.';
+
+          submitButton.disabled = false;
+
+          submitButton.textContent =
+            'Send Inquiry →';
+
+        }
+
+      }
+    );
+
+
+    /* =========================================
+       SUPABASE TABLE
+       
+       Run this ONCE in:
+       Supabase Dashboard
+       → SQL Editor
+    ========================================= */
+
+    /*
+    
+    create table public.contact_submissions (
+      id bigint generated by default as identity primary key,
+      name text not null,
+      business text,
+      email text not null,
+      service text,
+      message text not null,
+      created_at timestamptz not null default now()
+    );
+
+
+    alter table public.contact_submissions
+    enable row level security;
+
+
+    create policy "Allow public contact submissions"
+    on public.contact_submissions
+    for insert
+    to anon
+    with check (true);
+
     */
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
 
-    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
-    document.getElementById('year').textContent = new Date().getFullYear();
+    /* =========================================
+       SCROLL REVEAL
+    ========================================= */
+
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add('visible');
+
+              observer.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.1
+        }
+      );
+
+
+    document
+      .querySelectorAll('.reveal')
+      .forEach((element) => {
+
+        observer.observe(element);
+
+      });
+
+
+    /* =========================================
+       CURRENT YEAR
+    ========================================= */
+
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+
   </script>
+
 </body>
 </html>
