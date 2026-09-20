@@ -1,0 +1,3995 @@
+<!DOCTYPE html>
+<html lang="en-NP">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>website speed & performance optimization</title>
+
+  <meta name="description" content="Website speed and performance optimization for business websites in Itahari, Sunsari, and Nepal. Improve loading performance, images, scripts, styles, server response, page experience, and website efficiency.">
+
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#08111f">
+
+  <link rel="canonical" href="https://yourdomain.com/website-speed-performance.html">
+
+  <meta property="og:title" content="Website Speed & Performance Optimization | Startup Nepal">
+  <meta property="og:description" content="Improve business website speed and performance by optimizing images, scripts, styles, resources, server response, page structure, and loading behavior.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/website-speed-performance.html">
+  <meta property="og:site_name" content="Startup Nepal">
+
+
+  <style>
+
+    :root {
+      --bg: #07101c;
+      --bg-soft: #0b1727;
+      --panel: rgba(15, 28, 48, 0.72);
+      --panel-solid: #0e1b2e;
+      --text: #f6f8fc;
+      --muted: #9ba9bc;
+      --line: rgba(255,255,255,.09);
+      --accent: #77f2c0;
+      --accent-2: #66a6ff;
+      --accent-dark: #12281f;
+      --danger: #ff9f9f;
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --shadow: 0 24px 70px rgba(0,0,0,.35);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(102,166,255,.13), transparent 32%),
+        radial-gradient(circle at 88% 14%, rgba(119,242,192,.09), transparent 28%),
+        linear-gradient(180deg, #06101c 0%, #081421 42%, #07101c 100%);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: linear-gradient(to bottom, black, transparent 70%);
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
+
+    .announcement {
+      border-bottom: 1px solid var(--line);
+      background: rgba(4,10,18,.6);
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+    .announcement-inner {
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-align: center;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 14px rgba(119,242,192,.8);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--line);
+      background: rgba(7,16,28,.74);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .navbar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(119,242,192,.98), rgba(102,166,255,.98));
+      color: #08111f;
+      box-shadow: 0 10px 28px rgba(102,166,255,.2);
+      font-size: 1.06rem;
+      font-weight: 900;
+    }
+
+    .brand-text small {
+      display:block;
+      color: var(--muted);
+      font-size:.68rem;
+      font-weight:650;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .brand-text strong {
+      display:block;
+      font-size:1rem;
+    }
+
+    .nav-menu {
+      display:flex;
+      align-items:center;
+      gap: 5px;
+      list-style:none;
+    }
+
+    .nav-link,
+    .nav-trigger {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 11px 14px;
+      border-radius: 12px;
+      color: #d9e1ec;
+      font-size: .92rem;
+      font-weight: 650;
+      transition: .2s ease;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .nav-link:hover,
+    .nav-trigger:hover {
+      background: rgba(255,255,255,.05);
+      color: #fff;
+    }
+
+    .nav-link.active {
+      color: var(--accent);
+    }
+
+    .chevron {
+      font-size: .72rem;
+      transition: transform .22s ease;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-panel {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%) translateY(-7px);
+      width: min(750px, calc(100vw - 28px));
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: rgba(9,19,33,.96);
+      backdrop-filter: blur(20px);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: .2s ease;
+    }
+
+    .dropdown:hover .dropdown-panel,
+    .dropdown:focus-within .dropdown-panel,
+    .dropdown.open .dropdown-panel {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown:hover .chevron,
+    .dropdown.open .chevron {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-intro {
+      padding: 3px 6px 15px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 12px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .68rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .dropdown-intro h3 {
+      margin-top: 5px;
+      font-size: 1.05rem;
+    }
+
+    .dropdown-grid {
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 7px;
+    }
+
+    .dropdown-link {
+      padding: 11px 12px;
+      border-radius: 13px;
+      display:flex;
+      align-items:flex-start;
+      gap: 10px;
+      color: #dfe7f2;
+      transition:.2s ease;
+    }
+
+    .dropdown-link:hover {
+      background: rgba(119,242,192,.07);
+      color:#fff;
+    }
+
+    .service-icon {
+      width: 29px;
+      height: 29px;
+      flex:0 0 29px;
+      border-radius: 9px;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.055);
+      color:var(--accent);
+      font-size:.77rem;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .dropdown-link strong {
+      display:block;
+      font-size:.85rem;
+      line-height:1.35;
+    }
+
+    .dropdown-link span {
+      display:block;
+      color:var(--muted);
+      font-size:.73rem;
+      margin-top:2px;
+      line-height:1.4;
+    }
+
+    .nav-cta {
+      padding: 11px 15px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #9ef8d4);
+      color: #07101c;
+      font-weight: 800;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(119,242,192,.16);
+    }
+
+    .menu-toggle {
+      display:none;
+      width:45px;
+      height:45px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.035);
+      color:#fff;
+      cursor:pointer;
+    }
+
+    .menu-toggle span {
+      display:block;
+      width:19px;
+      height:2px;
+      background:#fff;
+      margin:4px auto;
+      border-radius:999px;
+      transition:.2s ease;
+    }
+
+    /* HERO */
+
+    .about-hero {
+      padding: 88px 0 72px;
+    }
+
+    .about-hero-grid {
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      align-items:center;
+      gap:60px;
+    }
+
+    .about-hero h1 {
+      margin-top:18px;
+      font-size:clamp(2.65rem,5.6vw,4.9rem);
+      line-height:1.03;
+      letter-spacing:-.055em;
+      max-width:820px;
+    }
+
+    .about-hero h1 .gradient {
+      background:linear-gradient(100deg,#fff 8%,#9edcff 47%,#8df7ce 88%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .about-hero p {
+      margin-top:22px;
+      max-width:680px;
+      color:var(--muted);
+      font-size:1.03rem;
+    }
+
+    .about-actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:11px;
+      margin-top:26px;
+    }
+
+    .pill {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 11px;
+      border:1px solid rgba(119,242,192,.18);
+      background:rgba(119,242,192,.05);
+      color:#c5ffe9;
+      border-radius:999px;
+      font-size:.76rem;
+      font-weight:750;
+    }
+
+    .pill-dot {
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:var(--accent);
+    }
+
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:14px;
+      font-weight:800;
+      font-size:.9rem;
+      border:1px solid var(--line);
+      transition:.2s ease;
+    }
+
+    .btn-primary {
+      background:linear-gradient(135deg,var(--accent),#9af7d4);
+      color:#08111f;
+      border-color:transparent;
+      box-shadow:0 18px 38px rgba(119,242,192,.11);
+    }
+
+    .btn-primary:hover {
+      transform:translateY(-2px);
+      box-shadow:0 22px 42px rgba(119,242,192,.17);
+    }
+
+    .btn-secondary {
+      background:rgba(255,255,255,.03);
+      color:#eef4fb;
+    }
+
+    .btn-secondary:hover {
+      background:rgba(255,255,255,.06);
+      transform:translateY(-1px);
+    }
+
+    /* VISUAL */
+
+    .about-visual {
+      position:relative;
+      min-height:470px;
+    }
+
+    .about-orbit {
+      position:absolute;
+      inset:24px 10px 20px 0;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:32px;
+      background:
+        radial-gradient(circle at 52% 35%, rgba(119,242,192,.12), transparent 35%),
+        linear-gradient(145deg,rgba(20,37,61,.9),rgba(9,18,32,.92));
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .about-orbit::before {
+      content:"";
+      position:absolute;
+      width:270px;
+      height:270px;
+      border:1px solid rgba(119,242,192,.13);
+      border-radius:50%;
+      top:70px;
+      left:50%;
+      transform:translateX(-50%);
+      box-shadow:
+        0 0 0 50px rgba(119,242,192,.02),
+        0 0 0 100px rgba(102,166,255,.025);
+    }
+
+    .about-orbit::after {
+      content:"";
+      position:absolute;
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 22px rgba(119,242,192,.8);
+      top:112px;
+      right:26%;
+    }
+
+    .orbit-core {
+      position:absolute;
+      top:158px;
+      left:50%;
+      transform:translateX(-50%);
+      width:118px;
+      height:118px;
+      border-radius:30px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,var(--accent),#92d7ff);
+      color:#07101c;
+      font-weight:950;
+      font-size:1.04rem;
+      box-shadow:0 25px 70px rgba(102,166,255,.22);
+      text-align:center;
+      line-height:1.12;
+    }
+
+    .orbit-label {
+      position:absolute;
+      padding:12px 14px;
+      border:1px solid var(--line);
+      background:rgba(11,23,39,.92);
+      border-radius:15px;
+      box-shadow:var(--shadow);
+    }
+
+    .orbit-label strong {
+      display:block;
+      font-size:.8rem;
+    }
+
+    .orbit-label span {
+      display:block;
+      margin-top:2px;
+      color:var(--muted);
+      font-size:.66rem;
+    }
+
+    .label-one {
+      top:52px;
+      left:24px;
+    }
+
+    .label-two {
+      top:56px;
+      right:20px;
+    }
+
+    .label-three {
+      bottom:58px;
+      left:26px;
+    }
+
+    .label-four {
+      bottom:48px;
+      right:20px;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding:86px 0;
+    }
+
+    .section-head {
+      max-width:720px;
+      margin-bottom:36px;
+    }
+
+    .section-head h2 {
+      margin-top:9px;
+      font-size:clamp(2rem,4vw,3rem);
+      line-height:1.08;
+      letter-spacing:-.035em;
+    }
+
+    .section-head p {
+      color:var(--muted);
+      margin-top:14px;
+    }
+
+    /* CARDS */
+
+    .about-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .about-card {
+      padding:28px;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:rgba(255,255,255,.025);
+    }
+
+    .about-card h3 {
+      margin-top:8px;
+      font-size:1.18rem;
+    }
+
+    .about-card p {
+      color:var(--muted);
+      margin-top:11px;
+      font-size:.9rem;
+    }
+
+    .values {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .value-card {
+      padding:24px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:linear-gradient(155deg,rgba(255,255,255,.045),rgba(255,255,255,.018));
+    }
+
+    .value-no {
+      width:34px;
+      height:34px;
+      display:grid;
+      place-items:center;
+      border-radius:10px;
+      background:rgba(119,242,192,.08);
+      border:1px solid rgba(119,242,192,.12);
+      color:var(--accent);
+      font-size:.74rem;
+      font-weight:900;
+    }
+
+    .value-card h3 {
+      margin-top:14px;
+      font-size:1rem;
+    }
+
+    .value-card p {
+      color:var(--muted);
+      font-size:.77rem;
+      margin-top:7px;
+    }
+
+    /* SPLIT */
+
+    .split {
+      display:grid;
+      grid-template-columns:.93fr 1.07fr;
+      gap:42px;
+      align-items:start;
+    }
+
+    .checklist {
+      display:grid;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .check-item {
+      display:flex;
+      gap:11px;
+      align-items:flex-start;
+      padding:13px 14px;
+      border:1px solid rgba(255,255,255,.05);
+      border-radius:15px;
+      background:rgba(255,255,255,.022);
+    }
+
+    .check-icon {
+      width:27px;
+      height:27px;
+      flex:0 0 27px;
+      display:grid;
+      place-items:center;
+      border-radius:9px;
+      background:rgba(119,242,192,.08);
+      color:var(--accent);
+      font-weight:900;
+      font-size:.72rem;
+    }
+
+    .check-item strong {
+      display:block;
+      font-size:.83rem;
+    }
+
+    .check-item span {
+      display:block;
+      color:var(--muted);
+      font-size:.71rem;
+      margin-top:2px;
+    }
+
+    /* TABLE */
+
+    .table-wrap {
+      overflow-x:auto;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:rgba(255,255,255,.025);
+    }
+
+    table {
+      width:100%;
+      min-width:760px;
+      border-collapse:collapse;
+    }
+
+    th,
+    td {
+      padding:15px 16px;
+      border-bottom:1px solid var(--line);
+      text-align:left;
+      vertical-align:top;
+    }
+
+    th {
+      color:#edf6fc;
+      background:rgba(255,255,255,.035);
+      font-size:.77rem;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+    }
+
+    td {
+      color:#b7c4d3;
+      font-size:.78rem;
+    }
+
+    tbody tr:last-child td {
+      border-bottom:0;
+    }
+
+    /* PROCESS */
+
+    .process {
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+    }
+
+    .process-card {
+      padding:23px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:linear-gradient(160deg,rgba(255,255,255,.04),rgba(255,255,255,.018));
+    }
+
+    .process-no {
+      width:33px;
+      height:33px;
+      border-radius:10px;
+      display:grid;
+      place-items:center;
+      background:rgba(102,166,255,.1);
+      border:1px solid rgba(102,166,255,.15);
+      color:#b6d3ff;
+      font-size:.76rem;
+      font-weight:850;
+    }
+
+    .process-card h3 {
+      margin-top:14px;
+      font-size:1rem;
+    }
+
+    .process-card p {
+      color:var(--muted);
+      font-size:.77rem;
+      margin-top:7px;
+    }
+
+    /* ARTICLE */
+
+    .article-wrap {
+      max-width:900px;
+    }
+
+    article {
+      border-top:1px solid var(--line);
+      padding-top:32px;
+    }
+
+    article h2 {
+      font-size:clamp(1.8rem,3vw,2.55rem);
+      line-height:1.12;
+      letter-spacing:-.03em;
+    }
+
+    article h3 {
+      margin-top:28px;
+      font-size:1.22rem;
+    }
+
+    article p {
+      margin-top:13px;
+      color:#b8c5d5;
+      font-size:.96rem;
+    }
+
+    article strong {
+      color:#f4f8fc;
+    }
+
+    .article-note {
+      margin-top:22px;
+      padding:17px 18px;
+      border-left:3px solid var(--accent);
+      background:rgba(119,242,192,.045);
+      border-radius:0 14px 14px 0;
+      color:#dcebe5;
+      font-size:.87rem;
+    }
+
+    /* FAQ */
+
+    .faq {
+      display:grid;
+      gap:10px;
+      max-width:860px;
+    }
+
+    .faq-item {
+      border:1px solid var(--line);
+      border-radius:17px;
+      overflow:hidden;
+      background:rgba(255,255,255,.025);
+    }
+
+    .faq-question {
+      width:100%;
+      padding:18px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      background:transparent;
+      border:0;
+      color:#fff;
+      text-align:left;
+      cursor:pointer;
+      font-weight:750;
+      font-size:.9rem;
+    }
+
+    .faq-question span:last-child {
+      color:var(--accent);
+      transition:.2s ease;
+      font-size:1.1rem;
+    }
+
+    .faq-answer {
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .3s ease;
+    }
+
+    .faq-answer p {
+      padding:0 20px 18px;
+      color:var(--muted);
+      font-size:.82rem;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height:320px;
+    }
+
+    .faq-item.open .faq-question span:last-child {
+      transform:rotate(45deg);
+    }
+
+    /* CTA */
+
+    .cta-section {
+      padding-top:30px;
+    }
+
+    .cta {
+      position:relative;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:28px;
+      padding:38px;
+      border:1px solid rgba(119,242,192,.14);
+      border-radius:28px;
+      background:
+        radial-gradient(circle at 80% 30%, rgba(119,242,192,.10), transparent 35%),
+        linear-gradient(135deg, rgba(25,47,64,.9), rgba(10,24,36,.88));
+    }
+
+    .cta h2 {
+      font-size:clamp(1.75rem,4vw,2.8rem);
+      line-height:1.08;
+      letter-spacing:-.035em;
+    }
+
+    .cta p {
+      color:var(--muted);
+      margin-top:10px;
+      max-width:650px;
+      font-size:.9rem;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding:26px 0 42px;
+    }
+
+    .footer-top {
+      padding:24px 0;
+      border-top:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .footer-links {
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      color:var(--muted);
+      font-size:.77rem;
+    }
+
+    .footer-bottom {
+      color:#718095;
+      font-size:.72rem;
+      display:flex;
+      gap:10px;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+
+    .footer-bottom span:nth-child(2) a {
+      font-size:1.02rem;
+      font-weight:700;
+    }
+
+    .reveal {
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible {
+      opacity:1;
+      transform:none;
+    }
+
+    @media (max-width:1040px) {
+
+      .nav-menu {
+        gap:0;
+      }
+
+      .nav-link,
+      .nav-trigger {
+        padding:10px 10px;
+        font-size:.84rem;
+      }
+
+      .nav-cta {
+        padding:10px 12px;
+      }
+
+      .about-hero-grid {
+        gap:35px;
+      }
+    }
+
+    @media (max-width:900px) {
+
+      .menu-toggle {
+        display:block;
+      }
+
+      .navbar {
+        min-height:72px;
+      }
+
+      .nav-menu {
+        position:absolute;
+        top:72px;
+        left:20px;
+        right:20px;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        padding:12px;
+        border:1px solid var(--line);
+        border-radius:18px;
+        background:rgba(8,18,31,.98);
+        box-shadow:var(--shadow);
+      }
+
+      .nav-menu.open {
+        display:flex;
+      }
+
+      .nav-link,
+      .nav-trigger,
+      .nav-cta {
+        width:100%;
+        justify-content:space-between;
+        padding:13px;
+      }
+
+      .dropdown-panel {
+        position:static;
+        transform:none !important;
+        width:100%;
+        margin-top:5px;
+        box-shadow:none;
+        border-radius:15px;
+        display:none;
+        opacity:1;
+        visibility:visible;
+        pointer-events:auto;
+      }
+
+      .dropdown.open .dropdown-panel {
+        display:block;
+      }
+
+      .dropdown:hover .dropdown-panel {
+        display:none;
+      }
+
+      .dropdown.open:hover .dropdown-panel {
+        display:block;
+      }
+
+      .dropdown-grid {
+        grid-template-columns:1fr;
+      }
+
+      .about-hero-grid,
+      .split,
+      .cta {
+        grid-template-columns:1fr;
+      }
+
+      .about-visual {
+        min-height:400px;
+      }
+
+      .about-grid {
+        grid-template-columns:1fr 1fr;
+      }
+
+      .values {
+        grid-template-columns:1fr 1fr;
+      }
+
+      .process {
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .cta .btn {
+        justify-self:start;
+      }
+    }
+
+    @media (max-width:620px) {
+
+      .container {
+        width:min(calc(100% - 28px), var(--max));
+      }
+
+      .announcement-inner {
+        font-size:.72rem;
+        padding:7px 0;
+      }
+
+      .brand-text small {
+        font-size:.58rem;
+      }
+
+      .brand-text strong {
+        font-size:.9rem;
+      }
+
+      .brand-mark {
+        width:39px;
+        height:39px;
+      }
+
+      .about-hero {
+        padding:62px 0 48px;
+      }
+
+      .about-hero h1 {
+        font-size:clamp(2.4rem,13vw,3.65rem);
+      }
+
+      .about-hero p {
+        font-size:.93rem;
+      }
+
+      .about-actions .btn {
+        width:100%;
+      }
+
+      .about-visual {
+        min-height:370px;
+      }
+
+      .about-orbit {
+        inset:8px 0 0 0;
+      }
+
+      .about-grid,
+      .values,
+      .process {
+        grid-template-columns:1fr;
+      }
+
+      .orbit-core {
+        width:96px;
+        height:96px;
+        top:137px;
+        border-radius:24px;
+        font-size:1rem;
+      }
+
+      .about-orbit::before {
+        width:220px;
+        height:220px;
+        top:76px;
+      }
+
+      .label-one {
+        left:10px;
+        top:30px;
+      }
+
+      .label-two {
+        right:10px;
+        top:34px;
+      }
+
+      .label-three {
+        left:10px;
+        bottom:30px;
+      }
+
+      .label-four {
+        right:10px;
+        bottom:25px;
+      }
+
+      section {
+        padding:64px 0;
+      }
+
+      .cta {
+        padding:27px;
+      }
+
+      .footer-top {
+        align-items:flex-start;
+        flex-direction:column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior:auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+      }
+
+    }
+
+  </style>
+
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "name":"Website Speed & Performance Optimization",
+    "serviceType":"Website Speed & Performance Optimization",
+    "description":"Website speed and performance optimization for business websites covering images, scripts, styles, resources, server response, page loading, rendering, and technical performance.",
+    "provider":{
+      "@type":"ProfessionalService",
+      "name":"Startup Nepal",
+      "url":"https://yourdomain.com/",
+      "email":"speedxd174@gmail.com"
+    },
+    "areaServed":[
+      "Itahari",
+      "Sunsari",
+      "Koshi Province",
+      "Nepal"
+    ],
+    "url":"https://yourdomain.com/website-speed-performance.html"
+  }
+  </script>
+
+</head>
+
+
+<body>
+
+
+  <div class="announcement">
+
+    <div class="container announcement-inner">
+
+      <span class="status-dot"></span>
+
+      <span>
+        SEO & web development for businesses in Itahari and surrounding areas
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <header>
+
+    <div class="container navbar">
+
+
+      <a class="brand" href="index.html" aria-label="Startup Nepal home">
+
+        <span class="brand-mark">
+          SN
+        </span>
+
+        <span class="brand-text">
+
+          <small>
+            Local Search Growth
+          </small>
+
+          <strong>
+            Startup Nepal
+          </strong>
+
+        </span>
+
+      </a>
+
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+
+      <nav aria-label="Primary navigation">
+
+
+        <ul class="nav-menu" id="navMenu">
+
+
+          <li>
+            <a class="nav-link" href="index.html">
+              Home
+            </a>
+          </li>
+
+
+          <li>
+            <a class="nav-link" href="about.html">
+              About
+            </a>
+          </li>
+
+
+          <li class="dropdown" id="servicesDropdown">
+
+
+            <button
+              class="nav-trigger"
+              type="button"
+              aria-expanded="false"
+            >
+
+              Services
+
+              <span class="chevron">
+                ⌄
+              </span>
+
+            </button>
+
+
+            <div
+              class="dropdown-panel"
+              aria-label="SEO and web development services"
+            >
+
+
+              <div class="dropdown-intro">
+
+                <div class="eyebrow">
+                  Services
+                </div>
+
+                <h3>
+                  SEO & Web Development Services
+                </h3>
+
+              </div>
+
+
+              <div class="dropdown-grid">
+
+
+                <a
+                  class="dropdown-link"
+                  href="seo-web-development-services.html"
+                >
+
+                  <span class="service-icon">
+                    01
+                  </span>
+
+                  <span>
+                    <strong>
+                      SEO & Web Development Services
+                    </strong>
+
+                    <span>
+                      Search visibility + business website development.
+                    </span>
+                  </span>
+
+                </a>
+
+
+                <a
+                  class="dropdown-link"
+                  href="local-seo-service.html"
+                >
+
+                  <span class="service-icon">
+                    02
+                  </span>
+
+                  <span>
+                    <strong>
+                      Local SEO Service
+                    </strong>
+
+                    <span>
+                      Improve local search visibility and discovery.
+                    </span>
+                  </span>
+
+                </a>
+
+
+                <a
+                  class="dropdown-link"
+                  href="seo-website-audit.html"
+                >
+
+                  <span class="service-icon">
+                    03
+                  </span>
+
+                  <span>
+                    <strong>
+                      SEO Website Audit
+                    </strong>
+
+                    <span>
+                      Find technical, on-page, content, and SEO issues.
+                    </span>
+                  </span>
+
+                </a>
+
+
+                <a
+                  class="dropdown-link"
+                  href="google-business-profile-optimization.html"
+                >
+
+                  <span class="service-icon">
+                    04
+                  </span>
+
+                  <span>
+                    <strong>
+                      Google Business Profile Setup & Optimization
+                    </strong>
+
+                    <span>
+                      Build a stronger local business profile.
+                    </span>
+                  </span>
+
+                </a>
+
+
+                <a
+                  class="dropdown-link"
+                  href="local-keyword-research.html"
+                >
+
+                  <span class="service-icon">
+                    05
+                  </span>
+
+                  <span>
+                    <strong>
+                      Local Keyword Research for Small Businesses
+                    </strong>
+
+                    <span>
+                      Map local search demand to useful pages.
+                    </span>
+                  </span>
+
+                </a>
+
+
+                <a
+                  class="dropdown-link"
+                  href="local-seo-landing-pages.html"
+                >
+
+                  <span class="service-icon">
+                    06
+                  </span>
+
+                  <span>
+                    <strong>
+                      Local SEO Landing Pages for Service Areas
+                    </strong>
+
+                    <span>
+                      Create location-focused pages with clear intent.
+                    </span>
+                  </span>
+
+                </a>
+
+
+                <a
+                  class="dropdown-link"
+                  href="nap-citation-optimization.html"
+                >
+
+                  <span class="service-icon">
+                    07
+                  </span>
+
+                  <span>
+                    <strong>
+                      NAP & Local Citation Optimization
+                    </strong>
+
+                    <span>
+                      Keep business information consistent across listings.
+                    </span>
+                  </span>
+
+                </a>
+
+
+                <a
+                  class="dropdown-link"
+                  href="on-page-seo-services.html"
+                >
+
+                  <span class="service-icon">
+                    08
+                  </span>
+
+                  <span>
+                    <strong>
+                      On-Page SEO Services for Local Businesses
+                    </strong>
+
+                    <span>
+                      Improve titles, content, internal links, and page structure.
+                    </span>
+                  </span>
+
+                </a>
+
+
+                <a
+                  class="dropdown-link"
+                  href="technical-seo-services.html"
+                >
+
+                  <span class="service-icon">
+                    09
+                  </span>
+
+                  <span>
+                    <strong>
+                      Technical SEO Services for Business Websites
+                    </strong>
+
+                    <span>
+                      Address crawlability, indexing, structure, and technical health.
+                    </span>
+                  </span>
+
+                </a>
+
+
+                <a
+                  class="dropdown-link"
+                  href="mobile-seo-responsive.html"
+                >
+
+                  <span class="service-icon">
+                    10
+                  </span>
+
+                  <span>
+                    <strong>
+                      Mobile SEO & Responsive Website Optimization
+                    </strong>
+
+                    <span>
+                      Make your website easier to use on mobile devices.
+                    </span>
+                  </span>
+
+                </a>
+
+
+                <a
+                  class="dropdown-link"
+                  href="website-speed-performance.html"
+                >
+
+                  <span class="service-icon">
+                    11
+                  </span>
+
+                  <span>
+                    <strong>
+                      Website Speed & Performance Optimization
+                    </strong>
+
+                    <span>
+                      Improve loading experience and page performance.
+                    </span>
+                  </span>
+
+                </a>
+
+
+                <a
+                  class="dropdown-link"
+                  href="website-maintenance-plans.html"
+                >
+
+                  <span class="service-icon">
+                    12
+                  </span>
+
+                  <span>
+                    <strong>
+                      Website Maintenance Plans for Businesses
+                    </strong>
+
+                    <span>
+                      Keep business websites updated, healthy, and secure.
+                    </span>
+                  </span>
+
+                </a>
+
+
+              </div>
+
+            </div>
+
+          </li>
+
+
+          <li>
+            <a class="nav-link" href="resources.html">
+              Resources
+            </a>
+          </li>
+
+
+          <li>
+            <a class="nav-link" href="pricing.html">
+              Pricing
+            </a>
+          </li>
+
+
+          <li>
+            <a class="nav-link nav-cta" href="contact.html">
+              Contact
+            </a>
+          </li>
+
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- HERO -->
+
+    <section class="about-hero">
+
+      <div class="container about-hero-grid">
+
+
+        <div class="reveal">
+
+
+          <div class="pill">
+
+            <span class="pill-dot"></span>
+
+            Website Performance
+
+          </div>
+
+
+          <h1>
+
+            Website Speed &
+            <span class="gradient">
+              Performance Optimization
+            </span>
+
+          </h1>
+
+
+          <p>
+
+            Improve how quickly and efficiently your business website loads,
+            renders, and responds by optimizing images, scripts, styles,
+            resources, server response, page structure, and other performance
+            factors that affect the website experience.
+
+          </p>
+
+
+          <div class="about-actions">
+
+
+            <a
+              class="btn btn-primary"
+              href="contact.html"
+            >
+              Request a Performance Check →
+            </a>
+
+
+            <a
+              class="btn btn-secondary"
+              href="technical-seo-services.html"
+            >
+              Explore Technical SEO
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+
+        <div class="about-visual reveal">
+
+
+          <div class="about-orbit">
+
+
+            <div class="orbit-core">
+
+              WEBSITE
+              <br>
+              SPEED
+
+            </div>
+
+
+            <div class="orbit-label label-one">
+
+              <strong>
+                Images
+              </strong>
+
+              <span>
+                Efficient resources
+              </span>
+
+            </div>
+
+
+            <div class="orbit-label label-two">
+
+              <strong>
+                Scripts
+              </strong>
+
+              <span>
+                Page execution
+              </span>
+
+            </div>
+
+
+            <div class="orbit-label label-three">
+
+              <strong>
+                Server
+              </strong>
+
+              <span>
+                Response time
+              </span>
+
+            </div>
+
+
+            <div class="orbit-label label-four">
+
+              <strong>
+                Rendering
+              </strong>
+
+              <span>
+                Visible experience
+              </span>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- INTRO -->
+
+    <section>
+
+      <div class="container">
+
+
+        <div class="about-grid">
+
+
+          <div class="about-card reveal">
+
+
+            <div class="eyebrow">
+              Website Speed
+            </div>
+
+
+            <h3>
+              A faster website gives users access to important information sooner.
+            </h3>
+
+
+            <p>
+              Website speed optimization focuses on how resources are requested,
+              transferred, processed, and displayed so important pages can load
+              efficiently and remain usable.
+            </p>
+
+
+          </div>
+
+
+          <div class="about-card reveal">
+
+
+            <div class="eyebrow">
+              Performance
+            </div>
+
+
+            <h3>
+              Performance is more than one speed score.
+            </h3>
+
+
+            <p>
+              A website's performance is influenced by images, scripts, styles,
+              fonts, server responses, caching, page structure, rendering,
+              third-party resources, and the way these elements work together.
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MAIN ARTICLE -->
+
+    <section>
+
+      <div class="container article-wrap">
+
+
+        <article class="reveal">
+
+
+          <div class="eyebrow">
+            Website Speed & Performance Optimization
+          </div>
+
+
+          <h2>
+            What website speed and performance optimization means
+          </h2>
+
+
+          <p>
+            <strong>Website speed and performance optimization</strong> focuses
+            on improving how efficiently a web page is delivered, loaded,
+            rendered, and used. For a business website, the objective is to
+            make important content, navigation, images, forms, services,
+            contact information, and other page elements available without
+            unnecessary technical delay.
+          </p>
+
+
+          <p>
+            A business website contains many connected resources. The
+            <strong>HTML document</strong> provides the page structure,
+            <strong>CSS</strong> controls presentation, <strong>JavaScript</strong>
+            provides behavior, <strong>images and media</strong> provide visual
+            information, and the <strong>server</strong> delivers those resources.
+            Performance optimization reviews how these parts interact rather
+            than looking at one file in isolation.
+          </p>
+
+
+          <p>
+            The relationship can be understood as
+            <strong>user → requests page → server responds → resources load →
+            browser processes resources → page renders → user interacts</strong>.
+            Every stage can contain opportunities for improvement. A slow
+            server response can delay the start of loading. Large images can
+            increase the amount of data transferred. Too many scripts can
+            increase processing work. Unnecessary styles or resources can add
+            additional requests and rendering work.
+          </p>
+
+
+          <p>
+            <strong>Image optimization</strong> is one common part of the process.
+            Business websites often use photos, logos, banners, product images,
+            portfolio images, or other media. These files should be appropriately
+            sized and delivered in efficient formats and dimensions for their
+            actual use. An image that appears small on the page does not always
+            need to be delivered at a much larger size.
+          </p>
+
+
+          <p>
+            <strong>JavaScript optimization</strong> focuses on the scripts a
+            page loads and executes. Unnecessary scripts, heavy libraries,
+            blocking behavior, excessive third-party code, or inefficient
+            execution can increase the work required before a page becomes
+            interactive. Performance optimization reviews these resources in
+            relation to what the page actually needs.
+          </p>
+
+
+          <p>
+            <strong>CSS and rendering</strong> also influence page performance.
+            Stylesheets determine how the browser presents the page, while the
+            browser must process HTML and CSS to construct and render the visible
+            interface. Reducing unnecessary resources and improving how styles
+            are delivered can help the browser reach the useful visual state
+            more efficiently.
+          </p>
+
+
+          <p>
+            <strong>Server response and caching</strong> are another important
+            part of the system. Before a browser can receive the page content,
+            the server needs to respond to the request. Depending on the
+            website architecture, hosting environment, database, caching,
+            and application logic, server-side delays may become part of the
+            total loading process.
+          </p>
+
+
+          <p>
+            Performance also needs to be connected to the purpose of each page.
+            A business service page may need its service explanation, trust
+            information, images, and contact action to become usable quickly.
+            A product page may depend on product images and details. A contact
+            page may need forms and contact information. Optimization should
+            therefore protect important content while reducing unnecessary
+            technical work.
+          </p>
+
+
+          <p>
+            Website speed optimization is not simply about removing everything
+            until a page becomes empty. The business still needs its content,
+            design, navigation, functionality, branding, forms, and customer
+            actions. The goal is to find a practical balance between
+            <strong>useful content, functionality, visual presentation, and
+            efficient technical delivery</strong>.
+          </p>
+
+
+          <p>
+            The overall purpose is to create a website in which the business
+            provides useful information, the website delivers that information
+            efficiently, the page becomes usable quickly, and the customer can
+            continue toward the appropriate action without unnecessary
+            performance friction.
+          </p>
+
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- PERFORMANCE AREAS -->
+
+    <section>
+
+      <div class="container">
+
+
+        <div class="section-head reveal">
+
+
+          <div class="eyebrow">
+            Performance Areas
+          </div>
+
+
+          <h2>
+            What we optimize for better website performance
+          </h2>
+
+
+          <p>
+            Performance work covers the resources and systems involved in
+            delivering and rendering business website pages.
+          </p>
+
+
+        </div>
+
+
+        <div class="values">
+
+
+          <div class="value-card reveal">
+
+            <div class="value-no">
+              01
+            </div>
+
+            <h3>
+              Image Optimization
+            </h3>
+
+            <p>
+              Review image dimensions, formats, compression, loading behavior,
+              and delivery so visual resources remain useful without unnecessary weight.
+            </p>
+
+          </div>
+
+
+          <div class="value-card reveal">
+
+            <div class="value-no">
+              02
+            </div>
+
+            <h3>
+              JavaScript
+            </h3>
+
+            <p>
+              Review scripts and execution to identify unnecessary code,
+              blocking behavior, heavy libraries, and excess client-side work.
+            </p>
+
+          </div>
+
+
+          <div class="value-card reveal">
+
+            <div class="value-no">
+              03
+            </div>
+
+            <h3>
+              CSS Delivery
+            </h3>
+
+            <p>
+              Review stylesheets and page styling resources that affect the
+              browser's work before and during rendering.
+            </p>
+
+          </div>
+
+
+          <div class="value-card reveal">
+
+            <div class="value-no">
+              04
+            </div>
+
+            <h3>
+              Server Response
+            </h3>
+
+            <p>
+              Review hosting, response behavior, caching, and server-side
+              factors that can affect the beginning of page loading.
+            </p>
+
+          </div>
+
+
+          <div class="value-card reveal">
+
+            <div class="value-no">
+              05
+            </div>
+
+            <h3>
+              Resource Loading
+            </h3>
+
+            <p>
+              Review how fonts, images, scripts, styles, and third-party
+              resources are requested and loaded by the browser.
+            </p>
+
+          </div>
+
+
+          <div class="value-card reveal">
+
+            <div class="value-no">
+              06
+            </div>
+
+            <h3>
+              Caching
+            </h3>
+
+            <p>
+              Review appropriate caching opportunities that can reduce repeated
+              work when returning visitors request resources again.
+            </p>
+
+          </div>
+
+
+          <div class="value-card reveal">
+
+            <div class="value-no">
+              07
+            </div>
+
+            <h3>
+              Page Rendering
+            </h3>
+
+            <p>
+              Review how quickly the browser can process and present useful
+              content to the visitor.
+            </p>
+
+          </div>
+
+
+          <div class="value-card reveal">
+
+            <div class="value-no">
+              08
+            </div>
+
+            <h3>
+              Third-Party Resources
+            </h3>
+
+            <p>
+              Identify external scripts, widgets, trackers, fonts, and other
+              resources that add technical work to the page.
+            </p>
+
+          </div>
+
+
+          <div class="value-card reveal">
+
+            <div class="value-no">
+              09
+            </div>
+
+            <h3>
+              Mobile Performance
+            </h3>
+
+            <p>
+              Review performance across smaller devices and connections where
+              inefficient resources can have a larger practical effect.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RELATIONSHIP TABLE -->
+
+    <section>
+
+      <div class="container">
+
+
+        <div class="section-head reveal">
+
+
+          <div class="eyebrow">
+            Performance Relationships
+          </div>
+
+
+          <h2>
+            How website performance elements connect
+          </h2>
+
+
+          <p>
+            Performance becomes easier to understand when each technical
+            component is connected to the role it performs.
+          </p>
+
+
+        </div>
+
+
+        <div class="table-wrap reveal">
+
+
+          <table>
+
+
+            <thead>
+
+              <tr>
+
+                <th>
+                  Subject
+                </th>
+
+                <th>
+                  Relationship
+                </th>
+
+                <th>
+                  Object
+                </th>
+
+                <th>
+                  Purpose
+                </th>
+
+              </tr>
+
+            </thead>
+
+
+            <tbody>
+
+
+              <tr>
+
+                <td>
+                  User
+                </td>
+
+                <td>
+                  requests
+                </td>
+
+                <td>
+                  Web page
+                </td>
+
+                <td>
+                  Starts the page delivery process.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  Server
+                </td>
+
+                <td>
+                  delivers
+                </td>
+
+                <td>
+                  Website resources
+                </td>
+
+                <td>
+                  Sends the documents and resources needed by the page.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  HTML
+                </td>
+
+                <td>
+                  provides
+                </td>
+
+                <td>
+                  Page structure
+                </td>
+
+                <td>
+                  Defines the content and structural elements of the page.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  CSS
+                </td>
+
+                <td>
+                  styles
+                </td>
+
+                <td>
+                  Page elements
+                </td>
+
+                <td>
+                  Controls presentation and visual layout.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  JavaScript
+                </td>
+
+                <td>
+                  controls
+                </td>
+
+                <td>
+                  Page behavior
+                </td>
+
+                <td>
+                  Provides interactive functionality and dynamic behavior.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  Image
+                </td>
+
+                <td>
+                  provides
+                </td>
+
+                <td>
+                  Visual information
+                </td>
+
+                <td>
+                  Supports product, service, brand, or contextual information.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  Browser
+                </td>
+
+                <td>
+                  renders
+                </td>
+
+                <td>
+                  Website page
+                </td>
+
+                <td>
+                  Converts website resources into the visible user experience.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  Website
+                </td>
+
+                <td>
+                  guides
+                </td>
+
+                <td>
+                  Customer action
+                </td>
+
+                <td>
+                  Helps the visitor call, contact, book, quote, buy, or continue.
+                </td>
+
+              </tr>
+
+
+            </tbody>
+
+
+          </table>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- IMPORTANT PERFORMANCE TABLE -->
+
+    <section>
+
+      <div class="container">
+
+
+        <div class="section-head reveal">
+
+
+          <div class="eyebrow">
+            Performance Checks
+          </div>
+
+
+          <h2>
+            Important website speed and performance checks
+          </h2>
+
+
+          <p>
+            Performance improvements should be based on the actual resources
+            and behavior of the website.
+          </p>
+
+
+        </div>
+
+
+        <div class="table-wrap reveal">
+
+
+          <table>
+
+
+            <thead>
+
+              <tr>
+
+                <th>
+                  Area
+                </th>
+
+                <th>
+                  What we review
+                </th>
+
+                <th>
+                  Business Website Purpose
+                </th>
+
+              </tr>
+
+            </thead>
+
+
+            <tbody>
+
+
+              <tr>
+
+                <td>
+                  Images
+                </td>
+
+                <td>
+                  Dimensions, compression, formats, loading behavior, and unnecessary files
+                </td>
+
+                <td>
+                  Keep visual content useful while reducing unnecessary transfer.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  JavaScript
+                </td>
+
+                <td>
+                  Script size, execution, blocking behavior, unnecessary libraries, and third-party code
+                </td>
+
+                <td>
+                  Reduce unnecessary browser processing.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  CSS
+                </td>
+
+                <td>
+                  Stylesheet size, unused styles, delivery, and rendering requirements
+                </td>
+
+                <td>
+                  Help the browser reach the useful visual state efficiently.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  Server
+                </td>
+
+                <td>
+                  Response time, caching, hosting configuration, and server-side processing
+                </td>
+
+                <td>
+                  Improve the beginning of the page delivery process.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  Fonts
+                </td>
+
+                <td>
+                  Number of files, variants, loading behavior, and unnecessary font resources
+                </td>
+
+                <td>
+                  Reduce resource overhead while maintaining readable typography.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  Third-party resources
+                </td>
+
+                <td>
+                  Analytics, widgets, embeds, trackers, external scripts, and external services
+                </td>
+
+                <td>
+                  Identify resources that add extra page work.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  Caching
+                </td>
+
+                <td>
+                  Browser, server, and resource caching opportunities
+                </td>
+
+                <td>
+                  Reduce repeated work for returning visitors where appropriate.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  Mobile loading
+                </td>
+
+                <td>
+                  Resource weight, rendering, interaction, and mobile device behavior
+                </td>
+
+                <td>
+                  Keep pages practical on smaller devices and varying connections.
+                </td>
+
+              </tr>
+
+
+            </tbody>
+
+
+          </table>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+
+    <section>
+
+      <div class="container">
+
+
+        <div class="section-head reveal">
+
+
+          <div class="eyebrow">
+            Our Process
+          </div>
+
+
+          <h2>
+            Website speed and performance optimization process
+          </h2>
+
+
+          <p>
+            We identify the resources creating the most unnecessary work and
+            then prioritize improvements based on the page and business needs.
+          </p>
+
+
+        </div>
+
+
+        <div class="process">
+
+
+          <div class="process-card reveal">
+
+            <div class="process-no">
+              01
+            </div>
+
+            <h3>
+              Measure
+            </h3>
+
+            <p>
+              Review page performance, loading behavior, resources, and
+              important page conditions.
+            </p>
+
+          </div>
+
+
+          <div class="process-card reveal">
+
+            <div class="process-no">
+              02
+            </div>
+
+            <h3>
+              Diagnose
+            </h3>
+
+            <p>
+              Identify images, scripts, styles, server conditions,
+              third-party resources, and other bottlenecks.
+            </p>
+
+          </div>
+
+
+          <div class="process-card reveal">
+
+            <div class="process-no">
+              03
+            </div>
+
+            <h3>
+              Optimize
+            </h3>
+
+            <p>
+              Improve resource delivery, code, images, caching,
+              rendering, and other appropriate performance areas.
+            </p>
+
+          </div>
+
+
+          <div class="process-card reveal">
+
+            <div class="process-no">
+              04
+            </div>
+
+            <h3>
+              Verify
+            </h3>
+
+            <p>
+              Recheck important pages after implementation and compare
+              the resulting website behavior.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CHECKLIST -->
+
+    <section>
+
+      <div class="container split">
+
+
+        <div class="section-head reveal">
+
+
+          <div class="eyebrow">
+            Performance Checklist
+          </div>
+
+
+          <h2>
+            What we look for when optimizing website speed
+          </h2>
+
+
+          <p>
+            The review focuses on the resources and technical conditions
+            that affect actual page loading and interaction.
+          </p>
+
+
+        </div>
+
+
+        <div class="checklist">
+
+
+          <div class="check-item reveal">
+
+            <div class="check-icon">
+              01
+            </div>
+
+            <div>
+
+              <strong>
+                Large or inefficient images
+              </strong>
+
+              <span>
+                Identify images that can be resized, compressed, reformatted,
+                or delivered more efficiently.
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="check-item reveal">
+
+            <div class="check-icon">
+              02
+            </div>
+
+            <div>
+
+              <strong>
+                Excessive JavaScript
+              </strong>
+
+              <span>
+                Review scripts and client-side work that may not be necessary
+                for the page's primary purpose.
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="check-item reveal">
+
+            <div class="check-icon">
+              03
+            </div>
+
+            <div>
+
+              <strong>
+                Unnecessary CSS
+              </strong>
+
+              <span>
+                Review styles and resources that increase page processing
+                without contributing meaningful presentation.
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="check-item reveal">
+
+            <div class="check-icon">
+              04
+            </div>
+
+            <div>
+
+              <strong>
+                Slow server response
+              </strong>
+
+              <span>
+                Review server-side factors that delay the beginning of page
+                delivery.
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="check-item reveal">
+
+            <div class="check-icon">
+              05
+            </div>
+
+            <div>
+
+              <strong>
+                Excessive third-party resources
+              </strong>
+
+              <span>
+                Identify external scripts, widgets, embeds, and other resources
+                that add unnecessary work.
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="check-item reveal">
+
+            <div class="check-icon">
+              06
+            </div>
+
+            <div>
+
+              <strong>
+                Poor caching strategy
+              </strong>
+
+              <span>
+                Review opportunities to reduce repeated downloads and processing
+                where suitable.
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="check-item reveal">
+
+            <div class="check-icon">
+              07
+            </div>
+
+            <div>
+
+              <strong>
+                Mobile performance
+              </strong>
+
+              <span>
+                Review page weight and behavior on smaller devices and
+                potentially slower connections.
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="check-item reveal">
+
+            <div class="check-icon">
+              08
+            </div>
+
+            <div>
+
+              <strong>
+                Important content delivery
+              </strong>
+
+              <span>
+                Make sure optimization does not remove or delay the business
+                information users need most.
+              </span>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PERFORMANCE RELATIONSHIPS -->
+
+    <section>
+
+      <div class="container">
+
+
+        <div class="section-head reveal">
+
+
+          <div class="eyebrow">
+            Business Website Experience
+          </div>
+
+
+          <h2>
+            Website performance should support the customer journey
+          </h2>
+
+
+          <p>
+            Faster pages are useful when performance improvements preserve
+            the information and actions customers actually need.
+          </p>
+
+
+        </div>
+
+
+        <div class="about-grid">
+
+
+          <div class="about-card reveal">
+
+            <div class="eyebrow">
+              Service Page
+            </div>
+
+            <h3>
+              Service information should become available efficiently.
+            </h3>
+
+            <p>
+              A service page may need to communicate the service, process,
+              pricing information, locations, trust details, and contact
+              action without unnecessary loading overhead.
+            </p>
+
+          </div>
+
+
+          <div class="about-card reveal">
+
+            <div class="eyebrow">
+              Product Page
+            </div>
+
+            <h3>
+              Product images and details should be delivered efficiently.
+            </h3>
+
+            <p>
+              Product pages often rely heavily on images and interactive
+              elements, making resource optimization particularly important.
+            </p>
+
+          </div>
+
+
+          <div class="about-card reveal">
+
+            <div class="eyebrow">
+              Local Business
+            </div>
+
+            <h3>
+              Contact and location information should remain accessible.
+            </h3>
+
+            <p>
+              Phone numbers, addresses, service areas, directions, enquiry
+              forms, and other local information should not be hidden behind
+              unnecessary technical delays.
+            </p>
+
+          </div>
+
+
+          <div class="about-card reveal">
+
+            <div class="eyebrow">
+              Conversion
+            </div>
+
+            <h3>
+              Performance should support the next customer action.
+            </h3>
+
+            <p>
+              The website should help visitors move from information toward
+              a relevant action such as calling, contacting, booking,
+              requesting a quote, or purchasing.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- MAIN CONTINUOUS ARTICLE -->
+
+    <section>
+
+      <div class="container article-wrap">
+
+
+        <article class="reveal">
+
+
+          <div class="eyebrow">
+            Website Performance Strategy
+          </div>
+
+
+          <h2>
+            How website speed and performance optimization works
+          </h2>
+
+
+          <p>
+            Website performance starts with the request for a page and continues
+            until the visitor can see and interact with useful content. The
+            browser requests the page, the server responds, the document and
+            supporting resources are transferred, the browser processes HTML,
+            CSS, and JavaScript, and the visible interface is rendered. Each
+            step creates a relationship between the user's request, the website,
+            the resources required by the page, and the final experience.
+          </p>
+
+
+          <p>
+            A business website may contain many resources because the business
+            needs branding, navigation, service information, images, forms,
+            analytics, interactive features, and other functionality. The goal
+            of performance optimization is not to remove those useful elements
+            without reason. Instead, the task is to understand what each
+            resource does, whether it is necessary, how much it costs to load
+            or process, and whether it can be delivered more efficiently.
+          </p>
+
+
+          <p>
+            Images are a common example. A business may need photographs to
+            explain a service or show a product, but a very large image can
+            require more data than necessary. Appropriate dimensions, modern
+            formats where suitable, compression, and efficient loading can
+            reduce unnecessary transfer while preserving the visual information.
+          </p>
+
+
+          <p>
+            Scripts create another relationship. A page may use JavaScript for
+            menus, forms, animations, analytics, widgets, or other functions.
+            Some scripts are essential while others may load third-party
+            features that are not important to the first useful state of the
+            page. Reviewing these scripts can identify code that should be
+            deferred, reduced, combined differently, or removed when it no
+            longer serves a useful purpose.
+          </p>
+
+
+          <p>
+            Styles also require browser processing. Large or unnecessarily
+            complex stylesheets can increase the amount of work required to
+            construct the visual page. Performance optimization reviews the
+            styles required by the actual page and considers whether delivery
+            and organization can be improved while maintaining the intended
+            design.
+          </p>
+
+
+          <p>
+            Server response is another part of the chain. A page cannot begin
+            its normal loading sequence until the browser receives the initial
+            response. Hosting quality, server-side processing, application
+            logic, database operations, caching, and configuration can all
+            influence this stage. Improving server-side delivery can therefore
+            affect what happens before the browser even starts processing
+            many of the page's resources.
+          </p>
+
+
+          <p>
+            Caching can connect repeated visits with previously requested
+            resources. Depending on the resource and implementation, caching
+            can reduce the need to repeatedly download or regenerate the same
+            content. Performance optimization reviews where appropriate caching
+            can reduce repeated work without causing users to receive outdated
+            content.
+          </p>
+
+
+          <p>
+            Third-party resources need particular attention because the business
+            may not control every external system involved in page loading.
+            Analytics, advertising systems, chat tools, social widgets,
+            embedded media, external fonts, and other services can add requests,
+            processing, or dependencies. Each resource should have a clear
+            business or functional reason to exist.
+          </p>
+
+
+          <p>
+            The final result should be measured at the page level and connected
+            to business importance. A homepage, service page, product page,
+            location page, and contact page may use different resources and
+            serve different purposes. The right optimization strategy therefore
+            considers the actual page rather than applying the same change
+            everywhere without checking its effect.
+          </p>
+
+
+          <div class="article-note">
+
+            Website speed is one part of the overall website experience.
+            Performance improvements should preserve useful content,
+            functionality, accessibility, responsive behavior, and important
+            customer actions.
+
+          </div>
+
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- COMMON PROBLEMS -->
+
+    <section>
+
+      <div class="container">
+
+
+        <div class="section-head reveal">
+
+
+          <div class="eyebrow">
+            Common Problems
+          </div>
+
+
+          <h2>
+            Common website speed and performance problems
+          </h2>
+
+
+          <p>
+            These issues can increase page weight, browser work, or loading time.
+          </p>
+
+
+        </div>
+
+
+        <div class="table-wrap reveal">
+
+
+          <table>
+
+
+            <thead>
+
+              <tr>
+
+                <th>
+                  Problem
+                </th>
+
+                <th>
+                  What it affects
+                </th>
+
+                <th>
+                  Better approach
+                </th>
+
+              </tr>
+
+            </thead>
+
+
+            <tbody>
+
+
+              <tr>
+
+                <td>
+                  Oversized images
+                </td>
+
+                <td>
+                  Data transfer and page loading
+                </td>
+
+                <td>
+                  Use appropriate dimensions, compression, and efficient delivery.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  Too many scripts
+                </td>
+
+                <td>
+                  Browser processing
+                </td>
+
+                <td>
+                  Review whether every script is necessary and how it is loaded.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  Heavy third-party tools
+                </td>
+
+                <td>
+                  Requests and dependencies
+                </td>
+
+                <td>
+                  Remove unnecessary tools and control loading where appropriate.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  Slow server response
+                </td>
+
+                <td>
+                  Initial page delivery
+                </td>
+
+                <td>
+                  Review hosting, server configuration, caching, and server-side work.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  Unnecessary CSS
+                </td>
+
+                <td>
+                  Styling and rendering work
+                </td>
+
+                <td>
+                  Reduce unused styles and improve resource delivery.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  Excessive font resources
+                </td>
+
+                <td>
+                  Additional resource loading
+                </td>
+
+                <td>
+                  Reduce unnecessary font files and variants.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  Poor caching
+                </td>
+
+                <td>
+                  Repeated downloads and processing
+                </td>
+
+                <td>
+                  Review suitable caching opportunities for reusable resources.
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td>
+                  Heavy mobile pages
+                </td>
+
+                <td>
+                  Mobile loading and interaction
+                </td>
+
+                <td>
+                  Reduce unnecessary resource weight while preserving useful content.
+                </td>
+
+              </tr>
+
+
+            </tbody>
+
+
+          </table>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section>
+
+      <div class="container">
+
+
+        <div class="section-head reveal">
+
+
+          <div class="eyebrow">
+            FAQ
+          </div>
+
+
+          <h2>
+            Website Speed & Performance Optimization FAQ
+          </h2>
+
+
+          <p>
+            Common questions about business website performance and speed.
+          </p>
+
+
+        </div>
+
+
+        <div class="faq">
+
+
+          <div class="faq-item reveal">
+
+            <button
+              class="faq-question"
+              type="button"
+            >
+
+              <span>
+                What is website speed optimization?
+              </span>
+
+              <span>
+                +
+              </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+              <p>
+                Website speed optimization improves how efficiently pages,
+                resources, and technical components are delivered, processed,
+                and rendered so users can access useful content more efficiently.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="faq-item reveal">
+
+            <button
+              class="faq-question"
+              type="button"
+            >
+
+              <span>
+                What affects website performance?
+              </span>
+
+              <span>
+                +
+              </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+              <p>
+                Performance can be affected by images, scripts, CSS, fonts,
+                server response, caching, third-party resources, page structure,
+                rendering, hosting, and other technical conditions.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="faq-item reveal">
+
+            <button
+              class="faq-question"
+              type="button"
+            >
+
+              <span>
+                Does image size affect website speed?
+              </span>
+
+              <span>
+                +
+              </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+              <p>
+                Large or unnecessarily detailed images can increase the amount
+                of data required to load a page. Appropriate dimensions,
+                compression, formats, and delivery can reduce unnecessary weight.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="faq-item reveal">
+
+            <button
+              class="faq-question"
+              type="button"
+            >
+
+              <span>
+                Can JavaScript slow down a business website?
+              </span>
+
+              <span>
+                +
+              </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+              <p>
+                JavaScript can increase browser processing and page work,
+                particularly when there are many scripts, heavy libraries,
+                blocking operations, or unnecessary third-party resources.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="faq-item reveal">
+
+            <button
+              class="faq-question"
+              type="button"
+            >
+
+              <span>
+                Does website hosting affect speed?
+              </span>
+
+              <span>
+                +
+              </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+              <p>
+                Hosting and server configuration can affect response time,
+                resource delivery, caching behavior, and the technical
+                conditions involved in serving a website.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="faq-item reveal">
+
+            <button
+              class="faq-question"
+              type="button"
+            >
+
+              <span>
+                Is website speed the same as technical SEO?
+              </span>
+
+              <span>
+                +
+              </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+              <p>
+                They overlap but are not identical. Website speed and
+                performance optimization focuses specifically on loading,
+                processing, rendering, and resource efficiency, while
+                technical SEO covers a broader range of technical website
+                conditions.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="faq-item reveal">
+
+            <button
+              class="faq-question"
+              type="button"
+            >
+
+              <span>
+                Does performance optimization remove website features?
+              </span>
+
+              <span>
+                +
+              </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+              <p>
+                Not necessarily. The goal is to identify unnecessary work and
+                deliver useful features efficiently while preserving the
+                business functionality the website actually needs.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="faq-item reveal">
+
+            <button
+              class="faq-question"
+              type="button"
+            >
+
+              <span>
+                Can faster website performance guarantee higher rankings?
+              </span>
+
+              <span>
+                +
+              </span>
+
+            </button>
+
+
+            <div class="faq-answer">
+
+              <p>
+                No. Performance is one part of a website's overall technical
+                and user experience. Search visibility also depends on content,
+                relevance, competition, authority, and other factors.
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta-section">
+
+      <div class="container">
+
+
+        <div class="cta reveal">
+
+
+          <div>
+
+
+            <div class="eyebrow">
+              Website Performance
+            </div>
+
+
+            <h2>
+              Make your business website load and respond more efficiently.
+            </h2>
+
+
+            <p>
+              Startup Nepal can review your images, scripts, styles, server
+              response, caching, third-party resources, mobile performance,
+              and other technical factors affecting website speed.
+            </p>
+
+
+          </div>
+
+
+          <a
+            class="btn btn-primary"
+            href="contact.html"
+          >
+            Request a Performance Check →
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+
+      <div class="footer-top">
+
+
+        <a class="brand" href="index.html">
+
+          <span class="brand-mark">
+            SN
+          </span>
+
+          <span class="brand-text">
+
+            <small>
+              SEO • Web • Local
+            </small>
+
+            <strong>
+              Startup Nepal
+            </strong>
+
+          </span>
+
+        </a>
+
+
+        <div class="footer-links">
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a href="services.html">
+            Services
+          </a>
+
+          <a href="resources.html">
+            Resources
+          </a>
+
+          <a href="pricing.html">
+            Pricing
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+
+        <span>
+          © <span id="year"></span> Startup Nepal. All rights reserved.
+        </span>
+
+
+        <span>
+          Email:
+          <a href="mailto:speedxd174@gmail.com">
+            speedxd174@gmail.com
+          </a>
+        </span>
+
+
+        <span>
+          Serving Itahari, Sunsari and surrounding business areas.
+        </span>
+
+
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    const menuToggle =
+      document.getElementById('menuToggle');
+
+    const navMenu =
+      document.getElementById('navMenu');
+
+    const servicesDropdown =
+      document.getElementById('servicesDropdown');
+
+    const servicesTrigger =
+      servicesDropdown.querySelector('.nav-trigger');
+
+
+    menuToggle.addEventListener('click', () => {
+
+      const open =
+        navMenu.classList.toggle('open');
+
+      menuToggle.setAttribute(
+        'aria-expanded',
+        open ? 'true' : 'false'
+      );
+
+    });
+
+
+    servicesTrigger.addEventListener('click', (event) => {
+
+      event.stopPropagation();
+
+      const open =
+        servicesDropdown.classList.toggle('open');
+
+      servicesTrigger.setAttribute(
+        'aria-expanded',
+        open ? 'true' : 'false'
+      );
+
+    });
+
+
+    document.addEventListener('click', (event) => {
+
+
+      if (!servicesDropdown.contains(event.target)) {
+
+        servicesDropdown.classList.remove('open');
+
+        servicesTrigger.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+
+      }
+
+
+      if (
+        window.innerWidth <= 900 &&
+        !navMenu.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
+
+        navMenu.classList.remove('open');
+
+        menuToggle.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+
+      }
+
+    });
+
+
+    document.querySelectorAll('.nav-menu a')
+      .forEach((link) => {
+
+        link.addEventListener('click', () => {
+
+          if (window.innerWidth <= 900) {
+
+            navMenu.classList.remove('open');
+
+            menuToggle.setAttribute(
+              'aria-expanded',
+              'false'
+            );
+
+          }
+
+        });
+
+      });
+
+
+    /* FAQ */
+
+    document.querySelectorAll('.faq-question')
+      .forEach((button) => {
+
+        button.addEventListener('click', () => {
+
+          const item =
+            button.closest('.faq-item');
+
+          const isOpen =
+            item.classList.contains('open');
+
+
+          document
+            .querySelectorAll('.faq-item')
+            .forEach((faqItem) => {
+
+              faqItem.classList.remove('open');
+
+            });
+
+
+          if (!isOpen) {
+
+            item.classList.add('open');
+
+          }
+
+        });
+
+      });
+
+
+    /* Reveal animation */
+
+    const observer =
+      new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add('visible');
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      }, {
+        threshold:0.1
+      });
+
+
+    document
+      .querySelectorAll('.reveal')
+      .forEach((element) => {
+
+        observer.observe(element);
+
+      });
+
+
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
